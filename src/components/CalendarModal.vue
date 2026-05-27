@@ -104,7 +104,7 @@ ${califica ? '✅ CALIFICA — Ingeniería completa' : '❌ NO CALIFICA — Pres
     etiquetas: etiquetas.join(','),
     notas,
     nota: notas,
-    tags: etiquetas,
+    tags: etiquetas.join(','),
     event_id: scheduleEventId,
     ...getStoredFbParams(),
   }

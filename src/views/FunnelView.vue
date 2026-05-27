@@ -289,7 +289,7 @@ const dismissProof = () => {
         <div class="funnel__vsl-wrap">
           <div class="funnel__vsl" @click="openModal()" role="button" aria-label="Ver video" tabindex="0">
             <div class="funnel__vsl-bg">
-              <img src="https://fast.wistia.com/embed/medias/u9yljeo589/swatch" class="funnel__vsl-thumb" alt="" />
+              <img src="https://fast.wistia.com/embed/medias/h792lc4zkb/swatch" class="funnel__vsl-thumb" alt="" />
               <div class="funnel__vsl-blur-overlay"></div>
             </div>
             <div class="funnel__vsl-overlay">
