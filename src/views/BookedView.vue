@@ -21,6 +21,8 @@ onMounted(() => {
   if (!alreadyFired) {
     ;(window as any).fbq?.('track', 'CompleteRegistration', {
       content_name: 'auditoria-agendada',
+      value: 1,
+      currency: 'USD',
     })
     sessionStorage.setItem('os_complete_fired', '1')
   }

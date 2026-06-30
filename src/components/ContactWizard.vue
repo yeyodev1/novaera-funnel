@@ -141,7 +141,7 @@ async function submitS1() {
     // Meta Pixel — CompleteRegistration: señal de volumen para el algoritmo
     // Se dispara para TODO contacto que completa Step 1, sin importar calificación
     ;(window as any).fbq?.('track', 'CompleteRegistration',
-      { content_name: 'contacto-web-bakano' },
+      { content_name: 'contacto-web-bakano', value: 1, currency: 'USD' },
       { eventID: regEventId },
     )
     dir.value = 'fwd'

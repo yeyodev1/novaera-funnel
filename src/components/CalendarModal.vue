@@ -125,7 +125,12 @@ ${califica ? '✅ CALIFICA' : '❌ NO CALIFICA — Presupuesto insuficiente'}
   }).catch(() => {})
 
   ;(window as any).fbq?.('track', 'CompleteRegistration',
-    { content_name: 'cualificacion-step2', status: califica ? 'califica' : 'no-califica' },
+    {
+      content_name: 'cualificacion-step2',
+      status: califica ? 'califica' : 'no-califica',
+      value: 1,
+      currency: 'USD',
+    },
     { eventID: scheduleEventId }
   )
 

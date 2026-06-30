@@ -251,7 +251,11 @@ const handleSubmit = async () => {
     telefono: parsedPhoneE164.value,
     timestamp: Date.now(),
   }))
-  ;(window as any).fbq?.('track', 'CompleteRegistration')
+  ;(window as any).fbq?.('track', 'CompleteRegistration', {
+    content_name: 'registro-inicial',
+    value: 1,
+    currency: 'USD',
+  })
 
   submitting.value = false
   emit('close')

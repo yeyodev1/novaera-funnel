@@ -16,7 +16,11 @@ const openModal = () => {
       return
     }
   }
-  ;(window as any).fbq?.('track', 'CompleteRegistration', { content_name: 'cta-abrir-registro' })
+  ;(window as any).fbq?.('track', 'CompleteRegistration', {
+    content_name: 'cta-abrir-registro',
+    value: 1,
+    currency: 'USD',
+  })
   modalOpen.value = true
 }
 
