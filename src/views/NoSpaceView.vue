@@ -39,7 +39,7 @@ onMounted(() => {
         <span>
           <template v-if="contactName">{{ contactName }}, podrás</template>
           <template v-else>Podrás</template>
-          volver y solicitar una nueva auditoría en
+          volver y solicitar un nuevo diagnóstico en
           <strong>{{ hoursLeft }} hora{{ hoursLeft !== 1 ? 's' : '' }}</strong>
         </span>
       </div>
@@ -49,33 +49,33 @@ onMounted(() => {
           <i class="fa-solid fa-calendar-xmark nospace__icon"></i>
         </div>
 
-        <h1 class="nospace__title">Cupos completos para auditoría logística</h1>
+        <h1 class="nospace__title">Cupos completos para diagnóstico comercial</h1>
 
         <p class="nospace__body">
           Nuestro equipo de ingenieros senior tiene la capacidad limitada para mantener la calidad
-          de análisis que nos distingue. En este momento los <strong>5 cupos mensuales</strong>
-          de Quick Solutions están completos.
+          de ejecución que nos distingue. En este momento los <strong>5 cupos mensuales</strong>
+          de Nova Era están completos.
         </p>
 
         <p class="nospace__body">
-          Cuando se libere un espacio, podrás agendar tu Diagnóstico de Auditoría Logística
-          y Aduanera Completa sin costo.
+          Cuando se libere un espacio, podrás agendar tu Diagnóstico de Infraestructura Comercial
+          sin costo.
         </p>
 
         <div class="nospace__divider" aria-hidden="true"></div>
 
         <h2 class="nospace__subtitle">Mientras tanto</h2>
         <p class="nospace__body">
-          Mientras esperas, te recomendamos preparar tu matriz de costos logísticos actuales,
-          partidas arancelarias de tus principales productos y cualquier duda técnica que
-          quieras resolver en tu sesión con Jefferson Bazán.
+          Mientras esperas, te recomendamos preparar tus planos estructurales,
+          fotografías de tus fachadas actuales y cualquier duda técnica que
+          quieras resolver en tu sesión con Raúl.
         </p>
       </div>
 
       <p class="nospace__footer-note">
         <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-        Quick Solutions trabaja exclusivamente con corporaciones multinacionales e industrias
-        de alto volumen. No trabajamos con importadores pequeños ni modalidades simplificadas.
+        Nova Era trabaja exclusivamente con corporaciones multinacionales e industrias
+        consolidadas. No atendemos proyectos residenciales ni solicitudes enfocadas en competir por precio.
       </p>
 
     </main>
@@ -85,7 +85,7 @@ onMounted(() => {
         <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
-      <p class="nospace__footer-copy">© {{ new Date().getFullYear() }} Quick Solutions. Todos los derechos reservados.</p>
+      <p class="nospace__footer-copy">© {{ new Date().getFullYear() }} Nova Era. Todos los derechos reservados.</p>
     </footer>
 
   </div>

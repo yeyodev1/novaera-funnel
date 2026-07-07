@@ -31,14 +31,14 @@ const router = createRouter({
       name: 'funnel',
       component: FunnelView,
       meta: {
-        title: 'Quick Solutions | Arquitectos de la Cadena de Suministro',
+        title: 'Nova Era | Ingeniería de Marca e Infraestructura Comercial',
         description:
-          'Quick Solutions — Arquitectos de la cadena de suministro basados en ingeniería de datos. Eliminamos retenciones, sobrecostos e imprevistos con la metodología IFAC. Diagnóstico de auditoría logística gratuito.',
-        canonical: 'https://quicksolutions.ec/',
-        ogTitle: 'Quick Solutions | Arquitectos de la Cadena de Suministro',
+          'Nova Era — Especialistas en infraestructura comercial premium. Transformamos fachadas corporativas, adecuación interior y branding vehicular sin retrasos ni improvisaciones. Diagnóstico gratuito.',
+        canonical: 'https://novaera.ec/',
+        ogTitle: 'Nova Era | Infraestructura Comercial Premium',
         ogDescription:
-          'Transformamos tu logística internacional con ingeniería de datos y previsibilidad absoluta. Sin retenciones, sin sobrecostos, sin sorpresas.',
-        ogUrl: 'https://quicksolutions.ec/',
+          'Domina visualmente tu mercado. Construimos fachadas corporativas y espacios comerciales que proyectan el verdadero nivel de éxito de tu empresa.',
+        ogUrl: 'https://novaera.ec/',
       } satisfies RouteMeta,
     },
     {
@@ -46,12 +46,12 @@ const router = createRouter({
       name: 'video',
       component: VideoView,
       meta: {
-        title: 'Mira el video | Quick Solutions — Paso 1 de 2',
-        description: 'Descubre cómo la metodología IFAC elimina retenciones, sobrecostos e imprevistos en tu cadena de suministro.',
-        canonical: 'https://quicksolutions.ec/ver-video',
-        ogTitle: 'Mira el video | Quick Solutions',
-        ogDescription: 'Ve el video y agenda tu diagnóstico de auditoría logística gratuito con Jefferson Bazán.',
-        ogUrl: 'https://quicksolutions.ec/ver-video',
+        title: 'Mira el video | Nova Era — Paso 1 de 2',
+        description: 'Descubre cómo una infraestructura de alto valor aumenta tu autoridad comercial.',
+        canonical: 'https://novaera.ec/ver-video',
+        ogTitle: 'Mira el video | Nova Era',
+        ogDescription: 'Ve el video y agenda tu diagnóstico comercial gratuito.',
+        ogUrl: 'https://novaera.ec/ver-video',
       } satisfies RouteMeta,
     },
     {
@@ -59,12 +59,12 @@ const router = createRouter({
       name: 'booking',
       component: BookingView,
       meta: {
-        title: 'Agenda tu Diagnóstico | Quick Solutions — Paso 2 de 2',
-        description: 'Selecciona el día y hora para tu Diagnóstico de Auditoría Logística gratuito con el equipo de Quick Solutions.',
-        canonical: 'https://quicksolutions.ec/agendar',
-        ogTitle: 'Agenda tu Diagnóstico | Quick Solutions',
-        ogDescription: 'Elige tu horario y reserva tu Auditoría Logística gratuita.',
-        ogUrl: 'https://quicksolutions.ec/agendar',
+        title: 'Agenda tu Diagnóstico | Nova Era — Paso 2 de 2',
+        description: 'Selecciona el día y hora para tu Diagnóstico de Infraestructura Comercial gratuito.',
+        canonical: 'https://novaera.ec/agendar',
+        ogTitle: 'Agenda tu Diagnóstico | Nova Era',
+        ogDescription: 'Elige tu horario y reserva tu Diagnóstico Comercial.',
+        ogUrl: 'https://novaera.ec/agendar',
       } satisfies RouteMeta,
     },
     {
@@ -72,12 +72,12 @@ const router = createRouter({
       name: 'booked',
       component: BookedView,
       meta: {
-        title: 'Diagnóstico Confirmado | Quick Solutions',
-        description: 'Tu diagnóstico de auditoría logística con Quick Solutions está confirmado. Revisa tu correo.',
-        canonical: 'https://quicksolutions.ec/cita-confirmada',
-        ogTitle: 'Diagnóstico Confirmado | Quick Solutions',
-        ogDescription: 'Tu auditoría logística está reservada. Te contactaremos pronto.',
-        ogUrl: 'https://quicksolutions.ec/cita-confirmada',
+        title: 'Diagnóstico Confirmado | Nova Era',
+        description: 'Tu diagnóstico comercial con Nova Era está confirmado. Revisa tu correo.',
+        canonical: 'https://novaera.ec/cita-confirmada',
+        ogTitle: 'Diagnóstico Confirmado | Nova Era',
+        ogDescription: 'Tu diagnóstico está reservado. Te contactaremos pronto.',
+        ogUrl: 'https://novaera.ec/cita-confirmada',
       } satisfies RouteMeta,
     },
     {
@@ -85,12 +85,12 @@ const router = createRouter({
       name: 'no-space',
       component: NoSpaceView,
       meta: {
-        title: 'Sin Cupos Disponibles | Quick Solutions',
-        description: 'En este momento los cupos de auditoría logística de Quick Solutions están completos.',
-        canonical: 'https://quicksolutions.ec/sin-espacio',
-        ogTitle: 'Sin Cupos Disponibles | Quick Solutions',
-        ogDescription: 'Los cupos de auditoría están completos. Te avisaremos cuando haya disponibilidad.',
-        ogUrl: 'https://quicksolutions.ec/sin-espacio',
+        title: 'Sin Cupos Disponibles | Nova Era',
+        description: 'En este momento los cupos para diagnóstico comercial de Nova Era están completos.',
+        canonical: 'https://novaera.ec/sin-espacio',
+        ogTitle: 'Sin Cupos Disponibles | Nova Era',
+        ogDescription: 'Los cupos de diagnóstico están completos. Te avisaremos cuando haya disponibilidad.',
+        ogUrl: 'https://novaera.ec/sin-espacio',
       } satisfies RouteMeta,
     },
     {
@@ -98,12 +98,12 @@ const router = createRouter({
       name: 'privacy-policy',
       component: PrivacyPolicyView,
       meta: {
-        title: 'Política de Privacidad | Quick Solutions',
-        description: 'Política de privacidad de Quick Solutions. Información sobre el tratamiento de datos personales.',
-        canonical: 'https://quicksolutions.ec/politicas-privacidad',
-        ogTitle: 'Política de Privacidad | Quick Solutions',
-        ogDescription: 'Política de privacidad de Quick Solutions.',
-        ogUrl: 'https://quicksolutions.ec/politicas-privacidad',
+        title: 'Política de Privacidad | Nova Era',
+        description: 'Política de privacidad de Nova Era. Información sobre el tratamiento de datos personales.',
+        canonical: 'https://novaera.ec/politicas-privacidad',
+        ogTitle: 'Política de Privacidad | Nova Era',
+        ogDescription: 'Política de privacidad de Nova Era.',
+        ogUrl: 'https://novaera.ec/politicas-privacidad',
       } satisfies RouteMeta,
     },
     {
@@ -111,12 +111,12 @@ const router = createRouter({
       name: 'legal-notice',
       component: LegalNoticeView,
       meta: {
-        title: 'Aviso Legal | Quick Solutions',
-        description: 'Aviso legal de Quick Solutions. Términos y condiciones de uso del sitio web.',
-        canonical: 'https://quicksolutions.ec/aviso-legal',
-        ogTitle: 'Aviso Legal | Quick Solutions',
-        ogDescription: 'Aviso legal de Quick Solutions.',
-        ogUrl: 'https://quicksolutions.ec/aviso-legal',
+        title: 'Aviso Legal | Nova Era',
+        description: 'Aviso legal de Nova Era. Términos y condiciones de uso del sitio web.',
+        canonical: 'https://novaera.ec/aviso-legal',
+        ogTitle: 'Aviso Legal | Nova Era',
+        ogDescription: 'Aviso legal de Nova Era.',
+        ogUrl: 'https://novaera.ec/aviso-legal',
       } satisfies RouteMeta,
     },
   ],
@@ -143,7 +143,7 @@ const setCanonical = (href: string) => {
 
 router.afterEach((to) => {
   const meta = to.meta
-  document.title = meta.title ?? 'Quick Solutions'
+  document.title = meta.title ?? 'Nova Era'
   setMeta('description', meta.description ?? '')
   setOgMeta('og:title', meta.ogTitle ?? meta.title ?? '')
   setOgMeta('og:description', meta.ogDescription ?? meta.description ?? '')

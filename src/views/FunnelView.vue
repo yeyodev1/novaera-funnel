@@ -515,7 +515,7 @@ const dismissProof = () => {
           <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
         </nav>
         <p class="funnel__footer-copy">
-          © {{ new Date().getFullYear() }} Quick Solutions. Todos los derechos reservados.
+          © {{ new Date().getFullYear() }} Nova Era. Todos los derechos reservados.
         </p>
       </div>
     </footer>
@@ -1179,14 +1179,14 @@ const dismissProof = () => {
 .funnel__section-label {
   font-family: fonts.$font-interface;
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: colors.$OS-NAVY;
+  color: colors.$OS-RED;
   margin: 0 0 1rem;
 
   &--light {
-    color: rgba(#ffffff, 0.55);
+    color: rgba(#ffffff, 0.75);
   }
 }
 

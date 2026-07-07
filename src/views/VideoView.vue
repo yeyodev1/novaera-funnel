@@ -154,7 +154,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
           @click="calendarOpen = true"
         >
           <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-          AGENDAR MI AUDITORÍA LOGÍSTICA
+          AGENDAR MI DIAGNÓSTICO COMERCIAL
         </button>
 
         <p class="vv-cta-sub">
@@ -172,18 +172,15 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
           </div>
           <div class="vv-authority__content">
             <p class="vv-authority__eyebrow">Líder y Fundador</p>
-            <h2 id="authority-heading" class="vv-authority__name">Jefferson Bazán</h2>
-            <p class="vv-authority__role">Arquitecto de la Cadena de Suministro — Ingeniería de Datos</p>
+            <h2 id="authority-heading" class="vv-authority__name">Raúl</h2>
+            <p class="vv-authority__role">Director de Proyectos — Ingeniería de Marca e Infraestructura Comercial</p>
             <p class="vv-authority__bio">
-              Con más de 15 años de experiencia en logística internacional y gestión aduanera, me he
-              dedicado a transformar la manera en que las grandes corporaciones entienden su cadena
-              de suministro. Mi filosofía es simple: <strong>la imprevisibilidad logística es un
-              impuesto invisible que pagas en producción detenida y capital paralizado</strong>.
+              Con más de 19 años de experiencia comprobada en el mercado nacional, transformando la presencia física de marcas líderes como Kia y Primax. Mi filosofía es simple: <strong>una infraestructura de alto valor no es un simple tema de estética, es una máquina de atracción comercial masiva</strong>.
             </p>
             <ul class="vv-authority__creds" role="list">
-              <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Especialista en ingeniería de flujo aduanero continuo</li>
-              <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Certificación en gestión de cadenas multimodales internacionales</li>
-              <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Gestión integral: de la auditoría en origen al blindaje financiero</li>
+              <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Ingeniería de fachadas de alto impacto y dominio visual</li>
+              <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Adecuación interior y mobiliario comercial de alto estatus</li>
+              <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Branding vehicular premium y protección de marca</li>
             </ul>
           </div>
         </div>
@@ -196,7 +193,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
         <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
-      <p class="vv-footer__copy">© {{ new Date().getFullYear() }} Quick Solutions. Todos los derechos reservados.</p>
+      <p class="vv-footer__copy">© {{ new Date().getFullYear() }} Nova Era. Todos los derechos reservados.</p>
     </footer>
 
   </div>
@@ -212,7 +209,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
             <h2 id="capture-title" class="capture-modal__title">
               Antes de ver el video, <span>confirma tus datos</span>
             </h2>
-            <p class="capture-modal__sub">Para personalizar tu diagnóstico logístico</p>
+            <p class="capture-modal__sub">Para personalizar tu diagnóstico de infraestructura comercial</p>
           </div>
           <form class="capture-modal__form" @submit.prevent="submitCapture" novalidate>
             <div class="capture-row">
@@ -651,17 +648,17 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   }
 
   input {
-    border: 1.5px solid #E4EDF7;
+    border: 1.5px solid #333333;
     border-radius: 9px;
     padding: 0.7rem 0.85rem;
     font-family: fonts.$font-secondary;
     font-size: 0.88rem;
-    color: colors.$OS-DARK;
-    background: #FAFBFF;
+    color: #FFFFFF;
+    background: #111111;
     outline: none;
-    transition: border-color 0.18s;
+    transition: all 0.2s ease;
     &::placeholder { color: rgba(255, 255, 255, 0.35); }
-    &:focus { border-color: colors.$OS-BLUE; background: #F5F9FF; }
+    &:focus { border-color: colors.$OS-BLUE; background: #1a1a1a; box-shadow: 0 0 0 3px rgba(colors.$OS-BLUE, 0.1); }
   }
 
   &.error input { border-color: colors.$OS-RED; }
