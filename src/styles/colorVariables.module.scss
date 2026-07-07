@@ -11,19 +11,19 @@ $NE-HOT-PINK:      #FA2682; // C:2 M:85 Y:49 K:0
 $NE-YELLOW:        #F5FF0F; // C:4 M:0 Y:94 K:0
 
 // Mapeo a las variables del sistema (manteniendo los nombres para no romper UI)
-$QS-NAVY:    $NE-DEEP-PURPLE; // Brand Principal
-$QS-BLUE:    $NE-BLUE;        // Secundario
-$QS-GOLD:    $NE-YELLOW-ORANGE; // Acento
-$QS-RED:     $NE-HOT-PINK;    // CTAs y urgencia
+$QS-NAVY:    #222222;         // Brand Principal (Gris Oscuro/Charcoal)
+$QS-BLUE:    #8E9CB2;         // Secundario (Gris Plata)
+$QS-GOLD:    #F0B429;         // Acento (Amarillo Oro)
+$QS-RED:     #F0B429;         // CTAs y urgencia (Amarillo Oro para contraste)
 $QS-DARK:    #FFFFFF;         // Texto claro (modo oscuro)
 $QS-LIGHT:   $NE-BLACK;       // Fondo negro
 $QS-SURFACE: #111111;         // Superficies/cards oscuras
 
 // Urgency / inmediatez
-$QS-URGENT:        $NE-HOT-PINK;
-$QS-URGENT-DARK:   #AA0000;
-$QS-URGENT-LIGHT:  $NE-PINK-PURPLE;
-$QS-URGENT-BG:     rgba($NE-HOT-PINK, 0.15);
+$QS-URGENT:        #F0B429;
+$QS-URGENT-DARK:   #A67300;
+$QS-URGENT-LIGHT:  #FFD666;
+$QS-URGENT-BG:     rgba(#F0B429, 0.15);
 
 // Aliases legacy Aluvicopp (mantienen compatibilidad)
 $ALU-NAVY:    $QS-NAVY;

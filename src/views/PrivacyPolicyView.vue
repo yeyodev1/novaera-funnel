@@ -98,7 +98,7 @@ onMounted(() => {
     transition: color 0.2s;
 
     &:hover {
-      color: #7997FF;
+      color: #F0B429;
       text-decoration: underline;
     }
   }

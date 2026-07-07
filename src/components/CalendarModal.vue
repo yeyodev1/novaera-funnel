@@ -610,7 +610,7 @@ watch(() => props.open, (v) => {
   justify-content: center;
   gap: 0.6rem;
   background: colors.$OS-RED;
-  color: #ffffff;
+  color: #000000;
   border: none;
   border-radius: 12px;
   padding: 1rem 2rem;
@@ -621,8 +621,8 @@ watch(() => props.open, (v) => {
   cursor: pointer;
   width: 100%;
   transition: background 0.2s ease, transform 0.15s ease;
-  box-shadow: 0 4px 16px rgba(204, 0, 0, 0.3);
-  &:hover:not(:disabled) { background: #AA0000; transform: translateY(-1px); }
+  box-shadow: 0 4px 16px rgba(240, 180, 41, 0.3);
+  &:hover:not(:disabled) { background: #D49A1E; transform: translateY(-1px); }
   &:disabled { opacity: 0.65; cursor: not-allowed; }
 }
 </style>

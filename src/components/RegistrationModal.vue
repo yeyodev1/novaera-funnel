@@ -793,7 +793,7 @@ $accent: colors.$OS-RED;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #ffffff;
+  color: #000000;
   background: $accent;
   border: none;
   border-radius: 12px;

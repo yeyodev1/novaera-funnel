@@ -349,7 +349,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #7997FF;
+  color: #ffffff;
   margin: 0 0 1rem;
 
   i {
@@ -460,7 +460,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   justify-content: center;
   gap: 0.6rem;
   background: colors.$OS-RED;
-  color: #ffffff;
+  color: #000000;
   border: none;
   border-radius: 12px;
   padding: 1.1rem 2.5rem;
@@ -472,12 +472,12 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   width: 100%;
   max-width: 420px;
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 4px 20px rgba(204, 0, 0, 0.35);
+  box-shadow: 0 4px 20px rgba(240, 180, 41, 0.3);
 
   &:hover {
-    background: #AA0000;
+    background: #D49A1E;
     transform: translateY(-1px);
-    box-shadow: 0 8px 28px rgba(204, 0, 0, 0.45);
+    box-shadow: 0 8px 28px rgba(240, 180, 41, 0.45);
   }
 
   &:active {
@@ -761,7 +761,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   justify-content: center;
   gap: 0.6rem;
   background: colors.$OS-RED;
-  color: #ffffff;
+  color: #000000;
   border: none;
   border-radius: 11px;
   padding: 0.95rem 1.5rem;
@@ -773,10 +773,10 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   width: 100%;
   margin-top: 0.25rem;
   transition: background 0.2s, transform 0.15s;
-  box-shadow: 0 4px 16px rgba(204, 0, 0, 0.3);
+  box-shadow: 0 4px 16px rgba(240, 180, 41, 0.3);
 
   &:hover:not(:disabled) {
-    background: #AA0000;
+    background: #D49A1E;
     transform: translateY(-1px);
   }
 

@@ -952,11 +952,11 @@ const dismissProof = () => {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(199, 87, 245, 0.15); // Lighter purple background
-  border: 1px solid rgba(199, 87, 245, 0.4); // Brighter purple border
+  background: rgba(colors.$OS-RED, 0.12);
+  border: 1px solid rgba(colors.$OS-RED, 0.35);
   border-radius: 999px;
   padding: 0.35rem 0.85rem;
-  color: #E299FF; // Very bright purple/pink for the text
+  color: #FFD666;
   font-family: fonts.$font-interface;
   font-size: 0.78rem;
   font-weight: 800;
@@ -1132,7 +1132,7 @@ const dismissProof = () => {
   justify-content: center;
   gap: 0.6rem;
   background: colors.$OS-RED;
-  color: #ffffff;
+  color: #000000;
   border: none;
   border-radius: 12px;
   padding: 1.1rem 2.5rem;
@@ -1144,12 +1144,12 @@ const dismissProof = () => {
   width: 100%;
   max-width: 520px;
   transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 20px rgba(204, 0, 0, 0.35);
+  box-shadow: 0 4px 20px rgba(240, 180, 41, 0.3);
 
   &:hover {
-    background: #AA0000;
+    background: #D49A1E;
     transform: translateY(-1px);
-    box-shadow: 0 8px 28px rgba(204, 0, 0, 0.45);
+    box-shadow: 0 8px 28px rgba(240, 180, 41, 0.4);
   }
 
   &:active {
@@ -1625,11 +1625,11 @@ const dismissProof = () => {
 .funnel__cta-btn--final {
   margin: 0 auto 1rem;
   background: colors.$OS-RED;
-  box-shadow: 0 4px 24px rgba(204, 0, 0, 0.4);
+  box-shadow: 0 4px 24px rgba(240, 180, 41, 0.35);
   max-width: 560px;
 
   &:hover {
-    background: #AA0000;
+    background: #D49A1E;
   }
 }
 

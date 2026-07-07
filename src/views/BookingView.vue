@@ -176,8 +176,8 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
     justify-content: center; font-family: fonts.$font-interface; font-size: 0.85rem;
     font-weight: 800; border: 2px solid #D0DBE8; color: #EEEEEE; transition: all 0.3s ease;
 
-    .stepper__step--done & { background: colors.$OS-BLUE; border-color: colors.$OS-BLUE; color: #ffffff; }
-    .stepper__step--active & { background: colors.$OS-RED; border-color: colors.$OS-RED; color: #ffffff; }
+    .stepper__step--done & { background: colors.$OS-BLUE; border-color: colors.$OS-BLUE; color: #000000; }
+    .stepper__step--active & { background: colors.$OS-RED; border-color: colors.$OS-RED; color: #000000; }
   }
 
   &__label {
@@ -207,7 +207,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #7997FF;
+  color: #ffffff;
   margin: 0 0 1rem;
 
   i {
