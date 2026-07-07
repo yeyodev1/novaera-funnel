@@ -621,7 +621,7 @@ const dismissProof = () => {
   align-items: center;
   gap: 0.4rem;
   background: #000000;
-  color: colors.$QS-URGENT-DARK;
+  color: #ffffff;
   border: 2px solid colors.$QS-URGENT-LIGHT;
   border-radius: 999px;
   padding: 0.45rem 1rem;
@@ -952,14 +952,14 @@ const dismissProof = () => {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(colors.$OS-NAVY, 0.06);
-  border: 1px solid rgba(colors.$OS-NAVY, 0.14);
+  background: rgba(199, 87, 245, 0.15); // Lighter purple background
+  border: 1px solid rgba(199, 87, 245, 0.4); // Brighter purple border
   border-radius: 999px;
   padding: 0.35rem 0.85rem;
-  color: colors.$OS-NAVY;
+  color: #E299FF; // Very bright purple/pink for the text
   font-family: fonts.$font-interface;
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin: 0 0 1.4rem;
