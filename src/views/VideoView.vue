@@ -339,17 +339,21 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 .vv-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
+  background: rgba(colors.$OS-BLUE, 0.14);
+  border: 1px solid rgba(colors.$OS-BLUE, 0.35);
+  border-radius: 999px;
+  padding: 0.4rem 0.95rem;
   font-family: fonts.$font-interface;
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: colors.$OS-NAVY;
-  margin: 0 0 0.75rem;
+  color: #7997FF;
+  margin: 0 0 1rem;
 
   i {
-    font-size: 0.75rem;
+    font-size: 0.78rem;
   }
 }
 
@@ -430,7 +434,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     margin: 0;
 
     strong {
-      color: colors.$OS-NAVY;
+      color: #7997FF;
     }
   }
 

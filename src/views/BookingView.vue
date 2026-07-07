@@ -195,10 +195,24 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
 }
 
 .booking__eyebrow {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  font-family: fonts.$font-interface; font-size: 0.76rem; font-weight: 700;
-  letter-spacing: 0.06em; text-transform: uppercase; color: colors.$OS-NAVY;
-  margin: 0 0 0.75rem; i { font-size: 0.75rem; }
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(colors.$OS-BLUE, 0.14);
+  border: 1px solid rgba(colors.$OS-BLUE, 0.35);
+  border-radius: 999px;
+  padding: 0.4rem 0.95rem;
+  font-family: fonts.$font-interface;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7997FF;
+  margin: 0 0 1rem;
+
+  i {
+    font-size: 0.78rem;
+  }
 }
 
 .booking__heading { margin-bottom: 1.75rem; }
