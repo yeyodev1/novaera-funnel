@@ -47,7 +47,7 @@ const submitCapture = async () => {
     phone: c.telefono,
     event_id: leadEventId,
   })
-  ;(window as any).fbq?.('track', 'Lead', { content_name: 'video-gate' }, { eventID: leadEventId })
+    ; (window as any).fbq?.('track', 'Lead', { content_name: 'video-gate' }, { eventID: leadEventId })
   await new Promise(r => setTimeout(r, 600))
   captureSubmitting.value = false
   captureOpen.value = false
@@ -72,11 +72,11 @@ const startTimer = () => {
       secondsLeft.value--
     } else {
       ctaUnlocked.value = true
-      ;(window as any).fbq?.('track', 'CompleteRegistration', {
-        content_name: 'video-completado',
-        value: 1,
-        currency: 'USD',
-      })
+        ; (window as any).fbq?.('track', 'CompleteRegistration', {
+          content_name: 'video-completado',
+          value: 1,
+          currency: 'USD',
+        })
       if (timer) clearInterval(timer)
     }
   }, 1000)
@@ -88,7 +88,7 @@ onMounted(() => {
   if (!hasContact) {
     captureOpen.value = true
   } else {
-    ;(window as any).fbq?.('track', 'ViewContent', { content_name: 'video-vsl' })
+    ; (window as any).fbq?.('track', 'ViewContent', { content_name: 'video-vsl' })
     startTimer()
   }
 })
@@ -172,7 +172,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
           </div>
           <div class="vv-authority__content">
             <p class="vv-authority__eyebrow">Líder y Fundador</p>
-            <h2 id="authority-heading" class="vv-authority__name">Raúl</h2>
+            <h2 id="authority-heading" class="vv-authority__name">Raúl Albán</h2>
             <p class="vv-authority__role">Director de Proyectos — Ingeniería de Marca e Infraestructura Comercial</p>
             <p class="vv-authority__bio">
               Con más de 19 años de experiencia comprobada en el mercado nacional, transformando la presencia física de marcas líderes como Kia y Primax. Mi filosofía es simple: <strong>una infraestructura de alto valor no es un simple tema de estética, es una máquina de atracción comercial masiva</strong>.
@@ -280,9 +280,9 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
 
   &__logo-img {
-  height: 35px;
-  width: auto;
-  object-fit: contain;
+    height: 35px;
+    width: auto;
+    object-fit: contain;
     font-family: fonts.$font-principal;
     font-weight: 800;
     font-size: 1.25rem;
@@ -321,7 +321,10 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     border-radius: 50%;
     background: #D0DBE8;
     transition: background 0.2s;
-    &--active { background: colors.$OS-NAVY; }
+
+    &--active {
+      background: colors.$OS-NAVY;
+    }
   }
 
   &__label {
@@ -344,10 +347,15 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   text-transform: uppercase;
   color: colors.$OS-NAVY;
   margin: 0 0 0.75rem;
-  i { font-size: 0.75rem; }
+
+  i {
+    font-size: 0.75rem;
+  }
 }
 
-.vv-headline { margin-bottom: 1.75rem; }
+.vv-headline {
+  margin-bottom: 1.75rem;
+}
 
 .vv-h1 {
   @include fonts.heading-font(800);
@@ -358,7 +366,9 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   letter-spacing: -0.025em;
 }
 
-.vv-accent { color: colors.$OS-RED; }
+.vv-accent {
+  color: colors.$OS-RED;
+}
 
 .vv-subtitle {
   font-size: 0.95rem;
@@ -367,7 +377,9 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   margin: 0;
 }
 
-.vv-video-wrapper { margin-bottom: 1.75rem; }
+.vv-video-wrapper {
+  margin-bottom: 1.75rem;
+}
 
 .vv-video-ratio {
   position: relative;
@@ -407,13 +419,19 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   width: 100%;
   max-width: 420px;
 
-  &__icon { font-size: 1.4rem; color: #EEEEEE; }
+  &__icon {
+    font-size: 1.4rem;
+    color: #EEEEEE;
+  }
 
   &__text {
     font-size: 0.88rem;
     color: #CCCCCC;
     margin: 0;
-    strong { color: colors.$OS-NAVY; }
+
+    strong {
+      color: colors.$OS-NAVY;
+    }
   }
 
   &__bar-wrap {
@@ -451,8 +469,16 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   max-width: 420px;
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
   box-shadow: 0 4px 20px rgba(204, 0, 0, 0.35);
-  &:hover { background: #AA0000; transform: translateY(-1px); box-shadow: 0 8px 28px rgba(204, 0, 0, 0.45); }
-  &:active { transform: translateY(0); }
+
+  &:hover {
+    background: #AA0000;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 28px rgba(204, 0, 0, 0.45);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
 }
 
 .vv-cta-sub {
@@ -462,7 +488,10 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   font-size: 0.76rem;
   color: #EEEEEE;
   margin: 0;
-  i { font-size: 0.7rem; }
+
+  i {
+    font-size: 0.7rem;
+  }
 }
 
 .vv-authority {
@@ -477,7 +506,12 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   display: flex;
   gap: 1.5rem;
   align-items: flex-start;
-  @media (max-width: 580px) { flex-direction: column; align-items: center; text-align: center; }
+
+  @media (max-width: 580px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .vv-authority__avatar {
@@ -491,7 +525,11 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   display: flex;
   align-items: center;
   justify-content: center;
-  i { color: rgba(#ffffff, 0.7); font-size: 2.5rem; }
+
+  i {
+    color: rgba(#ffffff, 0.7);
+    font-size: 2.5rem;
+  }
 }
 
 .vv-authority__eyebrow {
@@ -521,7 +559,10 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   color: #FFFFFF;
   line-height: 1.6;
   margin: 0 0 1.25rem;
-  strong { color: colors.$OS-DARK; }
+
+  strong {
+    color: colors.$OS-DARK;
+  }
 }
 
 .vv-authority__creds {
@@ -538,8 +579,15 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     gap: 0.5rem;
     font-size: 0.78rem;
     color: #FFFFFF;
-    i { color: colors.$OS-BLUE; font-size: 0.75rem; }
-    @media (max-width: 580px) { justify-content: center; }
+
+    i {
+      color: colors.$OS-BLUE;
+      font-size: 0.75rem;
+    }
+
+    @media (max-width: 580px) {
+      justify-content: center;
+    }
   }
 }
 
@@ -554,16 +602,34 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   &__links {
     display: flex;
     gap: 1.5rem;
-    a { font-size: 0.76rem; color: #EEEEEE; text-decoration: none; &:hover { color: colors.$OS-NAVY; } }
+
+    a {
+      font-size: 0.76rem;
+      color: #EEEEEE;
+      text-decoration: none;
+
+      &:hover {
+        color: colors.$OS-NAVY;
+      }
+    }
   }
 
-  &__copy { font-size: 0.72rem; color: #EEEEEE; margin: 0; }
+  &__copy {
+    font-size: 0.72rem;
+    color: #EEEEEE;
+    margin: 0;
+  }
 }
 
 .capture-fade-enter-active,
-.capture-fade-leave-active { transition: opacity 0.25s ease; }
+.capture-fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+
 .capture-fade-enter-from,
-.capture-fade-leave-to { opacity: 0; }
+.capture-fade-leave-to {
+  opacity: 0;
+}
 
 .capture-overlay {
   position: fixed;
@@ -593,9 +659,9 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   }
 
   &__logo-img {
-  height: 35px;
-  width: auto;
-  object-fit: contain;
+    height: 35px;
+    width: auto;
+    object-fit: contain;
     font-family: fonts.$font-principal;
     font-weight: 800;
     font-size: 1.25rem;
@@ -610,7 +676,10 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     color: colors.$OS-DARK;
     margin: 0 0 0.4rem;
     letter-spacing: -0.02em;
-    span { color: colors.$OS-RED; }
+
+    span {
+      color: colors.$OS-RED;
+    }
   }
 
   &__sub {
@@ -631,7 +700,10 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
-  @media (max-width: 400px) { grid-template-columns: 1fr; }
+
+  @media (max-width: 400px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .capture-field {
@@ -657,13 +729,26 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     background: #111111;
     outline: none;
     transition: all 0.2s ease;
-    &::placeholder { color: rgba(255, 255, 255, 0.35); }
-    &:focus { border-color: colors.$OS-BLUE; background: #1a1a1a; box-shadow: 0 0 0 3px rgba(colors.$OS-BLUE, 0.1); }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    &:focus {
+      border-color: colors.$OS-BLUE;
+      background: #1a1a1a;
+      box-shadow: 0 0 0 3px rgba(colors.$OS-BLUE, 0.1);
+    }
   }
 
-  &.error input { border-color: colors.$OS-RED; }
+  &.error input {
+    border-color: colors.$OS-RED;
+  }
 
-  &__error { font-size: 0.73rem; color: colors.$OS-RED; }
+  &__error {
+    font-size: 0.73rem;
+    color: colors.$OS-RED;
+  }
 }
 
 .capture-submit {
@@ -685,7 +770,15 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   margin-top: 0.25rem;
   transition: background 0.2s, transform 0.15s;
   box-shadow: 0 4px 16px rgba(204, 0, 0, 0.3);
-  &:hover:not(:disabled) { background: #AA0000; transform: translateY(-1px); }
-  &:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  &:hover:not(:disabled) {
+    background: #AA0000;
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 }
 </style>

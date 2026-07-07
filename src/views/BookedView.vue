@@ -19,7 +19,7 @@ const isReturningVisitor = computed(() => {
 onMounted(() => {
   const alreadyFired = sessionStorage.getItem('os_complete_fired')
   if (!alreadyFired) {
-    ;(window as any).fbq?.('track', 'CompleteRegistration', {
+    ; (window as any).fbq?.('track', 'CompleteRegistration', {
       content_name: 'diagnostico-agendado',
       value: 1,
       currency: 'USD',
@@ -117,7 +117,7 @@ const nextSteps = [
             <i class="fa-solid fa-helmet-safety"></i>
           </div>
           <div class="booked__team-info">
-            <strong class="booked__team-name">Raúl</strong>
+            <strong class="booked__team-name">Raúl Albán</strong>
             <span class="booked__team-role">Director de Proyectos — Ingeniería de Marca e Infraestructura</span>
             <p class="booked__team-note">
               "Una infraestructura de alto valor no es un gasto, es una máquina de atracción comercial masiva. Eso es lo que construimos en Nova Era."
@@ -200,16 +200,32 @@ const nextSteps = [
   border-radius: 20px;
 }
 
-.booked__hero-icon { font-size: 3.5rem; color: colors.$OS-BLUE; margin-bottom: 1rem; line-height: 1; }
+.booked__hero-icon {
+  font-size: 3.5rem;
+  color: colors.$OS-BLUE;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
 
 .booked__hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: rgba(colors.$OS-BLUE, 0.14); color: colors.$OS-BLUE;
-  border: 1px solid rgba(colors.$OS-BLUE, 0.3); border-radius: 999px;
-  padding: 0.4rem 0.95rem; margin: 0 0 0.85rem;
-  font-family: fonts.$font-interface; font-size: 0.74rem; font-weight: 700;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  i { font-size: 0.78rem; }
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(colors.$OS-BLUE, 0.14);
+  color: colors.$OS-BLUE;
+  border: 1px solid rgba(colors.$OS-BLUE, 0.3);
+  border-radius: 999px;
+  padding: 0.4rem 0.95rem;
+  margin: 0 0 0.85rem;
+  font-family: fonts.$font-interface;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  i {
+    font-size: 0.78rem;
+  }
 }
 
 .booked__hero-title {
@@ -243,7 +259,10 @@ const nextSteps = [
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
-  @media (max-width: 620px) { grid-template-columns: 1fr; }
+
+  @media (max-width: 620px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .booked__step {
@@ -275,7 +294,11 @@ const nextSteps = [
   align-items: center;
   justify-content: center;
   margin-bottom: 0.85rem;
-  i { color: #ffffff; font-size: 1rem; }
+
+  i {
+    color: #ffffff;
+    font-size: 1rem;
+  }
 }
 
 .booked__step-title {
@@ -300,7 +323,12 @@ const nextSteps = [
   border: 1px solid rgba(colors.$OS-NAVY, 0.1);
   border-radius: 16px;
   padding: 1.5rem;
-  @media (max-width: 480px) { flex-direction: column; align-items: center; text-align: center; }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .booked__team-avatar {
@@ -314,7 +342,11 @@ const nextSteps = [
   flex-shrink: 0;
   border: 3px solid #ffffff;
   box-shadow: 0 3px 12px rgba(0, 82, 165, 0.15);
-  i { color: rgba(#ffffff, 0.85); font-size: 2rem; }
+
+  i {
+    color: rgba(#ffffff, 0.85);
+    font-size: 2rem;
+  }
 }
 
 .booked__team-info {
@@ -351,7 +383,13 @@ const nextSteps = [
   color: #EEEEEE;
   line-height: 1.55;
   margin: 0;
-  i { font-size: 0.8rem; flex-shrink: 0; margin-top: 1px; color: #EEEEEE; }
+
+  i {
+    font-size: 0.8rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: #EEEEEE;
+  }
 }
 
 .booked__footer {
@@ -363,7 +401,25 @@ const nextSteps = [
   gap: 0.5rem;
   text-align: center;
 
-  &-links { display: flex; gap: 1.5rem; a { font-size: 0.76rem; color: #EEEEEE; text-decoration: none; &:hover { color: colors.$OS-NAVY; } } }
-  &-copy { font-size: 0.72rem; color: #EEEEEE; margin: 0; }
+  &-links {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      font-size: 0.76rem;
+      color: #EEEEEE;
+      text-decoration: none;
+
+      &:hover {
+        color: colors.$OS-NAVY;
+      }
+    }
+  }
+
+  &-copy {
+    font-size: 0.72rem;
+    color: #EEEEEE;
+    margin: 0;
+  }
 }
 </style>
