@@ -51,7 +51,7 @@ const nextSteps = [
   <div class="booked">
 
     <header class="booked__topbar">
-      <h2 class="booked__logo-text">QUICK SOLUTIONS</h2>
+      <img src="@/assets/logos/logo.png" class="booked__logo-img" alt="Nova Era Logo" />
     </header>
 
     <main class="booked__main">
@@ -169,7 +169,10 @@ const nextSteps = [
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
 }
 
-.booked__logo-text {
+.booked__logo-img {
+  height: 35px;
+  width: auto;
+  object-fit: contain;
   font-family: fonts.$font-principal;
   font-weight: 800;
   font-size: 1.25rem;

@@ -100,7 +100,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   <div class="vv-page">
 
     <header class="vv-topbar">
-      <h2 class="vv-topbar__logo-text">QUICK SOLUTIONS</h2>
+      <img src="@/assets/logos/logo.png" class="vv-topbar__logo-img" alt="Nova Era Logo" />
     </header>
 
     <main class="vv-main">
@@ -115,23 +115,22 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
       <section class="vv-headline">
         <p class="vv-eyebrow">
-          <i class="fa-solid fa-ship" aria-hidden="true"></i>
+          <i class="fa-solid fa-building-shield" aria-hidden="true"></i>
           Antes de agendar
         </p>
         <h1 class="vv-h1">
           Descubre por qué las grandes corporaciones
-          <span class="vv-accent">eligen a Quick Solutions</span>
+          <span class="vv-accent">eligen a Nova Era</span>
         </h1>
         <p class="vv-subtitle">
-          Ve el video completo. Jefferson Bazán te explica cómo la metodología IFAC transforma tu
-          cadena de suministro con ingeniería de datos, eliminando retenciones, sobrecostos y
-          paralizaciones que destruyen tu margen operativo.
+          Ve el video completo y descubre cómo dominar visualmente tu mercado,
+          aumentar el valor percibido de tus servicios y dejar atrás a tus competidores.
         </p>
       </section>
 
       <div class="vv-video-wrapper">
         <div class="vv-video-ratio">
-          <wistia-player media-id="bivr0yu5qp" aspect="1.7777777777777777"></wistia-player>
+          <wistia-player media-id="uejodz5qm2" aspect="1.7777777777777777"></wistia-player>
         </div>
       </div>
 
@@ -209,7 +208,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
       <div v-if="captureOpen" class="capture-overlay" role="dialog" aria-modal="true" aria-labelledby="capture-title">
         <div class="capture-modal">
           <div class="capture-modal__header">
-            <h2 class="capture-modal__logo-text">QUICK SOLUTIONS</h2>
+            <img src="@/assets/logos/logo.png" class="capture-modal__logo-img" alt="Nova Era Logo" />
             <h2 id="capture-title" class="capture-modal__title">
               Antes de ver el video, <span>confirma tus datos</span>
             </h2>
@@ -283,7 +282,10 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   z-index: 100;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
 
-  &__logo-text {
+  &__logo-img {
+  height: 35px;
+  width: auto;
+  object-fit: contain;
     font-family: fonts.$font-principal;
     font-weight: 800;
     font-size: 1.25rem;
@@ -593,7 +595,10 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     border-bottom: 1px solid #E8EDF5;
   }
 
-  &__logo-text {
+  &__logo-img {
+  height: 35px;
+  width: auto;
+  object-fit: contain;
     font-family: fonts.$font-principal;
     font-weight: 800;
     font-size: 1.25rem;

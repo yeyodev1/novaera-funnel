@@ -76,7 +76,7 @@ const urgencyOpts: { value: Exclude<Urgency, ''>; label: string; sub: string; ho
 ]
 
 function calcTags(urgency: Urgency): string[] {
-  const base = ['quicksolutions', 'funnel-registro']
+  const base = ['novaera', 'funnel-registro']
   if (urgency === 'inmediato')    return [...base, 'urgente', 'contrato-inmediato']
   if (urgency === 'proximos')     return [...base, 'urgencia-media']
   if (urgency === 'planificando') return [...base, 'planificando']
@@ -89,7 +89,7 @@ function buildNote(f: typeof form.value, country: string, pageDuration: number):
   const secs = pageDuration % 60
   return [
     '━━━━━━━━━━━━━━━━━━━━━━━━',
-    'QUICK SOLUTIONS — Registro Inicial',
+    'NOVA ERA — Registro Inicial',
     '━━━━━━━━━━━━━━━━━━━━━━━━',
     `👤 ${f.nombre} ${f.apellido}`,
     `📧 ${f.email}`,
@@ -223,13 +223,13 @@ const handleSubmit = async () => {
     notas: buildNote(form.value, selectedCountry.value.name, pageDur),
     nota: buildNote(form.value, selectedCountry.value.name, pageDur),
     pageDuration: pageDur,
-    source: 'quicksolutions-web',
+    source: 'novaera-web',
     timestamp: new Date().toISOString(),
     event_id: leadEventId,
     ...getStoredFbParams(),
   }
 
-  console.info('[Quick Solutions Registro]', payload)
+  console.info('[Nova Era Registro]', payload)
 
   const webhookUrl = import.meta.env.VITE_WEBHOOK_REGISTRO ?? 'https://services.leadconnectorhq.com/hooks/AIfaQhtY6ww2dKc5xq8r/webhook-trigger/EHeiuQ0FuekJ68p7JWbd'
   await fetch(webhookUrl, {
@@ -309,8 +309,8 @@ watch(dropdownOpen, open => {
           </button>
 
           <div class="rmodal__header">
-            <p class="rmodal__eyebrow">Auditoría logística gratuita</p>
-            <h2 id="rmodal-title" class="rmodal__title">Agenda tu auditoría<br><span class="rmodal__title-accent">sin costo</span></h2>
+            <p class="rmodal__eyebrow">Diagnóstico de infraestructura gratuito</p>
+            <h2 id="rmodal-title" class="rmodal__title">Agenda tu diagnóstico<br><span class="rmodal__title-accent">sin costo</span></h2>
             <p class="rmodal__subtitle">Cupos limitados — completa tus datos y accede al video exclusivo.</p>
           </div>
 
@@ -426,7 +426,7 @@ watch(dropdownOpen, open => {
             <div class="rmodal__field rmodal__field--urgency" :class="{ 'has-error': touched.urgencia && errors.urgencia }">
               <label class="rmodal__urgency-label">
                 <i class="fa-solid fa-bolt" aria-hidden="true"></i>
-                ¿Cuándo necesitas optimizar tu cadena de suministro?
+                ¿Cuándo necesitas transformar tu infraestructura física?
               </label>
               <div class="rmodal__urgency-opts" role="radiogroup">
                 <label

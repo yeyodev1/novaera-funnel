@@ -27,65 +27,65 @@ const openModal = () => {
 const stats = [
   {
     icon: 'fa-solid fa-building',
-    number: '500+',
-    text: 'Corporaciones multinacionales e industrias confían en nuestra ingeniería de cadena de suministro',
+    number: '19+',
+    text: 'Años de experiencia comprobada en el mercado nacional corporativo e industrial',
   },
   {
     icon: 'fa-solid fa-chart-line',
-    number: '95%',
-    text: 'Reducción de incidencias y retenciones aduaneras con la metodología IFAC',
+    number: '22%',
+    text: 'Incremento en el flujo de clientes premium reportado tras optimizar la infraestructura',
   },
   {
     icon: 'fa-solid fa-award',
-    number: '15+',
-    text: 'Años de experiencia en ingeniería de flujo aduanero y logística de precisión',
+    number: '40%',
+    text: 'Aumento inmediato del valor percibido del inmueble y de tu marca comercial',
   },
 ]
 
 const before = [
-  'Retenciones de contenedores en puerto por errores milimétricos de clasificación arancelaria que paralizan tu producción',
-  'Sobrecostos ocultos por almacenaje, demoras, multas y reclasificaciones de última hora que destruyen tu margen',
-  'Agencias "bomberos" que solo reaccionan cuando el incendio ya ocurrió y te cobran por apagarlo',
-  'Capital de trabajo paralizado por semanas mientras un contenedor retenido espera una corrección documental',
-  'Penalizaciones de clientes internacionales por incumplimiento de plazos debido a fallas logísticas evitables',
+  'Fachadas desgastadas o genéricas que ahuyentan clientes premium en los primeros 3 segundos',
+  'Presupuesto quemado en campañas digitales mientras tu imagen física destruye tu credibilidad',
+  'Adecuaciones tratadas como "gasto" con proveedores informales, sobrecostos y retrasos',
+  'Materiales baratos que se decoloran y degradan ante el clima en menos de un año',
+  'Perder contratos y licitaciones rentables frente a competidores que se ven "más sólidos"',
 ]
 
 const pillars = [
   {
     num: '01',
-    icon: 'fa-solid fa-search',
-    title: 'Auditoría Técnica y Control Previo Anticipado',
-    body: 'Revisión profunda en origen: partidas arancelarias, certificados de origen, facturas comerciales y regulaciones fitosanitarias antes de activar el contenedor en el buque. Reduce más del 90% de incidencias y retenciones en puerto de destino.',
+    icon: 'fa-solid fa-building',
+    title: 'Ingeniería de fachadas de alto impacto',
+    body: 'Diseñamos e instalamos fachadas monumentales con paneles compuestos (alucobond), vidrios templados de seguridad y logos corpóreos luminosos para capturar el tráfico visual y transformar tu edificio en un hito de alta autoridad.',
   },
   {
     num: '02',
-    icon: 'fa-solid fa-arrows-spin',
-    title: 'Sincronización Integral de la Cadena Multimodal',
-    body: 'Unificación directa de transporte internacional (marítimo, aéreo, terrestre), aduana, estiba y transporte local blindado con candados satelitales y escolta armada. Optimiza tiempos de tránsito terrestre hasta en un 32%.',
+    icon: 'fa-solid fa-couch',
+    title: 'Adecuación interior y mobiliario comercial de estatus',
+    body: 'Optimizamos los flujos de tránsito, diseñamos iluminación de precisión y fabricamos mobiliario premium a medida (counters, viniles HD). Cada centímetro acelera cierres de negocios y proyecta solidez inquebrantable.',
   },
   {
     num: '03',
-    icon: 'fa-solid fa-shield',
-    title: 'Blindaje de Flujo de Caja y Gestión de Riesgos',
-    body: 'Precalculación matemática de tasas y tributos para eliminar imprevistos financieros. Estructuración de pólizas de seguro al 100% del valor real de la mercancía. Convertimos la logística en un activo medible y de alto rendimiento.',
+    icon: 'fa-solid fa-truck-fast',
+    title: 'Blindaje de marca exterior y branding vehicular',
+    body: 'Transformamos cada camión o vehículo corporativo en una valla publicitaria móvil de alto impacto con viniles automotrices importados de alta durabilidad, garantizando uniformidad de marca en toda tu flota.',
   },
 ]
 
 const testimonials = [
   {
-    quote: 'Necesitábamos que nuestra importación de maquinaria pesada estuviera liberada en máximo 5 días. La agencia anterior nos dejó un contenedor retenido 18 días por un error en el certificado de origen. Con Quick Solutions y su metodología IFAC, no solo liberaron en 48 horas, sino que además nos identificaron $12,000 en sobrecostos que estábamos pagando por rutas ineficientes.',
-    author: 'Ing. Ricardo Méndez',
-    role: 'Gerente de Logística — Corporación Metalúrgica',
+    quote: 'Pasamos de la constante improvisación, los sobrecostos ocultos y los interminables retrasos con proveedores informales a una ejecución técnica perfecta, directa de fábrica. Incrementó el flujo de clientes premium en un 22% durante el primer trimestre.',
+    author: 'Director de Operaciones',
+    role: 'Grupo Corporativo — Sector Automotriz',
   },
   {
-    quote: 'Creíamos que los retrasos y los gastos imprevistos eran el costo normal de hacer negocios internacionales. Quick Solutions nos demostró que estábamos equivocados. Hoy nuestra cadena de suministro opera con previsibilidad financiera absoluta y nuestros costos logísticos se redujeron un 28%.',
-    author: 'Carolina Santillán',
-    role: 'Directora de Operaciones — Industria Química',
+    quote: 'Si mañana retiro mi marca y coloco el letrero de mi competencia, nadie notaría la diferencia. Entendimos que necesitábamos dominar visualmente el mercado, no solo cumplir. Nova Era transformó nuestras fachadas en verdaderos activos comerciales.',
+    author: 'Director General',
+    role: 'Corporación Multinacional',
   },
   {
-    quote: 'Al principio dudaba porque nuestro volumen de importación es alto y no quería arriesgar la operación con un cambio de proveedor logístico. Jefferson y su equipo hicieron una auditoría gratuita que nos mostró $45,000 en ahorros potenciales. Eso nos convenció. Llevamos 3 años con ellos y cero retenciones.',
-    author: 'Andrés Montero',
-    role: 'CEO — Grupo Corporativo',
+    quote: 'Nuestros espacios estaban muertos comercialmente y atrapados en una guerra de precios. Gracias a la ingeniería de alto valor comercial de Nova Era, elevamos drásticamente nuestro valor percibido y facturamos con fluidez.',
+    author: 'Gerente General',
+    role: 'Franquicia en expansión',
   },
 ]
 
@@ -129,16 +129,16 @@ onUnmounted(() => {
 type Proof = { who: string; where: string; minutesAgo: number }
 
 const PROOFS: Proof[] = [
-  { who: 'Corporación Metalúrgica',       where: 'Guayaquil',     minutesAgo: 3 },
-  { who: 'Industria Química del Sur',     where: 'Quito',         minutesAgo: 8 },
-  { who: 'Grupo Logístico del Pacífico',  where: 'Manta',         minutesAgo: 14 },
-  { who: 'Consorcio Alimenticio',         where: 'Guayaquil',     minutesAgo: 19 },
-  { who: 'Maquinaria Pesada S.A.',        where: 'Cuenca',        minutesAgo: 25 },
-  { who: 'Textiles Internacionales',      where: 'Quito',         minutesAgo: 31 },
-  { who: 'Petroindustria del Ecuador',    where: 'Esmeraldas',    minutesAgo: 38 },
-  { who: 'Laboratorios Farmacéuticos',    where: 'Guayaquil',     minutesAgo: 44 },
-  { who: 'Automotriz Andina',            where: 'Quito',         minutesAgo: 50 },
-  { who: 'Grupo Corporativo M&B',         where: 'Guayaquil',     minutesAgo: 57 },
+  { who: 'Grupo Corporativo M&B',         where: 'Guayaquil',     minutesAgo: 3 },
+  { who: 'Concesionaria Automotriz',      where: 'Quito',         minutesAgo: 8 },
+  { who: 'Franquicia Gastronómica',       where: 'Manta',         minutesAgo: 14 },
+  { who: 'Corporación Industrial',        where: 'Guayaquil',     minutesAgo: 19 },
+  { who: 'Cadena de Retail S.A.',         where: 'Cuenca',        minutesAgo: 25 },
+  { who: 'Importadora y Distribuidora',   where: 'Quito',         minutesAgo: 31 },
+  { who: 'Consorcio Empresarial',         where: 'Machala',       minutesAgo: 38 },
+  { who: 'Centro Médico Especializado',   where: 'Guayaquil',     minutesAgo: 44 },
+  { who: 'Empresa Logística Andina',      where: 'Quito',         minutesAgo: 50 },
+  { who: 'Sector Inmobiliario Corporativo',where: 'Guayaquil',    minutesAgo: 57 },
 ]
 
 const proofVisible = ref(false)
@@ -185,15 +185,15 @@ const dismissProof = () => {
   <div class="funnel">
 
     <header class="funnel__topbar">
-      <h2 class="funnel__logo-text">QUICK SOLUTIONS</h2>
-      <p class="funnel__logo-sub">Arquitectos de la Cadena de Suministro</p>
+      <img src="@/assets/logos/logo.png" class="funnel__logo-img" alt="Nova Era Logo" />
+      <p class="funnel__logo-sub">Ingeniería de Marca & Infraestructura Comercial</p>
     </header>
 
     <div class="funnel__urgency" role="banner">
       <div class="funnel__urgency-info">
         <span class="funnel__urgency-dot" aria-hidden="true" />
         <i class="fa-solid fa-bolt funnel__urgency-icon" aria-hidden="true"></i>
-        <span class="funnel__urgency-text">CUPOS PARA <strong>AUDITORÍA LOGÍSTICA GRATUITA</strong> — Cierran en:</span>
+        <span class="funnel__urgency-text">CUPOS PARA <strong>DIAGNÓSTICO DE INFRAESTRUCTURA GRATUITO</strong> — Cierran en:</span>
         <div class="funnel__timer" aria-live="polite" aria-label="Tiempo restante">
           <span class="funnel__timer-block"><strong>{{ hours }}</strong><small>h</small></span>
           <span class="funnel__timer-sep" aria-hidden="true">:</span>
@@ -205,10 +205,10 @@ const dismissProof = () => {
       <button
         type="button"
         class="funnel__urgency-cta"
-        aria-label="Agendar auditoría logística"
+        aria-label="Agendar diagnóstico"
         @click="openModal()"
       >
-        AGENDAR MI AUDITORÍA
+        AGENDAR MI DIAGNÓSTICO
         <span aria-hidden="true">→</span>
       </button>
     </div>
@@ -224,7 +224,7 @@ const dismissProof = () => {
             <span>{{ currentProof.where }}</span>
           </p>
           <p class="funnel__proof-text">
-            Acaba de agendar una <strong>auditoría logística</strong>
+            Acaba de agendar un <strong>diagnóstico comercial</strong>
           </p>
           <p class="funnel__proof-meta">
             <i class="fa-solid fa-clock" aria-hidden="true"></i>
@@ -246,56 +246,56 @@ const dismissProof = () => {
       <div class="funnel__container">
 
         <p class="funnel__eyebrow">
-          <i class="fa-solid fa-ship" aria-hidden="true"></i>
-          Ingeniería de la Cadena de Suministro
+          <i class="fa-solid fa-building-shield" aria-hidden="true"></i>
+          Infraestructura Comercial Premium
         </p>
 
         <h1 id="funnel-headline" class="funnel__headline">
-          Profesionaliza tu cadena de suministro y elimina las paradas no programadas con
-          <span class="funnel__headline-accent">ingeniería de datos y previsibilidad absoluta</span>
+          Deja de perder contratos de alto valor por culpa de una infraestructura que no
+          <span class="funnel__headline-accent">refleja tu verdadero nivel de éxito</span>
         </h1>
 
         <p class="funnel__hero-sub">
-          Descubre cómo Quick Solutions transforma la logística internacional de grandes corporaciones
-          con su metodología IFAC (Ingeniería de Flujo Aduanero Continuo), eliminando retenciones,
-          sobrecostos e imprevistos que paralizan tu operación y destruyen tu margen.
+          Descubre cómo el sistema premium de Nova Era transforma las fachadas y los espacios comerciales de empresas líderes,
+          eliminando los retrasos de proveedores informales y convirtiendo tu infraestructura en una 
+          máquina de atracción comercial masiva.
         </p>
 
         <ul class="funnel__benefits" role="list">
           <li class="funnel__benefit">
             <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
-            Sin retenciones de contenedores por errores de clasificación arancelaria
+            Sin retrasos ni improvisación de talleres artesanales.
           </li>
           <li class="funnel__benefit">
             <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
-            Sin sobrecostos ocultos ni reclasificaciones de última hora
+            Garantía técnica directa de fábrica con materiales de alta durabilidad.
           </li>
           <li class="funnel__benefit">
             <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
-            Sin capital de trabajo paralizado por demoras logísticas evitables
+            Incremento automático del valor percibido de tus servicios y productos.
           </li>
           <li class="funnel__benefit">
             <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
-            Con previsibilidad financiera absoluta y blindaje corporativo real
+            Dominio visual absoluto frente a tus competidores directos.
           </li>
         </ul>
 
         <div class="funnel__urgency-callout" role="note">
           <i class="fa-solid fa-fire" aria-hidden="true"></i>
-          <span>Para <strong>tomadores de decisiones</strong> que entienden la logística como una <strong>palanca financiera estratégica</strong> — no para quienes buscan el tramitador más barato.</span>
+          <span>Exclusivo para <strong>empresas consolidadas y líderes comerciales</strong> — no atendemos proyectos residenciales ni búsquedas de "la cotización más barata".</span>
         </div>
 
         <div class="funnel__vsl-wrap">
           <div class="funnel__vsl" @click="openModal()" role="button" aria-label="Ver video" tabindex="0">
             <div class="funnel__vsl-bg">
-              <img src="https://fast.wistia.com/embed/medias/bivr0yu5qp/swatch" class="funnel__vsl-thumb" alt="" />
+              <img src="https://fast.wistia.com/embed/medias/uejodz5qm2/swatch" class="funnel__vsl-thumb" alt="" />
               <div class="funnel__vsl-blur-overlay"></div>
             </div>
             <div class="funnel__vsl-overlay">
               <div class="funnel__vsl-play">
                 <i class="fa-solid fa-play" aria-hidden="true"></i>
               </div>
-              <p class="funnel__vsl-caption">Mira el video y descubre cómo la ingeniería de datos transforma tu cadena de suministro</p>
+              <p class="funnel__vsl-caption">Mira el video y descubre cómo dominar visualmente tu mercado</p>
             </div>
           </div>
         </div>
@@ -303,7 +303,7 @@ const dismissProof = () => {
         <div class="funnel__cta-wrap">
           <button class="funnel__cta-btn" @click="openModal()">
             <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-            AGENDAR AUDITORÍA LOGÍSTICA GRATIS
+            AGENDAR DIAGNÓSTICO GRATUITO
           </button>
           <p class="funnel__cta-sub">
             <i class="fa-solid fa-lock" aria-hidden="true"></i>
@@ -333,12 +333,12 @@ const dismissProof = () => {
       <div class="funnel__container">
         <p class="funnel__section-label">¿Te identificas con esto?</p>
         <h2 id="problem-heading" class="funnel__section-title">
-          El mito corporativo de que los retrasos e imprevistos son "normales"
+          El mito de que las adecuaciones son un "gasto estético"
         </h2>
         <p class="funnel__problem-intro">
-          Contratar a un "tramitador aduanero reactivo" no es un ahorro — es un pasivo que pagas
-          en producción detenida, capital paralizado y penalizaciones de clientes. Esto es lo que
-          realmente estás pagando:
+          Contratar a un maestro de obra informal o un taller reactivo no es un ahorro — es un pasivo 
+          que pagas al perder clientes de alto valor, proyectar desconfianza y retrasar tus aperturas. 
+          Esto es lo que realmente estás pagando:
         </p>
         <div class="funnel__problem-grid">
           <div v-for="(item, i) in before" :key="i" class="funnel__problem-item">
@@ -354,9 +354,9 @@ const dismissProof = () => {
 
     <section class="funnel__method" aria-labelledby="method-heading">
       <div class="funnel__container">
-        <p class="funnel__section-label">La metodología IFAC</p>
+        <p class="funnel__section-label">Sistema Nova Era</p>
         <h2 id="method-heading" class="funnel__section-title">
-          Tres pilares de ingeniería de flujo aduanero continuo
+          Infraestructura de alto valor comercial en 3 pilares
         </h2>
 
         <div class="funnel__pillar-card">
@@ -411,9 +411,9 @@ const dismissProof = () => {
 
     <section class="funnel__testimonials" aria-labelledby="testimonials-heading">
       <div class="funnel__container">
-        <p class="funnel__section-label">Casos de éxito</p>
+        <p class="funnel__section-label">Liderazgo de Mercado</p>
         <h2 id="testimonials-heading" class="funnel__section-title">
-          Lo que dicen quienes ya confiaron en Quick Solutions
+          Empresas que confían en Nova Era
         </h2>
 
         <div class="funnel__test-carousel">
@@ -461,22 +461,18 @@ const dismissProof = () => {
           </div>
         </div>
         <div class="funnel__authority-content">
-          <p class="funnel__authority-eyebrow">Líder y Fundador</p>
-          <h2 id="authority-heading" class="funnel__authority-name">Jefferson Bazán</h2>
-          <p class="funnel__authority-role">Arquitecto de la Cadena de Suministro — Ingeniería de Datos</p>
+          <p class="funnel__authority-eyebrow">Nuestro Respaldo</p>
+          <h2 id="authority-heading" class="funnel__authority-name">Ingeniería & Marca</h2>
+          <p class="funnel__authority-role">Más de 19 años de dominio en el mercado nacional</p>
           <p class="funnel__authority-bio">
-            En los inicios, operábamos como el 99% de las agencias: reactivos. Hasta que una gran
-            industria metalúrgica sufrió la retención de maquinaria pesada por casi un mes debido a
-            un error milimétrico del broker en el certificado de origen. Su gerente general me dijo:
-            <strong>"No necesito un bombero que me cobre por apagar el incendio cuando mi fábrica ya
-            está parada. Necesito un socio estratégico que evite que el incendio ocurra."</strong>
-            Eso cambió todo. Hoy la metodología IFAC es la respuesta a esa sentencia.
+            Durante décadas, hemos presenciado cómo empresas líderes queman su presupuesto en publicidad y licitaciones, solo para perder frente a competidores que proyectan una imagen superior. 
+            El mercado ha aceptado que el diseño sea tratado como un gasto menor con materiales dudosos. En <strong>Nova Era</strong> nacimos para resolver ese vacío. Hemos transformado los espacios de firmas como <strong>Agripac, Kia, Primax, Dakar, Corpei, Mvesa y Wendy's</strong>, entregando calidad premium directa de fábrica sin excusas ni improvisaciones.
           </p>
           <ul class="funnel__authority-creds" role="list">
-            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Especialista en ingeniería de flujo aduanero continuo</li>
-            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Certificación en gestión de cadenas multimodales internacionales</li>
-            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Gestión integral: de la auditoría en origen al blindaje financiero</li>
-            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Solo acepto 5 nuevas cuentas corporativas al mes</li>
+            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> 19 años de experiencia corporativa e industrial.</li>
+            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Fábrica propia y control de calidad premium directo.</li>
+            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Dominio absoluto de Neuromarketing e Ingeniería Civil.</li>
+            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Solo aceptamos proyectos corporativos premium de gran escala.</li>
           </ul>
         </div>
       </div>
@@ -486,24 +482,22 @@ const dismissProof = () => {
       <div class="funnel__container">
         <div class="funnel__scarcity-badge">
           <i class="fa-solid fa-gem" aria-hidden="true"></i>
-          Atención personalizada de Jefferson Bazán
+          Ingeniería Comercial Premium
         </div>
         <h2 id="scarcity-heading" class="funnel__scarcity-title">
-          Solo aceptamos <span class="funnel__scarcity-accent">5 nuevos clientes corporativos al mes</span>
+          Solo abrimos espacio para <span class="funnel__scarcity-accent">un número limitado de corporaciones</span>
         </h2>
         <p class="funnel__scarcity-sub">
-          Para garantizar el nivel de análisis y personalización que nos distingue, cada cliente
-          pasa por la revisión directa de nuestro equipo de ingenieros senior. Cuando se llenan
-          los 5 cupos, el resto espera al siguiente mes.
+          Debido al riguroso control técnico, la planificación de ingeniería y la ejecución directa de fábrica, procesamos un cupo limitado de proyectos de gran escala al mes para garantizar la excelencia que nos caracteriza.
         </p>
         <p class="funnel__scarcity-cta-text">
-          Agenda hoy tu <strong>Sesión de Diagnóstico de Auditoría Logística y Aduanera Completa</strong>
-          sin costo — 30 minutos en los que analizaremos tu matriz de costos, partidas arancelarias
-          y rutas logísticas para identificar ahorros y riesgos ocultos.
+          Agenda hoy tu <strong>Diagnóstico de Infraestructura Comercial</strong>
+          sin costo — analizaremos de manera exhaustiva tu infraestructura actual y te diremos con precisión 
+          científica dónde estás perdiendo autoridad en el mercado.
         </p>
         <button class="funnel__cta-btn funnel__cta-btn--final" @click="openModal()">
           <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-          AGENDAR MI AUDITORÍA LOGÍSTICA GRATIS
+          AGENDAR MI DIAGNÓSTICO GRATUITO
         </button>
         <p class="funnel__cta-sub">
           <i class="fa-solid fa-lock" aria-hidden="true"></i>
@@ -514,8 +508,8 @@ const dismissProof = () => {
 
     <footer class="funnel__footer">
       <div class="funnel__container funnel__footer-inner">
-        <h2 class="funnel__footer-logo-text">QUICK SOLUTIONS</h2>
-        <p class="funnel__footer-desc">Arquitectos de la Cadena de Suministro</p>
+        <img src="@/assets/logos/logo.png" class="funnel__footer-logo-img" alt="Nova Era Logo" />
+        <p class="funnel__footer-desc">Ingeniería de Marca e Infraestructura Comercial</p>
         <nav class="funnel__footer-links" aria-label="Legal">
           <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
           <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
@@ -560,7 +554,10 @@ const dismissProof = () => {
   box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
 }
 
-.funnel__logo-text {
+.funnel__logo-img {
+  height: 35px;
+  width: auto;
+  object-fit: contain;
   @include fonts.heading-font(800);
   font-size: 1.3rem;
   letter-spacing: 0.1em;
@@ -1453,7 +1450,7 @@ const dismissProof = () => {
   text-align: center;
 }
 
-.funnel__footer-logo-text {
+.funnel__footer-logo-img {
   @include fonts.heading-font(800);
   font-size: 1.1rem;
   color: rgba(#ffffff, 0.7);

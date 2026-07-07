@@ -1,16 +1,28 @@
-// Quick Solutions — Arquitectos de la Cadena de Suministro
-$QS-NAVY:    #0A1628;   // Deep Navy — Brand Principal
-$QS-BLUE:    #0052A5;   // Trust Blue — Secundario
-$QS-GOLD:    #C99700;   // Amber/Gold — Acento premium
-$QS-RED:     #CC0000;   // Bold Red — CTAs y urgencia
-$QS-DARK:    #0A1628;   // Texto oscuro
-$QS-LIGHT:   #F4F7FC;   // Fondo claro
-$QS-SURFACE: #F8FAFE;   // Superficies/cards
+// Nova Era / Graphic Corporation Colors
+$NE-BLACK:         #000000; // C:0 M:0 Y:0 K:100
+$NE-DARK-GRAY:     #666666; // C:0 M:0 Y:0 K:60
+$NE-BLUE:          #0D42FF; // C:95 M:74 Y:0 K:0
+$NE-PINK-PURPLE:   #C757F5; // C:22 M:66 Y:4 K:0
+$NE-GREEN:         #00FF00; // C:100 M:0 Y:100 K:0
+$NE-DEEP-PURPLE:   #320691; // C:76 M:97 Y:30 K:19
+$NE-YELLOW-ORANGE: #FFA82B; // C:0 M:34 Y:83 K:0
+$NE-ORANGE:        #FF8005; // C:0 M:50 Y:98 K:0
+$NE-HOT-PINK:      #FA2682; // C:2 M:85 Y:49 K:0
+$NE-YELLOW:        #F5FF0F; // C:4 M:0 Y:94 K:0
+
+// Mapeo a las variables del sistema (manteniendo los nombres para no romper UI)
+$QS-NAVY:    $NE-DEEP-PURPLE; // Brand Principal
+$QS-BLUE:    $NE-BLUE;        // Secundario
+$QS-GOLD:    $NE-YELLOW-ORANGE; // Acento
+$QS-RED:     $NE-HOT-PINK;    // CTAs y urgencia
+$QS-DARK:    $NE-BLACK;       // Texto oscuro
+$QS-LIGHT:   #F4F7FC;         // Fondo claro
+$QS-SURFACE: #F8FAFE;         // Superficies/cards
 
 // Urgency / inmediatez
-$QS-URGENT:        #CC0000;
+$QS-URGENT:        $NE-HOT-PINK;
 $QS-URGENT-DARK:   #AA0000;
-$QS-URGENT-LIGHT:  #FF6B6B;
+$QS-URGENT-LIGHT:  $NE-PINK-PURPLE;
 $QS-URGENT-BG:     #FFF5F5;
 
 // Aliases legacy Aluvicopp (mantienen compatibilidad)

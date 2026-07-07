@@ -33,7 +33,7 @@ const isValid = () =>
   form.value.consent
 
 const qualifies = () => {
-  if (form.value.presupuesto === 'menos3000') return false
+  if (form.value.tipo === 'residencial' || form.value.presupuesto === 'bajo') return false
   return true
 }
 
@@ -47,47 +47,46 @@ const handleSubmit = async () => {
   const scheduleEventId = generateEventId('schedule')
 
   const tipoLabel: Record<string, string> = {
-    importacion: 'Importación de materia prima / insumos',
-    maquinaria: 'Importación de maquinaria / equipos',
-    exportacion: 'Exportación',
-    ambos: 'Ambos (importación y exportación)',
+    fachadas: 'Fachadas corporativas y exteriores',
+    interiores: 'Adecuación interior y mobiliario comercial',
+    vehicular: 'Branding de flota vehicular',
+    residencial: 'Proyecto residencial / Vivienda',
   }
   const volumenLabel: Record<string, string> = {
-    inicio: 'Menos de 1 contenedor al mes',
-    pequeno: '1–5 contenedores al mes',
-    medio: '6–20 contenedores al mes',
-    alto: 'Más de 20 contenedores al mes',
+    gran: 'Gran corporación / Multinacional',
+    mediana: 'Mediana empresa',
+    pequena: 'Pequeña empresa',
+    micro: 'Microempresa / Emprendimiento',
   }
   const presupuestoLabel: Record<string, string> = {
-    menos3000: 'Menos de $3,000 USD/mes',
-    mas3000: '$3,000–$10,000 USD/mes',
-    mas10000: '$10,000–$30,000 USD/mes',
-    mas30000: 'Más de $30,000 USD/mes',
+    premium: 'Presupuesto premium (Inversión alta)',
+    intermedio: 'Presupuesto intermedio',
+    bajo: 'Cotización más barata / Taller artesanal',
   }
 
   const etiquetas = [
-    'funnel-quicksolutions',
+    'funnel-novaera',
     'step-2-cualificacion',
-    califica ? 'califica-qs' : 'no-califica-qs',
+    califica ? 'califica-novaera' : 'no-califica-novaera',
     `tipo-${form.value.tipo}`,
-    `volumen-${form.value.volumen}`,
+    `tamano-${form.value.volumen}`,
     `budget-${form.value.presupuesto}`,
   ]
 
   const notas = `
 ━━━━━━━━━━━━━━━━━━━━━━━━
-QUICK SOLUTIONS — Cualificación
+NOVA ERA — Cualificación
 ━━━━━━━━━━━━━━━━━━━━━━━━
 👤 ${contact.nombre} ${contact.apellido}
 📧 ${contact.email}
 📱 ${contact.telefono}
 ━━━━━━━━━━━━━━━━━━━━━━━━
-📦 Tipo: ${tipoLabel[form.value.tipo] ?? form.value.tipo}
-📊 Volumen: ${volumenLabel[form.value.volumen] ?? form.value.volumen}
-💰 Presupuesto: ${presupuestoLabel[form.value.presupuesto] ?? form.value.presupuesto}
+🏗 Tipo: ${tipoLabel[form.value.tipo] ?? form.value.tipo}
+🏢 Empresa: ${volumenLabel[form.value.volumen] ?? form.value.volumen}
+💰 Enfoque: ${presupuestoLabel[form.value.presupuesto] ?? form.value.presupuesto}
 💡 Reto: ${form.value.reto}
 ━━━━━━━━━━━━━━━━━━━━━━━━
-${califica ? '✅ CALIFICA' : '❌ NO CALIFICA — Presupuesto insuficiente'}
+${califica ? '✅ CALIFICA' : '❌ NO CALIFICA — No cumple perfil premium'}
   `.trim()
 
   const pageEntry = Number(sessionStorage.getItem('alu_page_entry')) || Date.now()
@@ -118,7 +117,8 @@ ${califica ? '✅ CALIFICA' : '❌ NO CALIFICA — Presupuesto insuficiente'}
 
   trackStage('cualificacion_completada', payload)
 
-  await fetch(import.meta.env.VITE_WEBHOOK_CALIFICACION, {
+  const webhookUrl = import.meta.env.VITE_WEBHOOK_CALIFICACION ?? 'https://services.leadconnectorhq.com/hooks/8EtBNOULhyS8OpxPByOJ/webhook-trigger/WszpAhg0mv14AhIgrnl9'
+  await fetch(webhookUrl, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
@@ -173,13 +173,13 @@ watch(() => props.open, (v) => {
 
           <div class="cal-header">
             <div class="cal-header-icon" aria-hidden="true">
-              <i class="fa-solid fa-ship"></i>
+              <i class="fa-solid fa-building-shield"></i>
             </div>
             <h2 id="cal-title" class="cal-title">
               Antes de agendar, cuéntanos sobre
-              <span class="cal-accent">tu operación</span>
+              <span class="cal-accent">tu proyecto</span>
             </h2>
-            <p class="cal-subtitle">4 preguntas para preparar tu auditoría — 60 segundos.</p>
+            <p class="cal-subtitle">4 preguntas para preparar tu diagnóstico — 60 segundos.</p>
           </div>
 
           <form class="cal-form" @submit.prevent="handleSubmit" novalidate>
@@ -188,14 +188,14 @@ watch(() => props.open, (v) => {
             <fieldset class="cal-fieldset" :class="{ 'has-error': touched && !form.tipo }">
               <legend class="cal-legend">
                 <span class="cal-q-num">01</span>
-                ¿Qué tipo de operaciones realizas?
+                ¿Qué tipo de proyecto necesitas desarrollar?
               </legend>
               <div class="cal-options">
                 <label v-for="opt in [
-                  { value: 'importacion', label: 'Importación de materia prima / insumos' },
-                  { value: 'maquinaria', label: 'Importación de maquinaria / equipos' },
-                  { value: 'exportacion', label: 'Exportación' },
-                  { value: 'ambos', label: 'Ambos (importación y exportación)' },
+                  { value: 'fachadas', label: 'Fachadas corporativas y exteriores' },
+                  { value: 'interiores', label: 'Adecuación interior y mobiliario comercial' },
+                  { value: 'vehicular', label: 'Branding de flota vehicular' },
+                  { value: 'residencial', label: 'Proyecto residencial / Vivienda' },
                 ]" :key="opt.value" class="cal-option" :class="{ selected: form.tipo === opt.value }">
                   <input type="radio" :value="opt.value" v-model="form.tipo" hidden />
                   <span class="cal-option__radio" aria-hidden="true" />
@@ -209,14 +209,14 @@ watch(() => props.open, (v) => {
             <fieldset class="cal-fieldset" :class="{ 'has-error': touched && !form.volumen }">
               <legend class="cal-legend">
                 <span class="cal-q-num">02</span>
-                ¿Cuál es tu volumen mensual aproximado?
+                ¿Cuál es el tamaño de tu empresa?
               </legend>
               <div class="cal-options">
                 <label v-for="opt in [
-                  { value: 'inicio', label: 'Menos de 1 contenedor al mes' },
-                  { value: 'pequeno', label: '1–5 contenedores al mes' },
-                  { value: 'medio', label: '6–20 contenedores al mes' },
-                  { value: 'alto', label: 'Más de 20 contenedores al mes' },
+                  { value: 'gran', label: 'Gran corporación / Multinacional' },
+                  { value: 'mediana', label: 'Mediana empresa' },
+                  { value: 'pequena', label: 'Pequeña empresa' },
+                  { value: 'micro', label: 'Microempresa / Emprendimiento' },
                 ]" :key="opt.value" class="cal-option" :class="{ selected: form.volumen === opt.value }">
                   <input type="radio" :value="opt.value" v-model="form.volumen" hidden />
                   <span class="cal-option__radio" aria-hidden="true" />
@@ -227,22 +227,21 @@ watch(() => props.open, (v) => {
             </fieldset>
 
             <!-- Q3 — Presupuesto logístico -->
-            <fieldset class="cal-fieldset cal-fieldset--budget" :class="{ 'has-error': touched && !form.presupuesto, 'has-investment': form.presupuesto && form.presupuesto !== 'menos3000' }">
+            <fieldset class="cal-fieldset cal-fieldset--budget" :class="{ 'has-error': touched && !form.presupuesto, 'has-investment': form.presupuesto && form.presupuesto !== 'bajo' }">
               <legend class="cal-legend cal-legend--budget">
                 <span class="cal-q-num cal-q-num--budget">03</span>
-                <span>¿Cuál es tu presupuesto mensual en logística internacional?</span>
+                <span>¿Qué nivel de inversión buscas para este proyecto?</span>
                 <i class="fa-solid fa-chart-line cal-legend-chart" aria-hidden="true"></i>
               </legend>
               <div class="cal-options">
                 <label v-for="opt in [
-                  { value: 'mas30000', label: 'Más de $30,000 USD/mes', premium: true },
-                  { value: 'mas10000', label: '$10,000 – $30,000 USD/mes', premium: true },
-                  { value: 'mas3000', label: '$3,000 – $10,000 USD/mes' },
-                  { value: 'menos3000', label: 'Menos de $3,000 USD/mes' },
+                  { value: 'premium', label: 'Inversión alta (Materiales premium y garantía directa)', premium: true },
+                  { value: 'intermedio', label: 'Presupuesto intermedio' },
+                  { value: 'bajo', label: 'Busco la cotización más barata del mercado' },
                 ]" :key="opt.value" class="cal-option" :class="{
                   selected: form.presupuesto === opt.value,
                   'cal-option--premium': opt.premium && form.presupuesto === opt.value,
-                  'cal-option--low': opt.value === 'menos3000' && form.presupuesto === 'menos3000',
+                  'cal-option--low': opt.value === 'bajo' && form.presupuesto === 'bajo',
                   'cal-option--premium-hover': opt.premium && form.presupuesto !== opt.value,
                 }">
                   <input type="radio" :value="opt.value" v-model="form.presupuesto" hidden />
@@ -258,12 +257,12 @@ watch(() => props.open, (v) => {
             <fieldset class="cal-fieldset" :class="{ 'has-error': touched && wordCount(form.reto) < 10 }">
               <legend class="cal-legend">
                 <span class="cal-q-num">04</span>
-                ¿Cuál es tu principal desafío logístico o aduanero?
+                ¿Cuál es tu principal desafío con tu infraestructura actual?
               </legend>
               <textarea
                 v-model="form.reto"
                 class="cal-textarea"
-                placeholder="Ej: Tenemos retenciones frecuentes en aduana por clasificación arancelaria de nuestra materia prima importada desde Asia..."
+                placeholder="Ej: Nuestra fachada se ve desgastada y estamos perdiendo contratos frente a competidores que proyectan mejor imagen..."
                 rows="4"
                 aria-describedby="q4-hint"
               ></textarea>
@@ -280,7 +279,7 @@ watch(() => props.open, (v) => {
               <input type="checkbox" v-model="form.consent" />
               <span class="cal-consent__box" aria-hidden="true" />
               <span class="cal-consent__text">
-                Acepto que Quick Solutions me contacte para brindarme una sesión de auditoría logística personalizada.
+                Acepto que Nova Era me contacte para brindarme una sesión de diagnóstico de infraestructura.
               </span>
             </label>
             <span v-if="touched && !form.consent" class="cal-error">Debes aceptar para continuar</span>

@@ -5,7 +5,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 const iframeHeight = ref(1100)
 
-const BASE_URL = 'https://api.leadconnectorhq.com/widget/booking/bDoTPmyIA6ng4o5iqD9i'
+const BASE_URL = 'https://api.leadconnectorhq.com/widget/booking/t3NhQRoFbUHYCSxzg7h8'
 
 const calendarUrl = computed(() => {
   try {
@@ -57,7 +57,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
   <div class="booking">
 
     <header class="booking__topbar">
-      <h2 class="booking__logo-text">QUICK SOLUTIONS</h2>
+      <img src="@/assets/logos/logo.png" class="booking__logo-img" alt="Nova Era Logo" />
     </header>
 
     <main class="booking__main">
@@ -80,17 +80,17 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
 
       <section class="booking__heading">
         <p class="booking__eyebrow">
-          <i class="fa-solid fa-ship" aria-hidden="true"></i>
+          <i class="fa-solid fa-building-shield" aria-hidden="true"></i>
           Casi listo
         </p>
         <h1 class="booking__title">
           Elige el horario de tu
-          <span class="booking__title-accent">auditoría logística</span>
+          <span class="booking__title-accent">diagnóstico de infraestructura</span>
         </h1>
         <p class="booking__subtitle">
-          Una sesión de 30 minutos con el equipo de Quick Solutions para analizar tu matriz de costos
-          actual, partidas arancelarias y rutas logísticas. Identificaremos ahorros y riesgos ocultos
-          en tu cadena de suministro.
+          Una sesión de 30 minutos con el equipo de Nova Era para analizar el potencial de tu
+          fachada o instalaciones. Identificaremos áreas clave de mejora para posicionar
+          tu marca como líder en el mercado.
         </p>
       </section>
 
@@ -98,11 +98,11 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
         <iframe
           :src="calendarUrl"
           :style="{ height: iframeHeight + 'px' }"
-          title="Agenda tu auditoría con Quick Solutions"
+          title="Agenda tu diagnóstico con Nova Era"
           class="calendar__iframe"
           frameborder="0"
           scrolling="no"
-          id="bDoTPmyIA6ng4o5iqD9i"
+          id="t3NhQRoFbUHYCSxzg7h8"
         ></iframe>
       </div>
 
@@ -113,7 +113,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
         <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
-      <p class="booking__footer-copy">© {{ new Date().getFullYear() }} Quick Solutions. Todos los derechos reservados.</p>
+      <p class="booking__footer-copy">© {{ new Date().getFullYear() }} Nova Era. Todos los derechos reservados.</p>
     </footer>
 
   </div>
@@ -143,7 +143,10 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
 }
 
-.booking__logo-text {
+.booking__logo-img {
+  height: 35px;
+  width: auto;
+  object-fit: contain;
   font-family: fonts.$font-principal;
   font-weight: 800;
   font-size: 1.25rem;

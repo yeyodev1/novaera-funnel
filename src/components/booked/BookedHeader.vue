@@ -4,7 +4,7 @@ const LOGO = 'https://res.cloudinary.com/dpuody0df/image/upload/v1775587085/baka
 
 <template>
   <header class="booked-header">
-    <h2 class="booked-header__logo-text">ALUVICOPP</h2>
+    <img src="@/assets/logos/logo.png" class="booked-header__logo-img" alt="Nova Era Logo" />
   </header>
 </template>
 
@@ -22,7 +22,10 @@ const LOGO = 'https://res.cloudinary.com/dpuody0df/image/upload/v1775587085/baka
   top: 0;
   z-index: 100;
 
-  &__logo-text {
+  &__logo-img {
+  height: 35px;
+  width: auto;
+  object-fit: contain;
     font-family: 'Outfit', sans-serif;
     font-weight: 800;
     font-size: 1.25rem;

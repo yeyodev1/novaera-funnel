@@ -29,7 +29,7 @@ onMounted(() => {
   <div class="nospace">
 
     <header class="nospace__topbar">
-      <h2 class="nospace__logo-text">QUICK SOLUTIONS</h2>
+      <img src="@/assets/logos/logo.png" class="nospace__logo-img" alt="Nova Era Logo" />
     </header>
 
     <main class="nospace__main">
@@ -115,7 +115,10 @@ onMounted(() => {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
 }
 
-.nospace__logo-text {
+.nospace__logo-img {
+  height: 35px;
+  width: auto;
+  object-fit: contain;
   font-family: fonts.$font-principal;
   font-weight: 800;
   font-size: 1.25rem;

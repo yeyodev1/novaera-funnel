@@ -1,86 +1,48 @@
-# Quick Solutions — VSL Funnel
+# Quick Solutions Funnel
 
-**Brand**: Quick Solutions (arquitectos de la cadena de suministro — IFAC methodology).  
-**Vocero**: Jefferson Bazán.
+## What Matters
 
-## Stack
+- Vue 3 + Vite 7 + TypeScript + SCSS + Pinia + vue-router.
+- `src/App.vue` only renders `<RouterView />`; route flow and SEO live in `src/router/index.ts`.
+- Use pnpm only. `package.json` has no lint or test scripts.
 
-- Vue 3 + Vite 7 + TypeScript + SCSS + Pinia + vue-router
-- `@` → `./src` (vite alias)
-- pnpm
-- FontAwesome 6 via CDN (`index.html`). Usar `<i class="fa-solid fa-...">`, NO emojis
-- SCSS: `colorVariables.module.scss` auto-inyectado global via `vite.config.ts` `additionalData`
-- Wistia player (`wistia-player` custom element, media-id: `bivr0yu5qp`)
-- GSAP activo en `ToolsView.vue` (ScrollTrigger registrado)
+## Commands
 
-## Comandos
+- `pnpm dev` starts Vite.
+- `pnpm build` runs `vue-tsc --build` first, then `vite build`.
+- `pnpm type-check` runs `vue-tsc --build`.
+- `pnpm format` runs `prettier --write src/`.
+- `pnpm preview` runs `vite preview`.
 
-```sh
-pnpm dev           # dev server (localhost)
-pnpm build         # type-check → build (via npm-run-all2)
-pnpm type-check    # vue-tsc --build
-pnpm format        # prettier --write src/
-pnpm preview       # vite preview
-```
+## Repo Quirks
 
-Prettier: sin semicolons, single quotes, printWidth 100.
+- Prettier is fixed to `semi: false`, `singleQuote: true`, `printWidth: 100`.
+- `@` resolves to `./src` in `vite.config.ts`.
+- SCSS globals come from `src/styles/colorVariables.module.scss` via Vite `additionalData`.
+- `public/_redirects` rewrites all routes to `index.html` for SPA hosting.
+- The dev server allows the ngrok host `38828430451a.ngrok-free.app`.
+- Font Awesome is loaded from the CDN in `index.html`; use `<i class="fa-solid fa-...">`, not emojis.
+- Wistia uses media id `bivr0yu5qp`.
 
-## Rutas & flujo del funnel
+## Funnel Rules
 
-```
-/           → FunnelView   (landing + RegistrationModal)
-/ver-video  → VideoView    (VSL + timer 2min + contact guard overlay)
-/agendar    → BookingView  (GHL calendar iframe)
-/cita-confirmada → BookedView
-/sin-espacio → NoSpaceView (cooldown 48h)
-/politicas-privacidad, /aviso-legal (públicas, sin guard)
-```
+- Routes are `/`, `/ver-video`, `/agendar`, `/cita-confirmada`, `/sin-espacio`, `/politicas-privacidad`, and `/aviso-legal`.
+- `/registro-vsl-tr` aliases `/`.
+- Router guards use localStorage TTLs: `os_booked_at` = 3 days, `os_disq_at` = 48 hours.
+- Fresh `os_booked_at` forces navigation to `/cita-confirmada`.
+- Fresh `os_disq_at` blocks `/agendar` and `/cita-confirmada` to `/sin-espacio`.
+- Legal routes stay public.
+- `router.afterEach` updates title, description, canonical, OG, and Twitter metadata.
 
-Route alias: `/registro-vsl-tr` → `/`.
+## State and Integrations
 
-## Routing guards (centralizados en `src/router/index.ts:179`)
+- `os_contact` stores the captured lead payload.
+- `alu_page_entry` and `os_complete_fired` are sessionStorage markers.
+- Booking confirmation arrives via `postMessage(['msgsndr-booking-complete', ...])`.
+- Booking iframe height uses `postMessage({ type: 'booking-app', height })`.
+- `src/utils/ghl.ts` posts to `VITE_WEBHOOK_TRACKING` when set, otherwise it uses the hardcoded LeadConnector webhook.
 
-- **`os_booked_at`**: 3-day TTL. Si fresco → redirige todo a `/cita-confirmada`.
-- **`os_disq_at`**: 48h TTL. Si fresco → bloquea `/agendar` y `/cita-confirmada` → `/sin-espacio`.
-- `/sin-espacio` sin `os_disq_at` fresco → redirige a `/`.
-- `/cita-confirmada` sin `os_booked_at` fresco → redirige a `/`.
-- Rutas legales no tienen guard.
+## Content Notes
 
-## LocalStorage
-
-| Key | Value | Escrito por |
-|---|---|---|
-| `os_contact` | `{ nombre, apellido, negocio, email, telefono, timestamp }` | `RegistrationModal` + `VideoView` capture |
-| `os_disq_at` | timestamp ms | `CalendarModal` al no calificar (presupuesto logístico < $3,000/mes) |
-| `os_booked_at` | timestamp ms | `BookingView` al confirmar cita (`postMessage`) |
-
-## Calificación (CalendarModal)
-
-Descalifica si `presupuesto === 'menos3000'` (< $3,000 USD/mes en logística internacional). Guarda `os_disq_at` (solo en producción). Redirige a `/sin-espacio`.
-
-## GHL
-
-- Calendar booking: `https://api.leadconnectorhq.com/widget/booking/bDoTPmyIA6ng4o5iqD9i` + `?firstName=...&email=...&phone=` desde `os_contact`
-- Tracking webhook: configurable via `VITE_WEBHOOK_TRACKING` env var
-- Evento confirmación: `postMessage(['msgsndr-booking-complete', {...}])`
-- Altura dinámica: `postMessage({ type: 'booking-app', height: N })`
-- Script embed: `https://api.leadconnectorhq.com/js/form_embed.js`
-
-## Meta Pixel
-
-ID: `1886197448722189`. Eventos trackeados: `PageView`, `ViewContent`, `CompleteRegistration`, `Lead`.
-
-## Reglas de estilo
-
-- Sin Header/Footer de navegación global (existen en disco, no importados)
-- `BookedView`: padding centralizado en `.booked__main`
-- Countdown de urgencia en Funnel: bloques de 6h
-- Social proof toast (FOMO) en Funnel: rotación con 3s delay inicial, 5s visibles, 2s gap
-
-## Meta
-
-- `node`: `^20.19.0 || >=22.12.0`
-- Sin tests, sin CI config
-- Dev server permite host: `38828430451a.ngrok-free.app`
-- SEO dinámico via router `afterEach`
-- Session storage: `alu_page_entry` (FunnelView), `os_complete_fired` (BookedView)
+- Keep Quick Solutions / Jefferson Bazán brand copy intact.
+- `src/styles/colorVariables.module.scss` contains many legacy aliases; preserve them unless you are deliberately cleaning up a consuming file.
