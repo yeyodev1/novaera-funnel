@@ -23,7 +23,7 @@ $QS-SURFACE: #111111;         // Superficies/cards oscuras
 $QS-URGENT:        $NE-HOT-PINK;
 $QS-URGENT-DARK:   #AA0000;
 $QS-URGENT-LIGHT:  $NE-PINK-PURPLE;
-$QS-URGENT-BG:     #FFF5F5;
+$QS-URGENT-BG:     rgba($NE-HOT-PINK, 0.15);
 
 // Aliases legacy Aluvicopp (mantienen compatibilidad)
 $ALU-NAVY:    $QS-NAVY;

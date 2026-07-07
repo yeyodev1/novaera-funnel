@@ -72,7 +72,7 @@ const props = defineProps({
   align-items: flex-start;
   gap: 1rem;
   padding: 1.25rem;
-  background: #F9FBFF;
+  background: #111111;
   border: 1px solid rgba(colors.$OS-NAVY, 0.1);
   border-radius: 20px;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
@@ -122,7 +122,7 @@ const props = defineProps({
   &__body {
     @include fonts.body-font(400);
     font-size: 0.9rem;
-    color: #4A5F7A;
+    color: #FFFFFF;
     margin: 0;
     line-height: 1.6;
     @media (min-width: 768px) { font-size: 1rem; }

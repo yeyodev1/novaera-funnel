@@ -316,7 +316,7 @@ watch(() => props.open, (v) => {
   position: fixed;
   inset: 0;
   z-index: 900;
-  background: rgba(colors.$OS-DARK, 0.65);
+  background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
@@ -346,7 +346,7 @@ watch(() => props.open, (v) => {
   border-radius: 50%;
   border: none;
   background: #111111;
-  color: #8A9BB5;
+  color: #CCCCCC;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -354,7 +354,7 @@ watch(() => props.open, (v) => {
   font-size: 0.9rem;
   transition: background 0.2s, color 0.2s;
   z-index: 1;
-  &:hover { background: #E4EDF7; color: colors.$OS-DARK; }
+  &:hover { background: #222222; color: colors.$OS-DARK; }
 }
 
 .cal-header {
@@ -388,7 +388,7 @@ watch(() => props.open, (v) => {
 
 .cal-subtitle {
   font-size: 0.86rem;
-  color: #8A9BB5;
+  color: #CCCCCC;
   margin: 0;
 }
 
@@ -474,78 +474,90 @@ watch(() => props.open, (v) => {
 .cal-options {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .cal-option {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1rem;
-  border: 1.5px solid #E4EDF7;
-  border-radius: 10px;
+  gap: 0.85rem;
+  padding: 0.85rem 1.15rem;
+  border: 1.5px solid #333333;
+  border-radius: 12px;
   cursor: pointer;
-  transition: border-color 0.18s, background 0.18s;
-  background: #FAFBFF;
+  transition: all 0.2s ease;
+  background: #151515;
 
-  &:hover { border-color: colors.$OS-BLUE; background: #F0F6FF; }
+  &:hover { 
+    border-color: #555555; 
+    background: #1e1e1e; 
+    transform: translateY(-1px);
+  }
 
   &.selected {
-    border-color: colors.$OS-NAVY;
-    background: #EEF4FF;
+    border-color: colors.$OS-BLUE;
+    background: rgba(colors.$OS-BLUE, 0.08);
+    box-shadow: 0 4px 15px rgba(colors.$OS-BLUE, 0.15);
   }
 
   &__radio {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    border: 2px solid #C8D8ED;
+    border: 2px solid #555555;
     flex-shrink: 0;
     position: relative;
-    transition: border-color 0.18s;
+    transition: all 0.2s ease;
 
     .cal-option.selected & {
-      border-color: colors.$OS-NAVY;
+      border-color: colors.$OS-BLUE;
+      background: rgba(colors.$OS-BLUE, 0.1);
       &::after {
         content: '';
         position: absolute;
-        inset: 3px;
+        inset: 4px;
         border-radius: 50%;
-        background: colors.$OS-NAVY;
+        background: colors.$OS-BLUE;
+        box-shadow: 0 0 8px colors.$OS-BLUE;
       }
     }
   }
 
   &__label {
-    font-size: 0.88rem;
-    color: #3A4F6A;
+    font-size: 0.92rem;
+    color: #DDDDDD;
     font-weight: 500;
-    .cal-option.selected & { color: colors.$OS-DARK; font-weight: 600; }
+    transition: color 0.2s ease;
+    .cal-option.selected & { color: #FFFFFF; font-weight: 600; text-shadow: 0 0 1px rgba(255,255,255,0.3); }
   }
 }
 
 .cal-textarea {
   width: 100%;
-  border: 1.5px solid #E4EDF7;
-  border-radius: 10px;
-  padding: 0.85rem 1rem;
+  border: 1.5px solid #333333;
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
   font-family: fonts.$font-secondary;
-  font-size: 0.88rem;
-  color: colors.$OS-DARK;
-  background: #FAFBFF;
+  font-size: 0.92rem;
+  color: #FFFFFF;
+  background: #151515;
   resize: vertical;
   outline: none;
-  transition: border-color 0.18s;
+  transition: all 0.2s ease;
   line-height: 1.55;
   box-sizing: border-box;
-  &::placeholder { color: #B0C0D5; }
-  &:focus { border-color: colors.$OS-BLUE; background: #F5F9FF; }
+  &::placeholder { color: rgba(255, 255, 255, 0.35); }
+  &:focus { 
+    border-color: colors.$OS-BLUE; 
+    background: #1a1a1a; 
+    box-shadow: 0 0 0 4px rgba(colors.$OS-BLUE, 0.1);
+  }
 }
 
 .cal-hint {
   display: block;
   font-size: 0.76rem;
-  color: #B0C0D5;
+  color: #EEEEEE;
   margin-top: 0.35rem;
 }
 
@@ -559,33 +571,35 @@ watch(() => props.open, (v) => {
 .cal-consent {
   display: flex;
   align-items: flex-start;
-  gap: 0.75rem;
+  gap: 0.85rem;
   cursor: pointer;
+  padding: 0.5rem 0;
 
   input { display: none; }
 
   &__box {
-    width: 18px;
-    height: 18px;
-    border: 2px solid #C8D8ED;
-    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #555555;
+    border-radius: 6px;
     flex-shrink: 0;
-    margin-top: 1px;
-    transition: all 0.18s;
+    margin-top: 2px;
+    transition: all 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
 
     input:checked ~ & {
-      background: colors.$OS-NAVY;
-      border-color: colors.$OS-NAVY;
-      &::after { content: '✓'; color: #ffffff; font-size: 0.7rem; font-weight: 800; }
+      background: colors.$OS-BLUE;
+      border-color: colors.$OS-BLUE;
+      box-shadow: 0 0 10px rgba(colors.$OS-BLUE, 0.3);
+      &::after { content: '✓'; color: #ffffff; font-size: 0.8rem; font-weight: 900; }
     }
   }
 
   &__text {
     font-size: 0.82rem;
-    color: #6A7E95;
+    color: #DDDDDD;
     line-height: 1.5;
   }
 }

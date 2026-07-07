@@ -93,7 +93,7 @@ import ContactWizard from './ContactWizard.vue'
 // ── Sección raíz ──────────────────────────────────────────────────────────────
 .contact {
   position: relative;
-  background-color: #0b0815;
+  background-color: #000000;
   padding: 120px 24px;
   overflow: hidden;
 

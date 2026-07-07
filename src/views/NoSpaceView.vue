@@ -155,7 +155,7 @@ onMounted(() => {
 }
 
 .nospace__card {
-  background: #F9FBFF;
+  background: #111111;
   border: 1px solid #222222;
   border-radius: 20px;
   padding: 2.5rem 2rem;
@@ -189,7 +189,7 @@ onMounted(() => {
 
 .nospace__body {
   font-size: 0.92rem;
-  color: #4A5F7A;
+  color: #FFFFFF;
   line-height: 1.65;
   margin: 0 0 1rem;
 
@@ -217,24 +217,24 @@ onMounted(() => {
   gap: 0.5rem;
   align-items: flex-start;
   font-size: 0.76rem;
-  color: #A0B0C5;
+  color: #EEEEEE;
   line-height: 1.55;
   margin: 0;
   max-width: 420px;
   text-align: left;
-  i { font-size: 0.8rem; flex-shrink: 0; margin-top: 1px; color: #C0D0E0; }
+  i { font-size: 0.8rem; flex-shrink: 0; margin-top: 1px; color: #EEEEEE; }
 }
 
 .nospace__footer {
   padding: 1.5rem;
-  border-top: 1px solid #F0F4FB;
+  border-top: 1px solid #222222;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
   text-align: center;
 
-  &-links { display: flex; gap: 1.5rem; a { font-size: 0.76rem; color: #B0C0D5; text-decoration: none; &:hover { color: colors.$OS-NAVY; } } }
-  &-copy { font-size: 0.72rem; color: #C8D8ED; margin: 0; }
+  &-links { display: flex; gap: 1.5rem; a { font-size: 0.76rem; color: #EEEEEE; text-decoration: none; &:hover { color: colors.$OS-NAVY; } } }
+  &-copy { font-size: 0.72rem; color: #EEEEEE; margin: 0; }
 }
 </style>

@@ -28,7 +28,7 @@
   width: 100%;
   padding: 2.5rem 1.5rem 3.5rem;
   text-align: center;
-  border-top: 1px solid #F0F4FB;
+  border-top: 1px solid #222222;
   background: #FAFBFF;
   margin-top: auto;
 
@@ -46,19 +46,19 @@
   &__link {
     @include fonts.interface-font(500);
     font-size: 0.72rem;
-    color: #B0C0D5;
+    color: #EEEEEE;
     text-decoration: none;
     transition: color 0.3s ease;
     &:hover { color: colors.$OS-NAVY; }
     @media (min-width: 768px) { font-size: 0.85rem; }
   }
 
-  &__separator { color: #D0DBE8; font-size: 1rem; line-height: 1; }
+  &__separator { color: #EEEEEE; font-size: 1rem; line-height: 1; }
 
   &__copy {
     @include fonts.interface-font(500);
     font-size: 0.65rem;
-    color: #C8D8ED;
+    color: #EEEEEE;
     margin: 0;
     line-height: 1.8;
     text-transform: uppercase;

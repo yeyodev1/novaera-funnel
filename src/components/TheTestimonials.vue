@@ -217,7 +217,7 @@ const openVideo = (url: string) => window.open(url, '_blank')
     top: 0;
     height: 100vh;
     overflow: clip;
-    background-color: #000;
+    background-color: #000000;
   }
 
   // ── Video ──────────────────────────────────────────────────────

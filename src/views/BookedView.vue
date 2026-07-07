@@ -222,7 +222,7 @@ const nextSteps = [
 
 .booked__hero-subtitle {
   font-size: 0.95rem;
-  color: #4A5F7A;
+  color: #FFFFFF;
   line-height: 1.65;
   margin: 0 auto;
   max-width: 460px;
@@ -247,7 +247,7 @@ const nextSteps = [
 }
 
 .booked__step {
-  background: #F9FBFF;
+  background: #111111;
   border: 1px solid #222222;
   border-radius: 14px;
   padding: 1.5rem 1.25rem;
@@ -287,7 +287,7 @@ const nextSteps = [
 
 .booked__step-body {
   font-size: 0.83rem;
-  color: #4A5F7A;
+  color: #FFFFFF;
   line-height: 1.5;
   margin: 0;
 }
@@ -332,13 +332,13 @@ const nextSteps = [
 
 .booked__team-role {
   font-size: 0.8rem;
-  color: #8A9BB5;
+  color: #CCCCCC;
 }
 
 .booked__team-note {
   margin: 0.5rem 0 0;
   font-size: 0.86rem;
-  color: #3A4F6A;
+  color: #FFFFFF;
   font-style: italic;
   line-height: 1.55;
 }
@@ -348,22 +348,22 @@ const nextSteps = [
   gap: 0.6rem;
   align-items: flex-start;
   font-size: 0.76rem;
-  color: #A0B0C5;
+  color: #EEEEEE;
   line-height: 1.55;
   margin: 0;
-  i { font-size: 0.8rem; flex-shrink: 0; margin-top: 1px; color: #C0D0E0; }
+  i { font-size: 0.8rem; flex-shrink: 0; margin-top: 1px; color: #EEEEEE; }
 }
 
 .booked__footer {
   padding: 1.5rem;
-  border-top: 1px solid #F0F4FB;
+  border-top: 1px solid #222222;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
   text-align: center;
 
-  &-links { display: flex; gap: 1.5rem; a { font-size: 0.76rem; color: #B0C0D5; text-decoration: none; &:hover { color: colors.$OS-NAVY; } } }
-  &-copy { font-size: 0.72rem; color: #C8D8ED; margin: 0; }
+  &-links { display: flex; gap: 1.5rem; a { font-size: 0.76rem; color: #EEEEEE; text-decoration: none; &:hover { color: colors.$OS-NAVY; } } }
+  &-copy { font-size: 0.72rem; color: #EEEEEE; margin: 0; }
 }
 </style>

@@ -187,7 +187,7 @@ onUnmounted(() => {
 @use '../styles/colorVariables.module.scss' as colors;
 
 .strategies {
-  background-color: #000;
+  background-color: #000000;
   padding: 15vw 0;
   position: relative;
   overflow: hidden;

@@ -77,7 +77,7 @@ const props = defineProps({
   &__subtitle {
     @include fonts.body-font(400);
     font-size: 0.95rem;
-    color: #4A5F7A;
+    color: #FFFFFF;
     margin: 0;
     line-height: 1.6;
     max-width: 540px;

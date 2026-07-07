@@ -479,9 +479,9 @@ watch(dropdownOpen, open => {
 @use '@/styles/colorVariables.module.scss' as colors;
 @use '@/styles/fonts.modules.scss' as fonts;
 
-$bg: #ffffff;
+$bg: #000000;
 $border: rgba(colors.$OS-NAVY, 0.1);
-$input-bg: #f9fbff;
+$input-bg: #111111;
 $text-muted: #7a8ea5;
 $text-body: #3a4f6a;
 $accent: colors.$OS-RED;
@@ -589,7 +589,7 @@ $accent: colors.$OS-RED;
     font-family: fonts.$font-interface;
     font-size: 0.74rem;
     font-weight: 600;
-    color: #4a5f7a;
+    color: #FFFFFF;
     letter-spacing: 0.5px;
   }
 
@@ -605,7 +605,7 @@ $accent: colors.$OS-RED;
     color: colors.$OS-DARK;
     outline: none;
     transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
-    &::placeholder { color: #b8cae0; }
+    &::placeholder { color: rgba(255, 255, 255, 0.35); }
     &:focus { border-color: rgba($accent, 0.5); background: rgba($accent, 0.04); box-shadow: 0 0 0 3px rgba($accent, 0.08); }
   }
 
@@ -651,7 +651,7 @@ $accent: colors.$OS-RED;
 
 .rmodal__flag { font-size: 1.1rem; line-height: 1; }
 
-.rmodal__dial { font-family: fonts.$font-accent; font-size: 0.82rem; font-weight: 600; color: #4a5f7a; }
+.rmodal__dial { font-family: fonts.$font-accent; font-size: 0.82rem; font-weight: 600; color: #FFFFFF; }
 
 .rmodal__chevron { opacity: 0.4; transition: transform 0.2s ease; &.open { transform: rotate(180deg); opacity: 0.7; } }
 
@@ -684,7 +684,7 @@ $accent: colors.$OS-RED;
   font-size: 0.84rem;
   outline: none;
   border-radius: 12px 12px 0 0;
-  &::placeholder { color: #b8cae0; }
+  &::placeholder { color: rgba(255, 255, 255, 0.35); }
 }
 
 .rmodal__country-dropdown ul {
@@ -716,14 +716,14 @@ $accent: colors.$OS-RED;
 .rmodal__country-name {
   font-family: fonts.$font-secondary;
   font-size: 0.82rem;
-  color: #3a4f6a;
+  color: #FFFFFF;
   flex: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.rmodal__country-dial { font-family: fonts.$font-accent; font-size: 0.75rem; color: #a0b0c5; flex-shrink: 0; }
+.rmodal__country-dial { font-family: fonts.$font-accent; font-size: 0.75rem; color: #EEEEEE; flex-shrink: 0; }
 
 .rmodal__phone-input {
   flex: 1;
@@ -737,7 +737,7 @@ $accent: colors.$OS-RED;
   color: colors.$OS-DARK;
   outline: none !important;
   box-shadow: none !important;
-  &::placeholder { color: #b8cae0; }
+  &::placeholder { color: rgba(255, 255, 255, 0.35); }
 }
 
 .rmodal__phone-status {
@@ -899,7 +899,7 @@ $accent: colors.$OS-RED;
       box-shadow: inset 0 0 0 3px #ffffff;
     }
 
-    .rmodal__urgency-opt-text strong { color: colors.$ALU-URGENT-DARK; }
+    .rmodal__urgency-opt-text strong { color: #FFFFFF; }
   }
 }
 

@@ -174,7 +174,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
   &__circle {
     width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center;
     justify-content: center; font-family: fonts.$font-interface; font-size: 0.85rem;
-    font-weight: 800; border: 2px solid #D0DBE8; color: #D0DBE8; transition: all 0.3s ease;
+    font-weight: 800; border: 2px solid #D0DBE8; color: #EEEEEE; transition: all 0.3s ease;
 
     .stepper__step--done & { background: colors.$OS-BLUE; border-color: colors.$OS-BLUE; color: #ffffff; }
     .stepper__step--active & { background: colors.$OS-RED; border-color: colors.$OS-RED; color: #ffffff; }
@@ -182,7 +182,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
 
   &__label {
     font-family: fonts.$font-interface; font-size: 0.72rem; font-weight: 600;
-    letter-spacing: 0.04em; color: #B0C0D5;
+    letter-spacing: 0.04em; color: #EEEEEE;
     .stepper__step--done & { color: colors.$OS-BLUE; }
     .stepper__step--active & { color: colors.$OS-DARK; }
   }
@@ -211,7 +211,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
 }
 
 .booking__subtitle {
-  font-size: 0.93rem; color: #4A5F7A; line-height: 1.6; margin: 0;
+  font-size: 0.93rem; color: #FFFFFF; line-height: 1.6; margin: 0;
 }
 
 .calendar__wrap {
@@ -222,10 +222,10 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
 .calendar__iframe { width: 100%; display: block; min-height: 600px; }
 
 .booking__footer {
-  padding: 1.5rem; border-top: 1px solid #F0F4FB;
+  padding: 1.5rem; border-top: 1px solid #222222;
   display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;
 
-  &-links { display: flex; gap: 1.5rem; a { font-size: 0.76rem; color: #B0C0D5; text-decoration: none; &:hover { color: colors.$OS-NAVY; } } }
-  &-copy { font-size: 0.72rem; color: #C8D8ED; margin: 0; }
+  &-links { display: flex; gap: 1.5rem; a { font-size: 0.76rem; color: #EEEEEE; text-decoration: none; &:hover { color: colors.$OS-NAVY; } } }
+  &-copy { font-size: 0.72rem; color: #EEEEEE; margin: 0; }
 }
 </style>

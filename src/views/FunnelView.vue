@@ -16,7 +16,7 @@ const openModal = () => {
       return
     }
   }
-  ;(window as any).fbq?.('track', 'CompleteRegistration', {
+  ; (window as any).fbq?.('track', 'CompleteRegistration', {
     content_name: 'cta-abrir-registro',
     value: 1,
     currency: 'USD',
@@ -108,7 +108,7 @@ const computeRemaining = () => {
 
 const tick = () => {
   const total = computeRemaining()
-  hours.value   = String(Math.floor(total / 3600)).padStart(2, '0')
+  hours.value = String(Math.floor(total / 3600)).padStart(2, '0')
   minutes.value = String(Math.floor((total % 3600) / 60)).padStart(2, '0')
   seconds.value = String(total % 60).padStart(2, '0')
 }
@@ -129,16 +129,16 @@ onUnmounted(() => {
 type Proof = { who: string; where: string; minutesAgo: number }
 
 const PROOFS: Proof[] = [
-  { who: 'Grupo Corporativo M&B',         where: 'Guayaquil',     minutesAgo: 3 },
-  { who: 'Concesionaria Automotriz',      where: 'Quito',         minutesAgo: 8 },
-  { who: 'Franquicia Gastronómica',       where: 'Manta',         minutesAgo: 14 },
-  { who: 'Corporación Industrial',        where: 'Guayaquil',     minutesAgo: 19 },
-  { who: 'Cadena de Retail S.A.',         where: 'Cuenca',        minutesAgo: 25 },
-  { who: 'Importadora y Distribuidora',   where: 'Quito',         minutesAgo: 31 },
-  { who: 'Consorcio Empresarial',         where: 'Machala',       minutesAgo: 38 },
-  { who: 'Centro Médico Especializado',   where: 'Guayaquil',     minutesAgo: 44 },
-  { who: 'Empresa Logística Andina',      where: 'Quito',         minutesAgo: 50 },
-  { who: 'Sector Inmobiliario Corporativo',where: 'Guayaquil',    minutesAgo: 57 },
+  { who: 'Grupo Corporativo M&B', where: 'Guayaquil', minutesAgo: 3 },
+  { who: 'Concesionaria Automotriz', where: 'Quito', minutesAgo: 8 },
+  { who: 'Franquicia Gastronómica', where: 'Manta', minutesAgo: 14 },
+  { who: 'Corporación Industrial', where: 'Guayaquil', minutesAgo: 19 },
+  { who: 'Cadena de Retail S.A.', where: 'Cuenca', minutesAgo: 25 },
+  { who: 'Importadora y Distribuidora', where: 'Quito', minutesAgo: 31 },
+  { who: 'Consorcio Empresarial', where: 'Machala', minutesAgo: 38 },
+  { who: 'Centro Médico Especializado', where: 'Guayaquil', minutesAgo: 44 },
+  { who: 'Empresa Logística Andina', where: 'Quito', minutesAgo: 50 },
+  { who: 'Sector Inmobiliario Corporativo', where: 'Guayaquil', minutesAgo: 57 },
 ]
 
 const proofVisible = ref(false)
@@ -539,7 +539,10 @@ const dismissProof = () => {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 1.5rem;
-    @media (min-width: 768px) { padding: 0 2rem; }
+
+    @media (min-width: 768px) {
+      padding: 0 2rem;
+    }
   }
 }
 
@@ -567,7 +570,7 @@ const dismissProof = () => {
 
 .funnel__logo-sub {
   font-size: 0.68rem;
-  color: #8A9BB5;
+  color: #CCCCCC;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin: 0;
@@ -607,7 +610,10 @@ const dismissProof = () => {
   gap: 0.6rem;
   flex-wrap: wrap;
   justify-content: center;
-  @media (min-width: 768px) { flex-wrap: nowrap; }
+
+  @media (min-width: 768px) {
+    flex-wrap: nowrap;
+  }
 }
 
 .funnel__urgency-cta {
@@ -630,16 +636,24 @@ const dismissProof = () => {
   animation: cta-bounce 2.4s ease-in-out infinite;
   transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
 
-  span { font-size: 0.95rem; transition: transform 0.18s ease; }
+  span {
+    font-size: 0.95rem;
+    transition: transform 0.18s ease;
+  }
 
   &:hover {
     background: #FFF5F5;
     transform: translateY(-1px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-    span { transform: translateX(3px); }
+
+    span {
+      transform: translateX(3px);
+    }
   }
 
-  &:active { transform: translateY(0); }
+  &:active {
+    transform: translateY(0);
+  }
 
   @media (min-width: 768px) {
     padding: 0.55rem 1.2rem;
@@ -648,8 +662,17 @@ const dismissProof = () => {
 }
 
 @keyframes cta-bounce {
-  0%, 100% { box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25); transform: scale(1); }
-  50%      { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); transform: scale(1.04); }
+
+  0%,
+  100% {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.04);
+  }
 }
 
 .funnel__proof {
@@ -661,7 +684,7 @@ const dismissProof = () => {
   align-items: flex-start;
   gap: 0.75rem;
   background: #000000;
-  border: 1px solid rgba(colors.$OS-NAVY, 0.08);
+  border: 1px solid #333333;
   border-left: 4px solid colors.$OS-BLUE;
   border-radius: 12px;
   padding: 0.75rem 0.9rem 0.75rem 0.85rem;
@@ -708,28 +731,42 @@ const dismissProof = () => {
   font-family: fonts.$font-interface;
   font-size: 0.86rem;
   line-height: 1.3;
-  color: colors.$OS-NAVY;
+  color: #FFFFFF;
 
-  strong { font-weight: 800; }
-  span { font-size: 0.74rem; color: rgba(colors.$OS-NAVY, 0.55); font-weight: 500; }
+  strong {
+    font-weight: 800;
+  }
+
+  span {
+    font-size: 0.74rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+  }
 }
 
 .funnel__proof-text {
   margin: 0;
   font-size: 0.82rem;
   line-height: 1.35;
-  color: rgba(colors.$OS-NAVY, 0.78);
-  strong { color: colors.$OS-NAVY; font-weight: 700; }
+  color: rgba(255, 255, 255, 0.85);
+
+  strong {
+    color: #FFFFFF;
+    font-weight: 700;
+  }
 }
 
 .funnel__proof-meta {
   margin: 4px 0 0;
   font-size: 0.7rem;
-  color: rgba(colors.$OS-NAVY, 0.45);
+  color: rgba(255, 255, 255, 0.5);
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  i { font-size: 0.66rem; }
+
+  i {
+    font-size: 0.66rem;
+  }
 }
 
 .funnel__proof-close {
@@ -748,19 +785,25 @@ const dismissProof = () => {
   justify-content: center;
   font-size: 0.78rem;
   transition: background 0.15s, color 0.15s;
-  &:hover { background: rgba(colors.$OS-NAVY, 0.08); color: colors.$OS-NAVY; }
+
+  &:hover {
+    color: #FFFFFF;
+  }
 }
 
 .proof-fade-enter-active {
   transition: opacity 0.32s ease, transform 0.42s cubic-bezier(0.34, 1.4, 0.64, 1);
 }
+
 .proof-fade-leave-active {
   transition: opacity 0.22s ease, transform 0.25s ease;
 }
+
 .proof-fade-enter-from {
   opacity: 0;
   transform: translateY(14px) translateX(-8px);
 }
+
 .proof-fade-leave-to {
   opacity: 0;
   transform: translateY(8px);
@@ -774,12 +817,25 @@ const dismissProof = () => {
 }
 
 @keyframes bolt-flash {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.55; transform: scale(0.92); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.55;
+    transform: scale(0.92);
+  }
 }
 
 .funnel__urgency-text {
-  strong { font-weight: 900; color: #FFE4E4; letter-spacing: 0.04em; }
+  strong {
+    font-weight: 900;
+    color: #FFE4E4;
+    letter-spacing: 0.04em;
+  }
 }
 
 .funnel__urgency-dot {
@@ -793,9 +849,20 @@ const dismissProof = () => {
 }
 
 @keyframes dot-pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7); transform: scale(1); }
-  70% { box-shadow: 0 0 0 8px rgba(255, 107, 107, 0); transform: scale(1.1); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); transform: scale(1); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+    transform: scale(1);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px rgba(255, 107, 107, 0);
+    transform: scale(1.1);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+    transform: scale(1);
+  }
 }
 
 .funnel__timer {
@@ -812,15 +879,25 @@ const dismissProof = () => {
   display: flex;
   align-items: baseline;
   gap: 2px;
+
   strong {
     font-size: 1.6rem;
     font-weight: 900;
     line-height: 1;
     font-variant-numeric: tabular-nums;
     color: #ffffff;
-    @media (min-width: 768px) { font-size: 2rem; }
+
+    @media (min-width: 768px) {
+      font-size: 2rem;
+    }
   }
-  small { font-size: 0.72rem; opacity: 0.85; font-weight: 700; text-transform: uppercase; }
+
+  small {
+    font-size: 0.72rem;
+    opacity: 0.85;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
 }
 
 .funnel__timer-sep {
@@ -829,7 +906,10 @@ const dismissProof = () => {
   opacity: 0.7;
   padding: 0 2px;
   line-height: 1;
-  @media (min-width: 768px) { font-size: 1.7rem; }
+
+  @media (min-width: 768px) {
+    font-size: 1.7rem;
+  }
 }
 
 .funnel__urgency-callout {
@@ -846,8 +926,16 @@ const dismissProof = () => {
   color: colors.$OS-DARK;
   font-weight: 600;
 
-  i { color: colors.$QS-URGENT; font-size: 1.15rem; flex-shrink: 0; }
-  strong { color: colors.$QS-URGENT-DARK; font-weight: 800; }
+  i {
+    color: colors.$QS-URGENT;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+  }
+
+  strong {
+    color: colors.$QS-URGENT-DARK;
+    font-weight: 800;
+  }
 
   @media (min-width: 768px) {
     font-size: 1rem;
@@ -875,7 +963,10 @@ const dismissProof = () => {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin: 0 0 1.4rem;
-  i { font-size: 0.8rem; }
+
+  i {
+    font-size: 0.8rem;
+  }
 }
 
 .funnel__headline {
@@ -886,17 +977,22 @@ const dismissProof = () => {
   margin: 0 0 1rem;
   letter-spacing: -0.025em;
 
-  &-accent { color: colors.$OS-RED; }
+  &-accent {
+    color: colors.$OS-RED;
+  }
 }
 
 .funnel__hero-sub {
   font-size: 1rem;
-  color: #4A5F7A;
+  color: #FFFFFF;
   line-height: 1.65;
   margin: 0 0 1.5rem;
   max-width: 720px;
 
-  strong { color: colors.$OS-DARK; font-weight: 700; }
+  strong {
+    color: colors.$OS-DARK;
+    font-weight: 700;
+  }
 }
 
 .funnel__benefits {
@@ -913,12 +1009,18 @@ const dismissProof = () => {
   align-items: center;
   gap: 0.6rem;
   font-size: 0.93rem;
-  color: #3A4F6A;
+  color: #FFFFFF;
 
-  i { color: colors.$OS-BLUE; font-size: 0.82rem; flex-shrink: 0; }
+  i {
+    color: colors.$OS-BLUE;
+    font-size: 0.82rem;
+    flex-shrink: 0;
+  }
 }
 
-.funnel__vsl-wrap { margin-bottom: 2rem; }
+.funnel__vsl-wrap {
+  margin-bottom: 2rem;
+}
 
 .funnel__vsl {
   position: relative;
@@ -931,8 +1033,15 @@ const dismissProof = () => {
   box-shadow: 0 8px 40px rgba(0, 82, 165, 0.12);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-  &:hover { transform: translateY(-2px); box-shadow: 0 16px 48px rgba(0, 82, 165, 0.2); }
-  &:focus-visible { outline: 3px solid colors.$OS-BLUE; outline-offset: 2px; }
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 48px rgba(0, 82, 165, 0.2);
+  }
+
+  &:focus-visible {
+    outline: 3px solid colors.$OS-BLUE;
+    outline-offset: 2px;
+  }
 }
 
 .funnel__vsl-bg {
@@ -954,7 +1063,10 @@ const dismissProof = () => {
   transform: scale(1.1);
   transition: filter 0.4s ease, transform 0.4s ease, brightness 0.4s ease;
 
-  .funnel__vsl:hover & { filter: blur(4px) brightness(0.75); transform: scale(1.05); }
+  .funnel__vsl:hover & {
+    filter: blur(4px) brightness(0.75);
+    transform: scale(1.05);
+  }
 }
 
 .funnel__vsl-blur-overlay {
@@ -985,8 +1097,16 @@ const dismissProof = () => {
   justify-content: center;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   transition: transform 0.2s ease;
-  .funnel__vsl:hover & { transform: scale(1.1); }
-  i { color: colors.$OS-RED; font-size: 1.7rem; margin-left: 5px; }
+
+  .funnel__vsl:hover & {
+    transform: scale(1.1);
+  }
+
+  i {
+    color: colors.$OS-RED;
+    font-size: 1.7rem;
+    margin-left: 5px;
+  }
 }
 
 .funnel__vsl-caption {
@@ -1026,8 +1146,15 @@ const dismissProof = () => {
   transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
   box-shadow: 0 4px 20px rgba(204, 0, 0, 0.35);
 
-  &:hover { background: #AA0000; transform: translateY(-1px); box-shadow: 0 8px 28px rgba(204, 0, 0, 0.45); }
-  &:active { transform: translateY(0); }
+  &:hover {
+    background: #AA0000;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 28px rgba(204, 0, 0, 0.45);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
 }
 
 .funnel__cta-sub {
@@ -1036,9 +1163,12 @@ const dismissProof = () => {
   justify-content: center;
   gap: 0.4rem;
   font-size: 0.78rem;
-  color: #8A9BB5;
+  color: #CCCCCC;
   margin: 0;
-  i { font-size: 0.72rem; }
+
+  i {
+    font-size: 0.72rem;
+  }
 }
 
 .funnel__stats {
@@ -1055,17 +1185,25 @@ const dismissProof = () => {
   color: colors.$OS-NAVY;
   margin: 0 0 1rem;
 
-  &--light { color: rgba(#ffffff, 0.55); }
+  &--light {
+    color: rgba(#ffffff, 0.55);
+  }
 }
 
 .funnel__stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  @media (max-width: 580px) { grid-template-columns: 1fr; gap: 1.75rem; }
+
+  @media (max-width: 580px) {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
 }
 
-.funnel__stat { text-align: center; }
+.funnel__stat {
+  text-align: center;
+}
 
 .funnel__stat-icon {
   font-size: 1.6rem;
@@ -1106,7 +1244,7 @@ const dismissProof = () => {
 
 .funnel__problem-intro {
   font-size: 0.95rem;
-  color: #4A5F7A;
+  color: #FFFFFF;
   line-height: 1.6;
   margin: 0 0 1.5rem;
 }
@@ -1122,7 +1260,7 @@ const dismissProof = () => {
   gap: 1rem;
   align-items: flex-start;
   padding: 1.25rem;
-  background: #F9FBFF;
+  background: #111111;
   border: 1px solid #222222;
   border-radius: 12px;
 
@@ -1133,9 +1271,10 @@ const dismissProof = () => {
     font-weight: 700;
     margin-bottom: 0.2rem;
   }
+
   p {
     font-size: 0.86rem;
-    color: #4A5F7A;
+    color: #FFFFFF;
     line-height: 1.5;
     margin: 0;
   }
@@ -1170,7 +1309,10 @@ const dismissProof = () => {
   position: relative;
   box-shadow: 0 2px 12px rgba(0, 82, 165, 0.05);
 
-  @media (max-width: 640px) { flex-direction: column; padding: 1.5rem; }
+  @media (max-width: 640px) {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
 }
 
 .funnel__pillar-num {
@@ -1196,7 +1338,11 @@ const dismissProof = () => {
   align-items: center;
   justify-content: center;
   margin-bottom: 0.85rem;
-  i { color: #ffffff; font-size: 1.1rem; }
+
+  i {
+    color: #ffffff;
+    font-size: 1.1rem;
+  }
 }
 
 .funnel__pillar-title {
@@ -1208,7 +1354,7 @@ const dismissProof = () => {
 
 .funnel__pillar-body {
   font-size: 0.9rem;
-  color: #4A5F7A;
+  color: #FFFFFF;
   line-height: 1.6;
   margin: 0;
 }
@@ -1256,8 +1402,17 @@ const dismissProof = () => {
   align-items: center;
   gap: 0.75rem;
 
-  strong { display: block; color: colors.$OS-DARK; font-size: 0.9rem; font-weight: 700; }
-  span { font-size: 0.78rem; color: #8A9BB5; }
+  strong {
+    display: block;
+    color: colors.$OS-DARK;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  span {
+    font-size: 0.78rem;
+    color: #CCCCCC;
+  }
 }
 
 .funnel__test-avatar {
@@ -1269,7 +1424,11 @@ const dismissProof = () => {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  i { color: #ffffff; font-size: 1.2rem; }
+
+  i {
+    color: #ffffff;
+    font-size: 1.2rem;
+  }
 }
 
 .funnel__test-dots {
@@ -1289,8 +1448,14 @@ const dismissProof = () => {
   transition: background 0.2s, transform 0.2s;
   padding: 0;
 
-  &.active { background: colors.$OS-NAVY; transform: scale(1.3); }
-  &:hover { background: colors.$OS-BLUE; }
+  &.active {
+    background: colors.$OS-NAVY;
+    transform: scale(1.3);
+  }
+
+  &:hover {
+    background: colors.$OS-BLUE;
+  }
 }
 
 .funnel__authority {
@@ -1304,10 +1469,16 @@ const dismissProof = () => {
   display: flex;
   gap: 2.5rem;
   align-items: flex-start;
-  @media (max-width: 640px) { flex-direction: column; align-items: center; }
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-.funnel__authority-photo-wrap { flex-shrink: 0; }
+.funnel__authority-photo-wrap {
+  flex-shrink: 0;
+}
 
 .funnel__authority-avatar {
   width: 112px;
@@ -1319,10 +1490,16 @@ const dismissProof = () => {
   justify-content: center;
   border: 4px solid #ffffff;
   box-shadow: 0 4px 20px rgba(0, 82, 165, 0.2);
-  i { color: rgba(#ffffff, 0.7); font-size: 3rem; }
+
+  i {
+    color: rgba(#ffffff, 0.7);
+    font-size: 3rem;
+  }
 }
 
-.funnel__authority-content { flex: 1; }
+.funnel__authority-content {
+  flex: 1;
+}
 
 .funnel__authority-eyebrow {
   font-family: fonts.$font-interface;
@@ -1344,16 +1521,20 @@ const dismissProof = () => {
 
 .funnel__authority-role {
   font-size: 0.88rem;
-  color: #8A9BB5;
+  color: #CCCCCC;
   margin: 0 0 1rem;
 }
 
 .funnel__authority-bio {
   font-size: 0.93rem;
-  color: #3A4F6A;
+  color: #FFFFFF;
   line-height: 1.65;
   margin: 0 0 1rem;
-  strong { color: colors.$OS-DARK; font-weight: 700; }
+
+  strong {
+    color: colors.$OS-DARK;
+    font-weight: 700;
+  }
 }
 
 .funnel__authority-creds {
@@ -1369,8 +1550,13 @@ const dismissProof = () => {
     align-items: center;
     gap: 0.5rem;
     font-size: 0.86rem;
-    color: #3A4F6A;
-    i { color: colors.$OS-BLUE; font-size: 0.82rem; flex-shrink: 0; }
+    color: #FFFFFF;
+
+    i {
+      color: colors.$OS-BLUE;
+      font-size: 0.82rem;
+      flex-shrink: 0;
+    }
   }
 }
 
@@ -1395,7 +1581,11 @@ const dismissProof = () => {
   text-transform: uppercase;
   color: rgba(#ffffff, 0.75);
   margin-bottom: 1rem;
-  i { color: rgba(#ffffff, 0.5); font-size: 0.8rem; }
+
+  i {
+    color: rgba(#ffffff, 0.5);
+    font-size: 0.8rem;
+  }
 }
 
 .funnel__scarcity-title {
@@ -1407,7 +1597,9 @@ const dismissProof = () => {
   line-height: 1.15;
 }
 
-.funnel__scarcity-accent { color: colors.$OS-RED; }
+.funnel__scarcity-accent {
+  color: colors.$OS-RED;
+}
 
 .funnel__scarcity-sub {
   font-size: 1rem;
@@ -1424,7 +1616,10 @@ const dismissProof = () => {
   max-width: 560px;
   line-height: 1.55;
 
-  strong { color: #ffffff; font-weight: 700; }
+  strong {
+    color: #ffffff;
+    font-weight: 700;
+  }
 }
 
 .funnel__cta-btn--final {
@@ -1432,13 +1627,18 @@ const dismissProof = () => {
   background: colors.$OS-RED;
   box-shadow: 0 4px 24px rgba(204, 0, 0, 0.4);
   max-width: 560px;
-  &:hover { background: #AA0000; }
+
+  &:hover {
+    background: #AA0000;
+  }
 }
 
-.funnel__scarcity .funnel__cta-sub { color: rgba(#ffffff, 0.5); }
+.funnel__scarcity .funnel__cta-sub {
+  color: rgba(#ffffff, 0.5);
+}
 
 .funnel__footer {
-  background: colors.$OS-DARK;
+  background: #000000;
   padding: 2rem 1.5rem;
 }
 
@@ -1469,12 +1669,16 @@ const dismissProof = () => {
 .funnel__footer-links {
   display: flex;
   gap: 1.5rem;
+
   a {
     font-size: 0.78rem;
     color: rgba(#ffffff, 0.45);
     text-decoration: none;
     transition: color 0.2s;
-    &:hover { color: rgba(#ffffff, 0.85); }
+
+    &:hover {
+      color: rgba(#ffffff, 0.85);
+    }
   }
 }
 

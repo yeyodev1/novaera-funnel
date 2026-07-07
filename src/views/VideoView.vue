@@ -331,7 +331,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     font-family: fonts.$font-interface;
     font-size: 0.78rem;
     font-weight: 600;
-    color: #7A8EA5;
+    color: #CCCCCC;
     letter-spacing: 0.03em;
   }
 }
@@ -365,7 +365,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
 .vv-subtitle {
   font-size: 0.95rem;
-  color: #4A5F7A;
+  color: #FFFFFF;
   line-height: 1.6;
   margin: 0;
 }
@@ -410,11 +410,11 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   width: 100%;
   max-width: 420px;
 
-  &__icon { font-size: 1.4rem; color: #B0C0D5; }
+  &__icon { font-size: 1.4rem; color: #EEEEEE; }
 
   &__text {
     font-size: 0.88rem;
-    color: #8A9BB5;
+    color: #CCCCCC;
     margin: 0;
     strong { color: colors.$OS-NAVY; }
   }
@@ -463,7 +463,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   align-items: center;
   gap: 0.4rem;
   font-size: 0.76rem;
-  color: #B0C0D5;
+  color: #EEEEEE;
   margin: 0;
   i { font-size: 0.7rem; }
 }
@@ -515,13 +515,13 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
 .vv-authority__role {
   font-size: 0.8rem;
-  color: #8A9BB5;
+  color: #CCCCCC;
   margin: 0 0 1rem;
 }
 
 .vv-authority__bio {
   font-size: 0.88rem;
-  color: #3A4F6A;
+  color: #FFFFFF;
   line-height: 1.6;
   margin: 0 0 1.25rem;
   strong { color: colors.$OS-DARK; }
@@ -540,7 +540,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     align-items: center;
     gap: 0.5rem;
     font-size: 0.78rem;
-    color: #4A5F7A;
+    color: #FFFFFF;
     i { color: colors.$OS-BLUE; font-size: 0.75rem; }
     @media (max-width: 580px) { justify-content: center; }
   }
@@ -548,7 +548,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
 .vv-footer {
   padding: 1.5rem;
-  border-top: 1px solid #F0F4FB;
+  border-top: 1px solid #222222;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -557,10 +557,10 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   &__links {
     display: flex;
     gap: 1.5rem;
-    a { font-size: 0.76rem; color: #B0C0D5; text-decoration: none; &:hover { color: colors.$OS-NAVY; } }
+    a { font-size: 0.76rem; color: #EEEEEE; text-decoration: none; &:hover { color: colors.$OS-NAVY; } }
   }
 
-  &__copy { font-size: 0.72rem; color: #C8D8ED; margin: 0; }
+  &__copy { font-size: 0.72rem; color: #EEEEEE; margin: 0; }
 }
 
 .capture-fade-enter-active,
@@ -618,7 +618,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
   &__sub {
     font-size: 0.82rem;
-    color: #8A9BB5;
+    color: #CCCCCC;
     margin: 0;
   }
 
@@ -646,7 +646,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     font-family: fonts.$font-interface;
     font-size: 0.78rem;
     font-weight: 700;
-    color: #4A5F7A;
+    color: #FFFFFF;
     letter-spacing: 0.02em;
   }
 
@@ -660,7 +660,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     background: #FAFBFF;
     outline: none;
     transition: border-color 0.18s;
-    &::placeholder { color: #B8CAE0; }
+    &::placeholder { color: rgba(255, 255, 255, 0.35); }
     &:focus { border-color: colors.$OS-BLUE; background: #F5F9FF; }
   }
 

@@ -302,7 +302,7 @@ onMounted(() => {
     font-family: 'Poppins', sans-serif;
     font-size: 1.4rem;
     font-weight: 600;
-    color: #333;
+    color: #FFFFFF;
     margin: 2rem 0 1rem 0;
 
     @media (max-width: 768px) {
@@ -315,7 +315,7 @@ onMounted(() => {
     font-family: 'Poppins', sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
-    color: #555;
+    color: #FFFFFF;
     margin: 1.5rem 0 1rem 0;
 
     @media (max-width: 768px) {
@@ -327,7 +327,7 @@ onMounted(() => {
   p {
     font-size: 1rem;
     line-height: 1.7;
-    color: #555;
+    color: #FFFFFF;
     margin: 0 0 1rem 0;
     text-align: justify;
 
@@ -350,7 +350,7 @@ onMounted(() => {
     li {
       font-size: 1rem;
       line-height: 1.7;
-      color: #555;
+      color: #FFFFFF;
       margin: 0.5rem 0;
 
       @media (max-width: 768px) {

@@ -256,7 +256,7 @@ onMounted(() => {
   font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #4A5568;
+  color: #FFFFFF;
   margin-bottom: 1.5rem;
   text-align: justify;
 }
@@ -272,7 +272,7 @@ onMounted(() => {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  color: #4A5568;
+  color: #FFFFFF;
   font-style: italic;
   background: rgba(212, 163, 115, 0.05);
   padding: 1.5rem;
@@ -325,7 +325,7 @@ onMounted(() => {
   font-family: 'Poppins', sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #4A5568;
+  color: #FFFFFF;
   margin: 1.5rem 0 1rem 0;
 }
 
@@ -346,7 +346,7 @@ onMounted(() => {
 .privacy-policy__company-info p {
   margin-bottom: 0.5rem;
   font-family: 'Inter', sans-serif;
-  color: #4A5568;
+  color: #FFFFFF;
 }
 
 .privacy-policy__company-info p:last-child {
@@ -369,7 +369,7 @@ onMounted(() => {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  color: #4A5568;
+  color: #FFFFFF;
   margin-bottom: 0.8rem;
   padding-left: 1.5rem;
   position: relative;
@@ -396,7 +396,7 @@ onMounted(() => {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  color: #4A5568;
+  color: #FFFFFF;
   margin-bottom: 1rem;
   text-align: justify;
 }

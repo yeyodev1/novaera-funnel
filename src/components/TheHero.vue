@@ -272,7 +272,7 @@ const { open: openContactModal } = useContactModal()
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: #000; // Fondo absoluto estilo Huge Inc
+  background-color: #000000; // Fondo absoluto estilo Huge Inc
   color: colors.$white;
 }
 
@@ -340,7 +340,7 @@ const { open: openContactModal } = useContactModal()
 }
 
 .cube-front {
-  background-color: #000;
+  background-color: #000000;
   transform: rotateY(0deg);
 }
 

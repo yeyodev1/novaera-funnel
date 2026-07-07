@@ -76,7 +76,7 @@ const props = defineProps({
   transition: all 0.3s ease;
 
   &:hover {
-    background: #EEF4FF;
+    background: #111111;
     border-color: rgba(colors.$OS-BLUE, 0.3);
     transform: translateY(-4px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
@@ -129,7 +129,7 @@ const props = defineProps({
   &__role {
     @include fonts.interface-font(600);
     font-size: 0.75rem;
-    color: #8A9BB5;
+    color: #CCCCCC;
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 1.5px;
