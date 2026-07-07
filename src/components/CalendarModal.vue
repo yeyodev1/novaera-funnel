@@ -236,8 +236,8 @@ watch(() => props.open, (v) => {
               <div class="cal-options">
                 <label v-for="opt in [
                   { value: 'premium', label: 'Inversión alta (Materiales premium y garantía directa)', premium: true },
-                  { value: 'intermedio', label: 'Presupuesto intermedio' },
-                  { value: 'bajo', label: 'Busco la cotización más barata del mercado' },
+                  { value: 'intermedio', label: 'Presupuesto intermedio', premium: false },
+                  { value: 'bajo', label: 'Busco la cotización más barata del mercado', premium: false },
                 ]" :key="opt.value" class="cal-option" :class="{
                   selected: form.presupuesto === opt.value,
                   'cal-option--premium': opt.premium && form.presupuesto === opt.value,
