@@ -97,15 +97,15 @@ onMounted(() => {
 
 .nospace {
   min-height: 100vh;
-  background: #ffffff;
+  background: #000000;
   color: colors.$OS-DARK;
   display: flex;
   flex-direction: column;
 }
 
 .nospace__topbar {
-  background: #ffffff;
-  border-bottom: 1px solid #E8EDF5;
+  background: #000000;
+  border-bottom: 1px solid #222222;
   padding: 0.9rem 1.5rem;
   display: flex;
   justify-content: center;
@@ -156,7 +156,7 @@ onMounted(() => {
 
 .nospace__card {
   background: #F9FBFF;
-  border: 1px solid #E4EDF7;
+  border: 1px solid #222222;
   border-radius: 20px;
   padding: 2.5rem 2rem;
   text-align: center;

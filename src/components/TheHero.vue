@@ -628,7 +628,7 @@ const { open: openContactModal } = useContactModal()
 
 .scroll-hint__fill {
   height: 100%;
-  background: linear-gradient(90deg, colors.$BAKANO-PINK, colors.$BAKANO-PURPLE);
+  background: colors.$QS-NAVY;
   border-radius: 1px;
   transition: width 0.1s linear;
   box-shadow: 0 0 8px rgba(colors.$BAKANO-PINK, 0.6);

@@ -265,15 +265,15 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
 .vv-page {
   min-height: 100vh;
-  background: #ffffff;
+  background: #000000;
   color: colors.$OS-DARK;
   display: flex;
   flex-direction: column;
 }
 
 .vv-topbar {
-  background: #ffffff;
-  border-bottom: 1px solid #E8EDF5;
+  background: #000000;
+  border-bottom: 1px solid #222222;
   padding: 0.9rem 1.5rem;
   display: flex;
   justify-content: center;
@@ -312,8 +312,8 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: #F5F8FF;
-    border: 1px solid #E4EDF7;
+    background: #111111;
+    border: 1px solid #222222;
     border-radius: 999px;
     padding: 0.4rem 1rem;
   }
@@ -378,7 +378,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 82, 165, 0.12);
-  border: 1px solid #E4EDF7;
+  border: 1px solid #222222;
   background: colors.$OS-NAVY;
 
   wistia-player {
@@ -471,8 +471,8 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 .vv-authority {
   margin-top: 3.5rem;
   padding: 2rem;
-  background: linear-gradient(135deg, #F5F8FF 0%, #ffffff 100%);
-  border: 1px solid #E4EDF7;
+  background: #000000;
+  border: 1px solid #222222;
   border-radius: 20px;
 }
 
@@ -581,7 +581,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 }
 
 .capture-modal {
-  background: #ffffff;
+  background: #000000;
   border-radius: 20px;
   width: 100%;
   max-width: 460px;
@@ -591,8 +591,8 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   &__header {
     padding: 2rem 2rem 1.25rem;
     text-align: center;
-    background: linear-gradient(135deg, #EEF4FF 0%, #F9FBFF 100%);
-    border-bottom: 1px solid #E8EDF5;
+    background: #000000;
+    border-bottom: 1px solid #222222;
   }
 
   &__logo-img {

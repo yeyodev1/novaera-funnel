@@ -15,9 +15,9 @@ $QS-NAVY:    $NE-DEEP-PURPLE; // Brand Principal
 $QS-BLUE:    $NE-BLUE;        // Secundario
 $QS-GOLD:    $NE-YELLOW-ORANGE; // Acento
 $QS-RED:     $NE-HOT-PINK;    // CTAs y urgencia
-$QS-DARK:    $NE-BLACK;       // Texto oscuro
-$QS-LIGHT:   #F4F7FC;         // Fondo claro
-$QS-SURFACE: #F8FAFE;         // Superficies/cards
+$QS-DARK:    #FFFFFF;         // Texto claro (modo oscuro)
+$QS-LIGHT:   $NE-BLACK;       // Fondo negro
+$QS-SURFACE: #111111;         // Superficies/cards oscuras
 
 // Urgency / inmediatez
 $QS-URGENT:        $NE-HOT-PINK;

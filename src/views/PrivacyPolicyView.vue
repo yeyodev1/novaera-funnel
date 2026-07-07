@@ -198,7 +198,7 @@ onMounted(() => {
 <style scoped>
 .privacy-policy {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background: #000000;
   padding: 2rem 0;
 }
 

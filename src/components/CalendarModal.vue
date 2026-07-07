@@ -326,7 +326,7 @@ watch(() => props.open, (v) => {
 }
 
 .cal-modal {
-  background: #ffffff;
+  background: #000000;
   border-radius: 20px;
   width: 100%;
   max-width: 560px;
@@ -334,7 +334,7 @@ watch(() => props.open, (v) => {
   overflow-y: auto;
   position: relative;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
-  border: 1px solid #E4EDF7;
+  border: 1px solid #222222;
 }
 
 .cal-close {
@@ -345,7 +345,7 @@ watch(() => props.open, (v) => {
   height: 32px;
   border-radius: 50%;
   border: none;
-  background: #F5F8FF;
+  background: #111111;
   color: #8A9BB5;
   cursor: pointer;
   display: flex;
@@ -359,7 +359,7 @@ watch(() => props.open, (v) => {
 
 .cal-header {
   padding: 2rem 2rem 1.25rem;
-  border-bottom: 1px solid #F0F4FB;
+  border-bottom: 1px solid #222222;
   text-align: center;
 }
 

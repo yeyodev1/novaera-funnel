@@ -243,7 +243,7 @@ onUnmounted(() => {
       color: transparent;
       -webkit-text-stroke: 2px rgba(colors.$white, 0.9);
       // Otra opción: usar un gradiente de texto
-      // background: linear-gradient(90deg, colors.$BAKANO-PINK, colors.$BAKANO-PURPLE);
+      // background: colors.$QS-NAVY;
       // -webkit-background-clip: text;
       // -webkit-text-fill-color: transparent;
     }

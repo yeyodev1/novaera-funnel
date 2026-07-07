@@ -172,7 +172,7 @@ import ContactWizard from './ContactWizard.vue'
 }
 
 .contact__title-grad {
-  background: linear-gradient(110deg, colors.$BAKANO-PINK 0%, colors.$BAKANO-PURPLE 100%);
+  background: colors.$QS-NAVY;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -235,7 +235,7 @@ import ContactWizard from './ContactWizard.vue'
   @include fonts.heading-font(900);
   font-size: 3rem;
   line-height: 1;
-  background: linear-gradient(135deg, colors.$BAKANO-PINK, colors.$BAKANO-PURPLE);
+  background: colors.$QS-NAVY;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

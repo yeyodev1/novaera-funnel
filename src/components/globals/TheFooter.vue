@@ -328,7 +328,7 @@ $text-body: rgba(255, 255, 255, 0.65);
   }
 
   &-gradient {
-    background: linear-gradient(110deg, colors.$BAKANO-PINK 0%, colors.$BAKANO-PURPLE 100%);
+    background: colors.$QS-NAVY;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -378,7 +378,7 @@ $text-body: rgba(255, 255, 255, 0.65);
       width: 22px;
       height: 22px;
       border-radius: 50%;
-      background: linear-gradient(135deg, colors.$BAKANO-PINK, colors.$BAKANO-PURPLE);
+      background: colors.$QS-NAVY;
       color: colors.$white;
       flex-shrink: 0;
     }
@@ -443,7 +443,7 @@ $text-body: rgba(255, 255, 255, 0.65);
 
     // Botón principal: gradiente
     &--primary {
-      background: linear-gradient(135deg, colors.$BAKANO-PINK, colors.$BAKANO-PURPLE);
+      background: colors.$QS-NAVY;
       border: none;
       color: colors.$white;
       box-shadow: 0 8px 32px rgba(colors.$BAKANO-PINK, 0.25);
@@ -628,7 +628,7 @@ $text-body: rgba(255, 255, 255, 0.65);
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: linear-gradient(135deg, colors.$BAKANO-PINK, colors.$BAKANO-PURPLE);
+  background: colors.$QS-NAVY;
   flex-shrink: 0;
 }
 
@@ -676,7 +676,7 @@ $text-body: rgba(255, 255, 255, 0.65);
   @include fonts.interface-font(600);
   color: $text-muted;
   text-decoration: none;
-  background: linear-gradient(90deg, colors.$BAKANO-PINK, colors.$BAKANO-PURPLE);
+  background: colors.$QS-NAVY;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

@@ -273,7 +273,7 @@ $dark2: #11091f;
     letter-spacing: -0.04em;
     line-height: 1;
     margin: 0 0 32px;
-    background: linear-gradient(90deg, colors.$white 0%, colors.$BAKANO-PINK 60%, colors.$BAKANO-PURPLE 100%);
+    background: colors.$QS-NAVY;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -282,7 +282,7 @@ $dark2: #11091f;
   &__line {
     width: 60px;
     height: 2px;
-    background: linear-gradient(90deg, colors.$BAKANO-PINK, colors.$BAKANO-PURPLE);
+    background: colors.$QS-NAVY;
     margin: 0 auto 28px;
     border-radius: 2px;
   }

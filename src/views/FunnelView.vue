@@ -530,7 +530,7 @@ const dismissProof = () => {
 @use '@/styles/colorVariables.module.scss' as colors;
 
 .funnel {
-  background: #ffffff;
+  background: #000000;
   color: colors.$OS-DARK;
   min-height: 100vh;
   font-family: fonts.$font-secondary;
@@ -544,8 +544,8 @@ const dismissProof = () => {
 }
 
 .funnel__topbar {
-  background: #ffffff;
-  border-bottom: 1px solid #E8EDF5;
+  background: #000000;
+  border-bottom: 1px solid #222222;
   padding: 0.9rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -577,7 +577,7 @@ const dismissProof = () => {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: linear-gradient(90deg, colors.$QS-URGENT 0%, colors.$QS-URGENT-DARK 100%);
+  background: colors.$QS-URGENT;
   color: #ffffff;
   padding: 0.65rem 0.85rem;
   display: flex;
@@ -614,7 +614,7 @@ const dismissProof = () => {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: #ffffff;
+  background: #000000;
   color: colors.$QS-URGENT-DARK;
   border: 2px solid colors.$QS-URGENT-LIGHT;
   border-radius: 999px;
@@ -660,7 +660,7 @@ const dismissProof = () => {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  background: #ffffff;
+  background: #000000;
   border: 1px solid rgba(colors.$OS-NAVY, 0.08);
   border-left: 4px solid colors.$OS-BLUE;
   border-radius: 12px;
@@ -857,7 +857,7 @@ const dismissProof = () => {
 
 .funnel__hero {
   padding: 3.5rem 0 3rem;
-  background: linear-gradient(180deg, #EEF4FF 0%, #ffffff 70%);
+  background: #000000;
 }
 
 .funnel__eyebrow {
@@ -979,7 +979,7 @@ const dismissProof = () => {
   width: 76px;
   height: 76px;
   border-radius: 50%;
-  background: #ffffff;
+  background: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1092,7 +1092,7 @@ const dismissProof = () => {
 
 .funnel__problem {
   padding: 4rem 0;
-  background: #ffffff;
+  background: #000000;
 }
 
 .funnel__section-title {
@@ -1123,7 +1123,7 @@ const dismissProof = () => {
   align-items: flex-start;
   padding: 1.25rem;
   background: #F9FBFF;
-  border: 1px solid #E4EDF7;
+  border: 1px solid #222222;
   border-radius: 12px;
 
   strong {
@@ -1150,7 +1150,7 @@ const dismissProof = () => {
 
 .funnel__method {
   padding: 4rem 0;
-  background: #F5F8FF;
+  background: #111111;
 }
 
 .funnel__method .funnel__container {
@@ -1163,8 +1163,8 @@ const dismissProof = () => {
   display: flex;
   gap: 1.5rem;
   align-items: flex-start;
-  background: #ffffff;
-  border: 1px solid #E4EDF7;
+  background: #000000;
+  border: 1px solid #222222;
   border-radius: 16px;
   padding: 1.75rem 2rem;
   position: relative;
@@ -1215,7 +1215,7 @@ const dismissProof = () => {
 
 .funnel__testimonials {
   padding: 4rem 0;
-  background: #ffffff;
+  background: #000000;
 }
 
 .funnel__test-carousel {
@@ -1225,7 +1225,7 @@ const dismissProof = () => {
 }
 
 .funnel__test-card {
-  background: #F5F8FF;
+  background: #111111;
   border: 1px solid rgba(colors.$OS-NAVY, 0.1);
   border-left: 4px solid colors.$OS-NAVY;
   border-radius: 16px;
@@ -1295,7 +1295,7 @@ const dismissProof = () => {
 
 .funnel__authority {
   padding: 4rem 0;
-  background: linear-gradient(135deg, #EEF4FF 0%, #F9FBFF 100%);
+  background: #000000;
   border-top: 1px solid #E4EDF7;
   border-bottom: 1px solid #E4EDF7;
 }

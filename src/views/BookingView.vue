@@ -125,15 +125,15 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
 
 .booking {
   min-height: 100vh;
-  background: #ffffff;
+  background: #000000;
   color: colors.$OS-DARK;
   display: flex;
   flex-direction: column;
 }
 
 .booking__topbar {
-  background: #ffffff;
-  border-bottom: 1px solid #E8EDF5;
+  background: #000000;
+  border-bottom: 1px solid #222222;
   padding: 0.9rem 1.5rem;
   display: flex;
   justify-content: center;
@@ -215,7 +215,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
 }
 
 .calendar__wrap {
-  border-radius: 16px; overflow: hidden; border: 1px solid #E4EDF7;
+  border-radius: 16px; overflow: hidden; border: 1px solid #222222;
   box-shadow: 0 4px 24px rgba(0, 82, 165, 0.07);
 }
 

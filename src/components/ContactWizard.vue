@@ -528,14 +528,14 @@ const urgencyOpts = [
 
   &.is-active {
     border-color: colors.$BAKANO-PINK;
-    background: linear-gradient(135deg, colors.$BAKANO-PINK, colors.$BAKANO-PURPLE);
+    background: colors.$QS-NAVY;
     color: colors.$white;
     box-shadow: 0 0 16px rgba(colors.$BAKANO-PINK, 0.35);
   }
 
   &.is-done {
     border-color: colors.$BAKANO-PINK;
-    background: linear-gradient(135deg, colors.$BAKANO-PINK, colors.$BAKANO-PURPLE);
+    background: colors.$QS-NAVY;
     color: colors.$white;
   }
 }
@@ -549,7 +549,7 @@ const urgencyOpts = [
   min-width: 32px;
 
   &.is-active {
-    background: linear-gradient(90deg, colors.$BAKANO-PINK, colors.$BAKANO-PURPLE);
+    background: colors.$QS-NAVY;
   }
 }
 
@@ -851,7 +851,7 @@ const urgencyOpts = [
   cursor: pointer;
   font-size: 0.9rem;
   letter-spacing: 0.5px;
-  background: linear-gradient(135deg, colors.$BAKANO-PINK, colors.$BAKANO-PURPLE);
+  background: colors.$QS-NAVY;
   color: colors.$white;
   transition: opacity 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
   flex: 1;
@@ -924,7 +924,7 @@ const urgencyOpts = [
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: linear-gradient(135deg, colors.$BAKANO-PINK, colors.$BAKANO-PURPLE);
+  background: colors.$QS-NAVY;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -663,7 +663,7 @@ $accent: colors.$OS-RED;
   width: 280px;
   max-height: 240px;
   overflow: hidden;
-  background: #ffffff;
+  background: #000000;
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 12px;
   box-shadow: 0 16px 48px rgba(0,0,0,0.15);
@@ -807,7 +807,7 @@ $accent: colors.$OS-RED;
 }
 
 .rmodal__submit--urgent {
-  background: linear-gradient(90deg, colors.$ALU-URGENT 0%, colors.$ALU-URGENT-DARK 100%);
+  background: colors.$ALU-URGENT;
   box-shadow: 0 8px 28px rgba(colors.$ALU-URGENT, 0.45);
   animation: urgent-pulse 2s ease-in-out infinite;
   &:hover:not(:disabled) { box-shadow: 0 14px 40px rgba(colors.$ALU-URGENT, 0.6); }
@@ -905,7 +905,7 @@ $accent: colors.$OS-RED;
 
 .rmodal__urgency-opt-dot {
   width: 18px; height: 18px; border-radius: 50%;
-  border: 2px solid #c5d3e3; background: #ffffff; flex-shrink: 0;
+  border: 2px solid #c5d3e3; background: #000000; flex-shrink: 0;
   transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
 
   .rmodal__urgency-opt--sel & {

@@ -146,7 +146,7 @@ onUnmounted(() => {
   &__bar {
     height: 100%;
     border-radius: 99px;
-    background: linear-gradient(90deg, colors.$BAKANO-PINK, colors.$BAKANO-PURPLE);
+    background: colors.$QS-NAVY;
     transition: width 0.12s linear;
     box-shadow: 0 0 12px rgba(colors.$BAKANO-PINK, 0.6);
   }

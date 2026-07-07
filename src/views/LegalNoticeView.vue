@@ -206,7 +206,7 @@ onMounted(() => {
 
 .legal-notice {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: #000000;
   padding: 2rem 0;
 
   &__container {
@@ -225,7 +225,7 @@ onMounted(() => {
   }
 
   &__header {
-    background: linear-gradient(135deg, #D4A373 0%, #BC6C25 100%);
+    background: #000000;
     color: white;
     padding: 3rem 2rem;
     text-align: center;

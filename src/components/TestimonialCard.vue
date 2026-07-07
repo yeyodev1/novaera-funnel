@@ -122,7 +122,7 @@ $quote-color:  rgba(255, 255, 255, 0.80);
     line-height: 0.75;
     margin-bottom: 12px;
     // Gradiente como color de texto
-    background: linear-gradient(135deg, colors.$BAKANO-PINK 0%, colors.$BAKANO-PURPLE 100%);
+    background: colors.$QS-NAVY;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -224,7 +224,7 @@ $quote-color:  rgba(255, 255, 255, 0.80);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, colors.$BAKANO-PINK 0%, colors.$BAKANO-PURPLE 100%);
+    background: colors.$QS-NAVY;
     color: colors.$white;
     transition: transform 0.25s ease;
 
@@ -238,7 +238,7 @@ $quote-color:  rgba(255, 255, 255, 0.80);
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, colors.$BAKANO-PINK, colors.$BAKANO-PURPLE);
+    background: colors.$QS-NAVY;
     opacity: 0;
     transition: opacity 0.35s ease;
   }

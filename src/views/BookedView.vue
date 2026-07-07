@@ -151,15 +151,15 @@ const nextSteps = [
 
 .booked {
   min-height: 100vh;
-  background: #ffffff;
+  background: #000000;
   color: colors.$OS-DARK;
   display: flex;
   flex-direction: column;
 }
 
 .booked__topbar {
-  background: #ffffff;
-  border-bottom: 1px solid #E8EDF5;
+  background: #000000;
+  border-bottom: 1px solid #222222;
   padding: 0.9rem 1.5rem;
   display: flex;
   justify-content: center;
@@ -195,8 +195,8 @@ const nextSteps = [
 .booked__hero {
   text-align: center;
   padding: 2rem;
-  background: linear-gradient(135deg, #EEF4FF 0%, #F9FBFF 100%);
-  border: 1px solid #E4EDF7;
+  background: #000000;
+  border: 1px solid #222222;
   border-radius: 20px;
 }
 
@@ -248,7 +248,7 @@ const nextSteps = [
 
 .booked__step {
   background: #F9FBFF;
-  border: 1px solid #E4EDF7;
+  border: 1px solid #222222;
   border-radius: 14px;
   padding: 1.5rem 1.25rem;
   position: relative;
@@ -296,7 +296,7 @@ const nextSteps = [
   display: flex;
   gap: 1.25rem;
   align-items: flex-start;
-  background: #F5F8FF;
+  background: #111111;
   border: 1px solid rgba(colors.$OS-NAVY, 0.1);
   border-radius: 16px;
   padding: 1.5rem;

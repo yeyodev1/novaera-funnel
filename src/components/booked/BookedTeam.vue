@@ -70,7 +70,7 @@ const props = defineProps({
   align-items: center;
   gap: 1.25rem;
   padding: 1.25rem;
-  background: #F5F8FF;
+  background: #111111;
   border: 1px solid rgba(colors.$OS-NAVY, 0.1);
   border-radius: 28px;
   transition: all 0.3s ease;
@@ -92,7 +92,7 @@ const props = defineProps({
     padding: 4px;
     transition: all 0.3s ease;
     flex-shrink: 0;
-    background: #ffffff;
+    background: #000000;
 
     @media (min-width: 768px) { width: 110px; height: 110px; }
   }
