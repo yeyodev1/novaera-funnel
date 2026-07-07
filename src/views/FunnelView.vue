@@ -1651,10 +1651,9 @@ const dismissProof = () => {
 }
 
 .funnel__footer-logo-img {
-  @include fonts.heading-font(800);
-  font-size: 1.1rem;
-  color: rgba(#ffffff, 0.7);
-  letter-spacing: 0.08em;
+  height: 32px;
+  width: auto;
+  object-fit: contain;
   margin: 0;
 }
 
