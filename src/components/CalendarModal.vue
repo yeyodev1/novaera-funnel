@@ -226,7 +226,7 @@ watch(() => props.open, (v) => {
               <span v-if="touched && !form.volumen" class="cal-error">Selecciona una opción</span>
             </fieldset>
 
-            <!-- Q3 — Presupuesto logístico -->
+            <!-- Q3 — Presupuesto de proyecto -->
             <fieldset class="cal-fieldset cal-fieldset--budget" :class="{ 'has-error': touched && !form.presupuesto, 'has-investment': form.presupuesto && form.presupuesto !== 'bajo' }">
               <legend class="cal-legend cal-legend--budget">
                 <span class="cal-q-num cal-q-num--budget">03</span>

@@ -137,7 +137,7 @@ const PROOFS: Proof[] = [
   { who: 'Importadora y Distribuidora', where: 'Quito', minutesAgo: 31 },
   { who: 'Consorcio Empresarial', where: 'Machala', minutesAgo: 38 },
   { who: 'Centro Médico Especializado', where: 'Guayaquil', minutesAgo: 44 },
-  { who: 'Empresa Logística Andina', where: 'Quito', minutesAgo: 50 },
+  { who: 'Distribuidora y Almacenes Sierra', where: 'Quito', minutesAgo: 50 },
   { who: 'Sector Inmobiliario Corporativo', where: 'Guayaquil', minutesAgo: 57 },
 ]
 
@@ -365,12 +365,12 @@ const dismissProof = () => {
             <div class="funnel__pillar-icon" aria-hidden="true">
               <i class="fa-solid fa-search"></i>
             </div>
-            <h3 class="funnel__pillar-title">Auditoría Técnica y Control Previo Anticipado</h3>
+            <h3 class="funnel__pillar-title">Auditoría Técnica y Levantamiento Digital en Sitio</h3>
             <p class="funnel__pillar-body">
-              No esperamos a que el contenedor llegue a puerto para revisar la documentación.
-              Analizamos en origen cada partida arancelaria, certificado y factura antes de que
-              la carga se active en el buque. Resultado: más del 90% de reducción de incidencias
-              y retenciones aduaneras.
+              Realizamos un análisis estructural detallado, control fotogramétrico y escaneo de tu
+              fachada o local actual antes de iniciar la producción. Detectamos vicios ocultos y
+              restricciones de zonificación municipal para garantizar viabilidad absoluta.
+              Resultado: cero retrasos por trámites u omisiones técnicas.
             </p>
           </div>
         </div>
@@ -381,12 +381,12 @@ const dismissProof = () => {
             <div class="funnel__pillar-icon" aria-hidden="true">
               <i class="fa-solid fa-arrows-spin"></i>
             </div>
-            <h3 class="funnel__pillar-title">Sincronización Integral de la Cadena Multimodal</h3>
+            <h3 class="funnel__pillar-title">Ingeniería de Detalle y Sincronización de Obra</h3>
             <p class="funnel__pillar-body">
-              Unificamos transporte internacional (marítimo, aéreo, terrestre), despacho aduanero,
-              estiba y transporte local blindado con candados satelitales y escolta armada.
-              Un solo punto de control para toda la cadena. Optimizamos tiempos de tránsito
-              terrestre hasta en un 32%.
+              Unificamos el diseño arquitectónico, la fabricación industrializada en planta y el
+              montaje especializado en sitio. Coordinamos cuadrillas de obra civil, iluminación
+              de marca e instalaciones en paralelo bajo una sola dirección de proyecto.
+              Optimizamos los tiempos de entrega hasta en un 32%.
             </p>
           </div>
         </div>
@@ -397,12 +397,12 @@ const dismissProof = () => {
             <div class="funnel__pillar-icon" aria-hidden="true">
               <i class="fa-solid fa-shield"></i>
             </div>
-            <h3 class="funnel__pillar-title">Blindaje de Flujo de Caja y Gestión de Riesgos</h3>
+            <h3 class="funnel__pillar-title">Materiales de Alto Rendimiento y Garantía Directa</h3>
             <p class="funnel__pillar-body">
-              Precalculamos matemáticamente cada tasa y tributo para eliminar imprevistos financieros.
-              Estructuramos pólizas de seguro al 100% del valor real de la mercancía. Tu logística
-              deja de ser un centro de costo imprevisible y se convierte en un activo medible
-              de alto rendimiento.
+              Seleccionamos exclusivamente paneles composite de aluminio (ACM) de grado premium,
+              vidrios de alta seguridad con protección UV y sistemas LED de bajo consumo. Garantizamos
+              resistencia al desgaste climático extremo y ofrecemos un respaldo de hasta 5 años
+              en la estructura comercial.
             </p>
           </div>
         </div>
