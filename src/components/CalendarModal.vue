@@ -60,8 +60,8 @@ const handleSubmit = async () => {
   }
   const presupuestoLabel: Record<string, string> = {
     premium: 'Presupuesto premium (Inversión alta)',
-    intermedio: 'Presupuesto intermedio',
-    bajo: 'Cotización más barata / Taller artesanal',
+    intermedio: 'Presupuesto intermedio (Desde $1,200)',
+    bajo: 'Cotización más barata / Menos de $1,200',
   }
 
   const etiquetas = [
@@ -236,8 +236,8 @@ watch(() => props.open, (v) => {
               <div class="cal-options">
                 <label v-for="opt in [
                   { value: 'premium', label: 'Inversión alta (Materiales premium y garantía directa)', premium: true },
-                  { value: 'intermedio', label: 'Presupuesto intermedio', premium: false },
-                  { value: 'bajo', label: 'Busco la cotización más barata del mercado', premium: false },
+                  { value: 'intermedio', label: 'Presupuesto intermedio (Desde $1,200)', premium: false },
+                  { value: 'bajo', label: 'Busco la cotización más barata del mercado (Menos de $1,200)', premium: false },
                 ]" :key="opt.value" class="cal-option" :class="{
                   selected: form.presupuesto === opt.value,
                   'cal-option--premium': opt.premium && form.presupuesto === opt.value,
