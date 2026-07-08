@@ -5,7 +5,14 @@ const contactName = computed(() => {
   try {
     const stored = localStorage.getItem('os_contact')
     if (!stored) return ''
-    return JSON.parse(stored).nombre ?? ''
+    const rawName = JSON.parse(stored).nombre ?? ''
+    if (!rawName) return ''
+    return rawName
+      .trim()
+      .toLowerCase()
+      .split(/\s+/)
+      .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ')
   } catch { return '' }
 })
 
