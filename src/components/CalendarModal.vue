@@ -29,7 +29,7 @@ const isValid = () =>
   !!form.value.tipo &&
   !!form.value.volumen &&
   !!form.value.presupuesto &&
-  wordCount(form.value.reto) >= 10 &&
+  wordCount(form.value.reto) >= 5 &&
   form.value.consent
 
 const qualifies = () => {
@@ -258,7 +258,7 @@ watch(() => props.open, (v) => {
             </fieldset>
 
             <!-- Q4 — Reto -->
-            <fieldset class="cal-fieldset" :class="{ 'has-error': touched && wordCount(form.reto) < 10 }">
+            <fieldset class="cal-fieldset" :class="{ 'has-error': touched && wordCount(form.reto) < 5 }">
               <legend class="cal-legend">
                 <span class="cal-q-num">04</span>
                 ¿Cuál es tu principal desafío con tu infraestructura actual?
@@ -271,10 +271,10 @@ watch(() => props.open, (v) => {
                 aria-describedby="q4-hint"
               ></textarea>
               <span id="q4-hint" class="cal-hint">
-                {{ wordCount(form.reto) }}/10 palabras mínimo
+                {{ wordCount(form.reto) }}/5 palabras mínimo
               </span>
-              <span v-if="touched && wordCount(form.reto) < 10" class="cal-error">
-                Describe tu desafío con al menos 10 palabras
+              <span v-if="touched && wordCount(form.reto) < 5" class="cal-error">
+                Describe tu desafío con al menos 5 palabras
               </span>
             </fieldset>
 
