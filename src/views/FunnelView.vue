@@ -367,7 +367,7 @@ const dismissProof = () => {
             </div>
             <h3 class="funnel__pillar-title">Auditoría Técnica y Levantamiento Digital en Sitio</h3>
             <p class="funnel__pillar-body">
-              Realizamos un análisis estructural detallado, control fotogramétrico y escaneo de tu
+              Realizamos un análisis estructural detallado y escaneo de tu
               fachada o local actual antes de iniciar la producción. Detectamos vicios ocultos y
               restricciones de zonificación municipal para garantizar viabilidad absoluta.
               Resultado: cero retrasos por trámites u omisiones técnicas.
