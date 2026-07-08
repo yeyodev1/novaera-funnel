@@ -186,7 +186,6 @@ const dismissProof = () => {
 
     <header class="funnel__topbar">
       <img src="@/assets/logos/logo.png" class="funnel__logo-img" alt="NOVAERA Logo" />
-      <p class="funnel__logo-sub">Ingeniería de Marca - Infraestructura Comercial</p>
     </header>
 
     <div class="funnel__urgency" role="banner">
@@ -363,13 +362,14 @@ const dismissProof = () => {
           <div class="funnel__pillar-num" aria-hidden="true">01</div>
           <div class="funnel__pillar-content">
             <div class="funnel__pillar-icon" aria-hidden="true">
-              <i class="fa-solid fa-building"></i>
+              <i class="fa-solid fa-pen-ruler"></i>
             </div>
-            <h3 class="funnel__pillar-title">Ingeniería de Fachadas de Alto Impacto</h3>
+            <h3 class="funnel__pillar-title">Diseño Conceptual y Planificación Visual</h3>
             <p class="funnel__pillar-body">
-              Diseñamos e instalamos fachadas monumentales con paneles compuestos (alucobond), 
-              vidrios templados de seguridad y logos corpóreos luminosos para capturar el tráfico visual 
-              y transformar tu edificio en un hito de alta autoridad.
+              Creamos la propuesta estética de tu fachada, letreros o espacios
+              comerciales antes de iniciar la producción. Visualiza con precisión el impacto que
+              proyectará tu marca para asegurar que cumpla con los estándares premium de tu empresa.
+              Resultado: una imagen de alto estatus garantizada.
             </p>
           </div>
         </div>
@@ -378,13 +378,14 @@ const dismissProof = () => {
           <div class="funnel__pillar-num" aria-hidden="true">02</div>
           <div class="funnel__pillar-content">
             <div class="funnel__pillar-icon" aria-hidden="true">
-              <i class="fa-solid fa-couch"></i>
+              <i class="fa-solid fa-arrows-spin"></i>
             </div>
-            <h3 class="funnel__pillar-title">Adecuación Interior y Mobiliario Comercial de Estatus</h3>
+            <h3 class="funnel__pillar-title">Ingeniería de Detalle y Sincronización de Obra</h3>
             <p class="funnel__pillar-body">
-              Optimizamos los flujos de tránsito, diseñamos iluminación de precisión y fabricamos 
-              mobiliario premium a medida (counters, viniles HD). Cada centímetro acelera cierres 
-              de negocios y proyecta solidez inquebrantable.
+              Unificamos el diseño arquitectónico, la fabricación industrializada en planta y el
+              montaje especializado en sitio. Coordinamos cuadrillas de obra civil, iluminación
+              de marca e instalaciones en paralelo bajo una sola dirección de proyecto.
+              Optimizamos los tiempos de entrega hasta en un 32%.
             </p>
           </div>
         </div>
@@ -393,13 +394,14 @@ const dismissProof = () => {
           <div class="funnel__pillar-num" aria-hidden="true">03</div>
           <div class="funnel__pillar-content">
             <div class="funnel__pillar-icon" aria-hidden="true">
-              <i class="fa-solid fa-truck-fast"></i>
+              <i class="fa-solid fa-shield"></i>
             </div>
-            <h3 class="funnel__pillar-title">Blindaje de Marca Exterior y Branding Vehicular</h3>
+            <h3 class="funnel__pillar-title">Materiales de Alto Rendimiento y Garantía Directa</h3>
             <p class="funnel__pillar-body">
-              Transformamos cada camión o vehículo corporativo en una valla publicitaria móvil 
-              de alto impacto con viniles automotrices importados de alta durabilidad, garantizando 
-              uniformidad de marca en toda tu flota.
+              Seleccionamos exclusivamente paneles composite de aluminio (ACM) de grado premium,
+              vidrios de alta seguridad con protección UV y sistemas LED de bajo consumo. Garantizamos
+              resistencia al desgaste climático extremo y ofrecemos un respaldo de hasta 5 años
+              en la estructura comercial.
             </p>
           </div>
         </div>
