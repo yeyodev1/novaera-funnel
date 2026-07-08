@@ -57,7 +57,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
   <div class="booking">
 
     <header class="booking__topbar">
-      <img src="@/assets/logos/logo.png" class="booking__logo-img" alt="Nova Era Logo" />
+      <img src="@/assets/logos/logo.png" class="booking__logo-img" alt="NOVAERA Logo" />
     </header>
 
     <main class="booking__main">
@@ -88,7 +88,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
           <span class="booking__title-accent">diagnóstico de infraestructura</span>
         </h1>
         <p class="booking__subtitle">
-          Una sesión de 30 minutos con el equipo de Nova Era para analizar el potencial de tu
+          Una sesión de 30 minutos con el equipo de NOVAERA para analizar el potencial de tu
           fachada o instalaciones. Identificaremos áreas clave de mejora para posicionar
           tu marca como líder en el mercado.
         </p>
@@ -98,7 +98,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
         <iframe
           :src="calendarUrl"
           :style="{ height: iframeHeight + 'px' }"
-          title="Agenda tu diagnóstico con Nova Era"
+          title="Agenda tu diagnóstico con NOVAERA"
           class="calendar__iframe"
           frameborder="0"
           scrolling="no"
@@ -113,7 +113,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
         <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
-      <p class="booking__footer-copy">© {{ new Date().getFullYear() }} Nova Era. Todos los derechos reservados.</p>
+      <p class="booking__footer-copy">© {{ new Date().getFullYear() }} NOVAERA. Todos los derechos reservados.</p>
     </footer>
 
   </div>

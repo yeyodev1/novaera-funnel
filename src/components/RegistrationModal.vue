@@ -76,7 +76,7 @@ const urgencyOpts: { value: Exclude<Urgency, ''>; label: string; sub: string; ho
 ]
 
 function calcTags(urgency: Urgency): string[] {
-  const base = ['novaera', 'funnel-registro']
+  const base = ['NOVAERA', 'funnel-registro']
   if (urgency === 'inmediato')    return [...base, 'urgente', 'contrato-inmediato']
   if (urgency === 'proximos')     return [...base, 'urgencia-media']
   if (urgency === 'planificando') return [...base, 'planificando']
@@ -89,7 +89,7 @@ function buildNote(f: typeof form.value, country: string, pageDuration: number):
   const secs = pageDuration % 60
   return [
     '━━━━━━━━━━━━━━━━━━━━━━━━',
-    'NOVA ERA — Registro Inicial',
+    'NOVAERA — Registro Inicial',
     '━━━━━━━━━━━━━━━━━━━━━━━━',
     `👤 ${f.nombre} ${f.apellido}`,
     `📧 ${f.email}`,
@@ -223,13 +223,13 @@ const handleSubmit = async () => {
     notas: buildNote(form.value, selectedCountry.value.name, pageDur),
     nota: buildNote(form.value, selectedCountry.value.name, pageDur),
     pageDuration: pageDur,
-    source: 'novaera-web',
+    source: 'NOVAERA-web',
     timestamp: new Date().toISOString(),
     event_id: leadEventId,
     ...getStoredFbParams(),
   }
 
-  console.info('[Nova Era Registro]', payload)
+  console.info('[NOVAERA Registro]', payload)
 
   const webhookUrl = import.meta.env.VITE_WEBHOOK_REGISTRO ?? 'https://services.leadconnectorhq.com/hooks/AIfaQhtY6ww2dKc5xq8r/webhook-trigger/EHeiuQ0FuekJ68p7JWbd'
   await fetch(webhookUrl, {

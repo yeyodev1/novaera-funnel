@@ -65,9 +65,9 @@ const handleSubmit = async () => {
   }
 
   const etiquetas = [
-    'funnel-novaera',
+    'funnel-NOVAERA',
     'step-2-cualificacion',
-    califica ? 'califica-novaera' : 'no-califica-novaera',
+    califica ? 'califica-NOVAERA' : 'no-califica-NOVAERA',
     `tipo-${form.value.tipo}`,
     `tamano-${form.value.volumen}`,
     `budget-${form.value.presupuesto}`,
@@ -75,7 +75,7 @@ const handleSubmit = async () => {
 
   const notas = `
 ━━━━━━━━━━━━━━━━━━━━━━━━
-NOVA ERA — Cualificación
+NOVAERA — Cualificación
 ━━━━━━━━━━━━━━━━━━━━━━━━
 👤 ${contact.nombre} ${contact.apellido}
 📧 ${contact.email}
@@ -279,7 +279,7 @@ watch(() => props.open, (v) => {
               <input type="checkbox" v-model="form.consent" />
               <span class="cal-consent__box" aria-hidden="true" />
               <span class="cal-consent__text">
-                Acepto que Nova Era me contacte para brindarme una sesión de diagnóstico de infraestructura.
+                Acepto que NOVAERA me contacte para brindarme una sesión de diagnóstico de infraestructura.
               </span>
             </label>
             <span v-if="touched && !form.consent" class="cal-error">Debes aceptar para continuar</span>

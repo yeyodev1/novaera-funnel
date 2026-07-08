@@ -78,12 +78,12 @@ const testimonials = [
     role: 'Grupo Corporativo — Sector Automotriz',
   },
   {
-    quote: 'Si mañana retiro mi marca y coloco el letrero de mi competencia, nadie notaría la diferencia. Entendimos que necesitábamos dominar visualmente el mercado, no solo cumplir. Nova Era transformó nuestras fachadas en verdaderos activos comerciales.',
+    quote: 'Si mañana retiro mi marca y coloco el letrero de mi competencia, nadie notaría la diferencia. Entendimos que necesitábamos dominar visualmente el mercado, no solo cumplir. NOVAERA transformó nuestras fachadas en verdaderos activos comerciales.',
     author: 'Director General',
     role: 'Corporación Multinacional',
   },
   {
-    quote: 'Nuestros espacios estaban muertos comercialmente y atrapados en una guerra de precios. Gracias a la ingeniería de alto valor comercial de Nova Era, elevamos drásticamente nuestro valor percibido y facturamos con fluidez.',
+    quote: 'Nuestros espacios estaban muertos comercialmente y atrapados en una guerra de precios. Gracias a la ingeniería de alto valor comercial de NOVAERA, elevamos drásticamente nuestro valor percibido y facturamos con fluidez.',
     author: 'Gerente General',
     role: 'Franquicia en expansión',
   },
@@ -185,7 +185,7 @@ const dismissProof = () => {
   <div class="funnel">
 
     <header class="funnel__topbar">
-      <img src="@/assets/logos/logo.png" class="funnel__logo-img" alt="Nova Era Logo" />
+      <img src="@/assets/logos/logo.png" class="funnel__logo-img" alt="NOVAERA Logo" />
       <p class="funnel__logo-sub">Ingeniería de Marca & Infraestructura Comercial</p>
     </header>
 
@@ -256,7 +256,7 @@ const dismissProof = () => {
         </h1>
 
         <p class="funnel__hero-sub">
-          Descubre cómo el sistema premium de Nova Era transforma las fachadas y los espacios comerciales de empresas líderes,
+          Descubre cómo el sistema premium de NOVAERA transforma las fachadas y los espacios comerciales de empresas líderes,
           eliminando los retrasos de proveedores informales y convirtiendo tu infraestructura en una 
           máquina de atracción comercial masiva.
         </p>
@@ -354,7 +354,7 @@ const dismissProof = () => {
 
     <section class="funnel__method" aria-labelledby="method-heading">
       <div class="funnel__container">
-        <p class="funnel__section-label">Sistema Nova Era</p>
+        <p class="funnel__section-label">Sistema NOVAERA</p>
         <h2 id="method-heading" class="funnel__section-title">
           Infraestructura de alto valor comercial en 3 pilares
         </h2>
@@ -413,7 +413,7 @@ const dismissProof = () => {
       <div class="funnel__container">
         <p class="funnel__section-label">Liderazgo de Mercado</p>
         <h2 id="testimonials-heading" class="funnel__section-title">
-          Empresas que confían en Nova Era
+          Empresas que confían en NOVAERA
         </h2>
 
         <div class="funnel__test-carousel">
@@ -466,7 +466,7 @@ const dismissProof = () => {
           <p class="funnel__authority-role">Más de 19 años de dominio en el mercado nacional</p>
           <p class="funnel__authority-bio">
             Durante décadas, hemos presenciado cómo empresas líderes queman su presupuesto en publicidad y licitaciones, solo para perder frente a competidores que proyectan una imagen superior. 
-            El mercado ha aceptado que el diseño sea tratado como un gasto menor con materiales dudosos. En <strong>Nova Era</strong> nacimos para resolver ese vacío. Hemos transformado los espacios de firmas como <strong>Agripac, Kia, Primax, Dakar, Corpei, Mvesa y Wendy's</strong>, entregando calidad premium directa de fábrica sin excusas ni improvisaciones.
+            El mercado ha aceptado que el diseño sea tratado como un gasto menor con materiales dudosos. En <strong>NOVAERA</strong> nacimos para resolver ese vacío. Hemos transformado los espacios de firmas como <strong>Agripac, Kia, Primax, Dacar, Corpei, y Wendy's</strong>, entregando calidad premium directa de fábrica sin excusas ni improvisaciones.
           </p>
           <ul class="funnel__authority-creds" role="list">
             <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> 19 años de experiencia corporativa e industrial.</li>
@@ -508,14 +508,14 @@ const dismissProof = () => {
 
     <footer class="funnel__footer">
       <div class="funnel__container funnel__footer-inner">
-        <img src="@/assets/logos/logo.png" class="funnel__footer-logo-img" alt="Nova Era Logo" />
+        <img src="@/assets/logos/logo.png" class="funnel__footer-logo-img" alt="NOVAERA Logo" />
         <p class="funnel__footer-desc">Ingeniería de Marca e Infraestructura Comercial</p>
         <nav class="funnel__footer-links" aria-label="Legal">
           <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
           <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
         </nav>
         <p class="funnel__footer-copy">
-          © {{ new Date().getFullYear() }} Nova Era. Todos los derechos reservados.
+          © {{ new Date().getFullYear() }} NOVAERA. Todos los derechos reservados.
         </p>
       </div>
     </footer>
@@ -916,8 +916,8 @@ const dismissProof = () => {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  background: colors.$QS-URGENT-BG;
-  border-left: 4px solid colors.$QS-URGENT;
+  background: rgba(colors.$QS-BLUE, 0.08);
+  border-left: 4px solid colors.$QS-BLUE;
   border-radius: 8px;
   padding: 0.85rem 1rem;
   margin: 1.25rem 0 1.5rem;
@@ -927,13 +927,13 @@ const dismissProof = () => {
   font-weight: 600;
 
   i {
-    color: colors.$QS-URGENT;
+    color: colors.$QS-BLUE;
     font-size: 1.15rem;
     flex-shrink: 0;
   }
 
   strong {
-    color: colors.$QS-URGENT-DARK;
+    color: colors.$OS-DARK;
     font-weight: 800;
   }
 
@@ -952,11 +952,11 @@ const dismissProof = () => {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(colors.$OS-RED, 0.12);
-  border: 1px solid rgba(colors.$OS-RED, 0.35);
+  background: rgba(colors.$QS-BLUE, 0.08);
+  border: 1px solid rgba(colors.$QS-BLUE, 0.25);
   border-radius: 999px;
   padding: 0.35rem 0.85rem;
-  color: #FFD666;
+  color: #E2E8F0;
   font-family: fonts.$font-interface;
   font-size: 0.78rem;
   font-weight: 800;
@@ -1282,7 +1282,7 @@ const dismissProof = () => {
 
 .funnel__problem-icon {
   font-size: 1.2rem;
-  color: colors.$OS-RED;
+  color: colors.$QS-BLUE;
   flex-shrink: 0;
   margin-top: 2px;
 }

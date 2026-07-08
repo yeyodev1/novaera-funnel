@@ -14,7 +14,7 @@ files.forEach(f => {
   let content = fs.readFileSync(f, 'utf8');
   
   // replace html
-  content = content.replace(/<h2 class="([^"]*)logo-text">.*?<\/h2>/g, '<img src="@/assets/logos/logo.png" class="$1logo-img" alt="Nova Era Logo" />');
+  content = content.replace(/<h2 class="([^"]*)logo-text">.*?<\/h2>/g, '<img src="@/assets/logos/logo.png" class="$1logo-img" alt="NOVAERA Logo" />');
   
   // replace CSS class name
   content = content.replace(/logo-text/g, 'logo-img');

@@ -100,7 +100,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   <div class="vv-page">
 
     <header class="vv-topbar">
-      <img src="@/assets/logos/logo.png" class="vv-topbar__logo-img" alt="Nova Era Logo" />
+      <img src="@/assets/logos/logo.png" class="vv-topbar__logo-img" alt="NOVAERA Logo" />
     </header>
 
     <main class="vv-main">
@@ -120,7 +120,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
         </p>
         <h1 class="vv-h1">
           Descubre por qué las grandes corporaciones
-          <span class="vv-accent">eligen a Nova Era</span>
+          <span class="vv-accent">eligen a NOVAERA</span>
         </h1>
         <p class="vv-subtitle">
           Ve el video completo y descubre cómo dominar visualmente tu mercado,
@@ -193,7 +193,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
         <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
-      <p class="vv-footer__copy">© {{ new Date().getFullYear() }} Nova Era. Todos los derechos reservados.</p>
+      <p class="vv-footer__copy">© {{ new Date().getFullYear() }} NOVAERA. Todos los derechos reservados.</p>
     </footer>
 
   </div>
@@ -205,7 +205,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
       <div v-if="captureOpen" class="capture-overlay" role="dialog" aria-modal="true" aria-labelledby="capture-title">
         <div class="capture-modal">
           <div class="capture-modal__header">
-            <img src="@/assets/logos/logo.png" class="capture-modal__logo-img" alt="Nova Era Logo" />
+            <img src="@/assets/logos/logo.png" class="capture-modal__logo-img" alt="NOVAERA Logo" />
             <h2 id="capture-title" class="capture-modal__title">
               Antes de ver el video, <span>confirma tus datos</span>
             </h2>

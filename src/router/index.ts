@@ -31,11 +31,11 @@ const router = createRouter({
       name: 'funnel',
       component: FunnelView,
       meta: {
-        title: 'Nova Era | Ingeniería de Marca e Infraestructura Comercial',
+        title: 'NOVAERA | Ingeniería de Marca e Infraestructura Comercial',
         description:
-          'Nova Era — Especialistas en infraestructura comercial premium. Transformamos fachadas corporativas, adecuación interior y branding vehicular sin retrasos ni improvisaciones. Diagnóstico gratuito.',
+          'NOVAERA — Especialistas en infraestructura comercial premium. Transformamos fachadas corporativas, adecuación interior y branding vehicular sin retrasos ni improvisaciones. Diagnóstico gratuito.',
         canonical: 'https://novaera.ec/',
-        ogTitle: 'Nova Era | Infraestructura Comercial Premium',
+        ogTitle: 'NOVAERA | Infraestructura Comercial Premium',
         ogDescription:
           'Domina visualmente tu mercado. Construimos fachadas corporativas y espacios comerciales que proyectan el verdadero nivel de éxito de tu empresa.',
         ogUrl: 'https://novaera.ec/',
@@ -46,10 +46,10 @@ const router = createRouter({
       name: 'video',
       component: VideoView,
       meta: {
-        title: 'Mira el video | Nova Era — Paso 1 de 2',
+        title: 'Mira el video | NOVAERA — Paso 1 de 2',
         description: 'Descubre cómo una infraestructura de alto valor aumenta tu autoridad comercial.',
         canonical: 'https://novaera.ec/ver-video',
-        ogTitle: 'Mira el video | Nova Era',
+        ogTitle: 'Mira el video | NOVAERA',
         ogDescription: 'Ve el video y agenda tu diagnóstico comercial gratuito.',
         ogUrl: 'https://novaera.ec/ver-video',
       } satisfies RouteMeta,
@@ -59,10 +59,10 @@ const router = createRouter({
       name: 'booking',
       component: BookingView,
       meta: {
-        title: 'Agenda tu Diagnóstico | Nova Era — Paso 2 de 2',
+        title: 'Agenda tu Diagnóstico | NOVAERA — Paso 2 de 2',
         description: 'Selecciona el día y hora para tu Diagnóstico de Infraestructura Comercial gratuito.',
         canonical: 'https://novaera.ec/agendar',
-        ogTitle: 'Agenda tu Diagnóstico | Nova Era',
+        ogTitle: 'Agenda tu Diagnóstico | NOVAERA',
         ogDescription: 'Elige tu horario y reserva tu Diagnóstico Comercial.',
         ogUrl: 'https://novaera.ec/agendar',
       } satisfies RouteMeta,
@@ -72,10 +72,10 @@ const router = createRouter({
       name: 'booked',
       component: BookedView,
       meta: {
-        title: 'Diagnóstico Confirmado | Nova Era',
-        description: 'Tu diagnóstico comercial con Nova Era está confirmado. Revisa tu correo.',
+        title: 'Diagnóstico Confirmado | NOVAERA',
+        description: 'Tu diagnóstico comercial con NOVAERA está confirmado. Revisa tu correo.',
         canonical: 'https://novaera.ec/cita-confirmada',
-        ogTitle: 'Diagnóstico Confirmado | Nova Era',
+        ogTitle: 'Diagnóstico Confirmado | NOVAERA',
         ogDescription: 'Tu diagnóstico está reservado. Te contactaremos pronto.',
         ogUrl: 'https://novaera.ec/cita-confirmada',
       } satisfies RouteMeta,
@@ -85,10 +85,10 @@ const router = createRouter({
       name: 'no-space',
       component: NoSpaceView,
       meta: {
-        title: 'Sin Cupos Disponibles | Nova Era',
-        description: 'En este momento los cupos para diagnóstico comercial de Nova Era están completos.',
+        title: 'Sin Cupos Disponibles | NOVAERA',
+        description: 'En este momento los cupos para diagnóstico comercial de NOVAERA están completos.',
         canonical: 'https://novaera.ec/sin-espacio',
-        ogTitle: 'Sin Cupos Disponibles | Nova Era',
+        ogTitle: 'Sin Cupos Disponibles | NOVAERA',
         ogDescription: 'Los cupos de diagnóstico están completos. Te avisaremos cuando haya disponibilidad.',
         ogUrl: 'https://novaera.ec/sin-espacio',
       } satisfies RouteMeta,
@@ -98,11 +98,11 @@ const router = createRouter({
       name: 'privacy-policy',
       component: PrivacyPolicyView,
       meta: {
-        title: 'Política de Privacidad | Nova Era',
-        description: 'Política de privacidad de Nova Era. Información sobre el tratamiento de datos personales.',
+        title: 'Política de Privacidad | NOVAERA',
+        description: 'Política de privacidad de NOVAERA. Información sobre el tratamiento de datos personales.',
         canonical: 'https://novaera.ec/politicas-privacidad',
-        ogTitle: 'Política de Privacidad | Nova Era',
-        ogDescription: 'Política de privacidad de Nova Era.',
+        ogTitle: 'Política de Privacidad | NOVAERA',
+        ogDescription: 'Política de privacidad de NOVAERA.',
         ogUrl: 'https://novaera.ec/politicas-privacidad',
       } satisfies RouteMeta,
     },
@@ -111,11 +111,11 @@ const router = createRouter({
       name: 'legal-notice',
       component: LegalNoticeView,
       meta: {
-        title: 'Aviso Legal | Nova Era',
-        description: 'Aviso legal de Nova Era. Términos y condiciones de uso del sitio web.',
+        title: 'Aviso Legal | NOVAERA',
+        description: 'Aviso legal de NOVAERA. Términos y condiciones de uso del sitio web.',
         canonical: 'https://novaera.ec/aviso-legal',
-        ogTitle: 'Aviso Legal | Nova Era',
-        ogDescription: 'Aviso legal de Nova Era.',
+        ogTitle: 'Aviso Legal | NOVAERA',
+        ogDescription: 'Aviso legal de NOVAERA.',
         ogUrl: 'https://novaera.ec/aviso-legal',
       } satisfies RouteMeta,
     },
@@ -143,7 +143,7 @@ const setCanonical = (href: string) => {
 
 router.afterEach((to) => {
   const meta = to.meta
-  document.title = meta.title ?? 'Nova Era'
+  document.title = meta.title ?? 'NOVAERA'
   setMeta('description', meta.description ?? '')
   setOgMeta('og:title', meta.ogTitle ?? meta.title ?? '')
   setOgMeta('og:description', meta.ogDescription ?? meta.description ?? '')

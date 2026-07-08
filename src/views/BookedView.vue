@@ -37,7 +37,7 @@ const nextSteps = [
   {
     icon: 'fa-brands fa-whatsapp',
     title: 'Te contactamos por WhatsApp',
-    body: 'El equipo de Nova Era te escribirá para confirmar la cita y conocer los detalles de tu proyecto.',
+    body: 'El equipo de NOVAERA te escribirá para confirmar la cita y conocer los detalles de tu proyecto.',
   },
   {
     icon: 'fa-solid fa-file-invoice',
@@ -51,7 +51,7 @@ const nextSteps = [
   <div class="booked">
 
     <header class="booked__topbar">
-      <img src="@/assets/logos/logo.png" class="booked__logo-img" alt="Nova Era Logo" />
+      <img src="@/assets/logos/logo.png" class="booked__logo-img" alt="NOVAERA Logo" />
     </header>
 
     <main class="booked__main">
@@ -75,7 +75,7 @@ const nextSteps = [
             </template>
           </h1>
           <p class="booked__hero-subtitle">
-            Tu sesión de diagnóstico comercial con Nova Era está confirmada. Revisa tu correo
+            Tu sesión de diagnóstico comercial con NOVAERA está confirmada. Revisa tu correo
             o WhatsApp para todos los detalles. Si necesitas reagendar, escríbenos.
           </p>
         </template>
@@ -90,7 +90,7 @@ const nextSteps = [
             </template>
           </h1>
           <p class="booked__hero-subtitle">
-            Tu sesión de diagnóstico comercial con Nova Era ha sido agendada correctamente.
+            Tu sesión de diagnóstico comercial con NOVAERA ha sido agendada correctamente.
             En breve recibirás todos los detalles.
           </p>
         </template>
@@ -120,7 +120,7 @@ const nextSteps = [
             <strong class="booked__team-name">Raúl Albán</strong>
             <span class="booked__team-role">Director de Proyectos — Ingeniería de Marca e Infraestructura</span>
             <p class="booked__team-note">
-              "Una infraestructura de alto valor no es un gasto, es una máquina de atracción comercial masiva. Eso es lo que construimos en Nova Era."
+              "Una infraestructura de alto valor no es un gasto, es una máquina de atracción comercial masiva. Eso es lo que construimos en NOVAERA."
             </p>
           </div>
         </div>
@@ -139,7 +139,7 @@ const nextSteps = [
         <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
-      <p class="booked__footer-copy">© {{ new Date().getFullYear() }} Nova Era. Todos los derechos reservados.</p>
+      <p class="booked__footer-copy">© {{ new Date().getFullYear() }} NOVAERA. Todos los derechos reservados.</p>
     </footer>
 
   </div>
