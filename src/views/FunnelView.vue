@@ -363,14 +363,14 @@ const dismissProof = () => {
           <div class="funnel__pillar-num" aria-hidden="true">01</div>
           <div class="funnel__pillar-content">
             <div class="funnel__pillar-icon" aria-hidden="true">
-              <i class="fa-solid fa-search"></i>
+              <i class="fa-solid fa-pen-ruler"></i>
             </div>
-            <h3 class="funnel__pillar-title">Auditoría Técnica y Levantamiento Digital en Sitio</h3>
+            <h3 class="funnel__pillar-title">Diseño Conceptual y Planificación Visual</h3>
             <p class="funnel__pillar-body">
-              Realizamos un análisis estructural detallado y escaneo de tu
-              fachada o local actual antes de iniciar la producción. Detectamos vicios ocultos y
-              restricciones de zonificación municipal para garantizar viabilidad absoluta.
-              Resultado: cero retrasos por trámites u omisiones técnicas.
+              Creamos la propuesta estética de tu fachada, letreros o espacios
+              comerciales antes de iniciar la producción. Visualiza con precisión el impacto que
+              proyectará tu marca para asegurar que cumpla con los estándares premium de tu empresa.
+              Resultado: una imagen de alto estatus garantizada.
             </p>
           </div>
         </div>
