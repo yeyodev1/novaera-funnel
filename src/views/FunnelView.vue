@@ -32,12 +32,12 @@ const stats = [
   },
   {
     icon: 'fa-solid fa-chart-line',
-    number: '22%',
+    number: '30%',
     text: 'Incremento en el flujo de clientes premium reportado tras optimizar la infraestructura',
   },
   {
     icon: 'fa-solid fa-award',
-    number: '40%',
+    number: '80%',
     text: 'Aumento inmediato del valor percibido del inmueble y de tu marca comercial',
   },
 ]
@@ -916,7 +916,7 @@ const dismissProof = () => {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  background: rgba(colors.$QS-BLUE, 0.08);
+  background: colors.$OS-NAVY;
   border-left: 4px solid colors.$QS-BLUE;
   border-radius: 8px;
   padding: 0.85rem 1rem;
