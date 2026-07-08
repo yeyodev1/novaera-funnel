@@ -50,6 +50,7 @@ const handleSubmit = async () => {
     fachadas: 'Fachadas corporativas y exteriores',
     interiores: 'Adecuación interior y mobiliario comercial',
     vehicular: 'Branding de flota vehicular',
+    letreros: 'Letreros comerciales de alto impacto',
     residencial: 'Proyecto residencial / Vivienda',
   }
   const volumenLabel: Record<string, string> = {
@@ -59,9 +60,10 @@ const handleSubmit = async () => {
     micro: 'Microempresa / Emprendimiento',
   }
   const presupuestoLabel: Record<string, string> = {
-    premium: 'Presupuesto premium (Inversión alta)',
-    intermedio: 'Presupuesto intermedio (Desde $1,200)',
-    bajo: 'Cotización más barata / Menos de $1,200',
+    premium: 'Más de $10,000 (Inversión alta / premium)',
+    rango_5000_10000: 'De $5,000 a $10,000',
+    rango_1200_5000: 'De $1,200 a $5,000',
+    bajo: 'La cotización más barata (Menos de $1,200)',
   }
 
   const etiquetas = [
@@ -195,6 +197,7 @@ watch(() => props.open, (v) => {
                   { value: 'fachadas', label: 'Fachadas corporativas y exteriores' },
                   { value: 'interiores', label: 'Adecuación interior y mobiliario comercial' },
                   { value: 'vehicular', label: 'Branding de flota vehicular' },
+                  { value: 'letreros', label: 'Letreros comerciales de alto impacto' },
                   { value: 'residencial', label: 'Proyecto residencial / Vivienda' },
                 ]" :key="opt.value" class="cal-option" :class="{ selected: form.tipo === opt.value }">
                   <input type="radio" :value="opt.value" v-model="form.tipo" hidden />
@@ -235,9 +238,10 @@ watch(() => props.open, (v) => {
               </legend>
               <div class="cal-options">
                 <label v-for="opt in [
-                  { value: 'premium', label: 'Inversión alta (Materiales premium y garantía directa)', premium: true },
-                  { value: 'intermedio', label: 'Presupuesto intermedio (Desde $1,200)', premium: false },
-                  { value: 'bajo', label: 'Busco la cotización más barata del mercado (Menos de $1,200)', premium: false },
+                  { value: 'premium', label: 'Más de $10,000 (Inversión alta / premium)', premium: true },
+                  { value: 'rango_5000_10000', label: 'De $5,000 a $10,000', premium: true },
+                  { value: 'rango_1200_5000', label: 'De $1,200 a $5,000', premium: false },
+                  { value: 'bajo', label: 'La cotización más barata (Menos de $1,200)', premium: false },
                 ]" :key="opt.value" class="cal-option" :class="{
                   selected: form.presupuesto === opt.value,
                   'cal-option--premium': opt.premium && form.presupuesto === opt.value,
