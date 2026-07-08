@@ -186,7 +186,7 @@ const dismissProof = () => {
 
     <header class="funnel__topbar">
       <img src="@/assets/logos/logo.png" class="funnel__logo-img" alt="NOVAERA Logo" />
-      <p class="funnel__logo-sub">Ingeniería de Marca & Infraestructura Comercial</p>
+      <p class="funnel__logo-sub">Ingeniería de Marca - Infraestructura Comercial</p>
     </header>
 
     <div class="funnel__urgency" role="banner">
