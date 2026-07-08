@@ -44,10 +44,10 @@ const stats = [
 
 const before = [
   'Fachadas desgastadas o genéricas que ahuyentan clientes premium en los primeros 3 segundos',
+  'Perder ventas y licitaciones rentables frente a competidores que se ven "más sólidos"',
   'Presupuesto quemado en campañas digitales mientras tu imagen física destruye tu credibilidad',
   'Adecuaciones tratadas como "gasto" con proveedores informales, sobrecostos y retrasos',
   'Materiales baratos que se decoloran y degradan ante el clima en menos de un año',
-  'Perder contratos y licitaciones rentables frente a competidores que se ven "más sólidos"',
 ]
 
 const pillars = [
