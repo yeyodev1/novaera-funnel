@@ -31,49 +31,86 @@ function getCookie(name: string): string {
   return match ? decodeURIComponent(match[1]) : ''
 }
 
+function setCookie(name: string, value: string, days = 90): void {
+  if (!value) return
+  const maxAge = days * 24 * 60 * 60
+  document.cookie = `${name}=${encodeURIComponent(value)}; path=/; max-age=${maxAge}; SameSite=Lax`
+}
+
 function buildFbc(fbclid: string): string {
   return `fb.1.${Date.now()}.${fbclid}`
 }
 
 /**
- * Llama esto en el onMounted de FunnelView.
- * Captura fbclid + UTMs de la URL y los persiste en sessionStorage.
+ * Captura fbclid + UTMs de la URL (o query object) y los persiste en sessionStorage, localStorage y cookies _fbc.
  */
-export function captureFbParams(): void {
-  const params = new URLSearchParams(window.location.search)
-  const fbclid = params.get('fbclid') ?? ''
+export function captureFbParams(queryParams?: Record<string, string | undefined>): void {
+  const searchParams = new URLSearchParams(window.location.search)
 
-  const existing = getStoredFbParams()
-
-  // Si ya tenemos fbclid y no llegó uno nuevo, conservar todo
-  if (!fbclid && existing.fbclid) return
-
-  const data: FbParams = {
-    fbclid,
-    fbc: fbclid ? buildFbc(fbclid) : getCookie('_fbc'),
-    fbp: getCookie('_fbp'),
-    utm_source:   params.get('utm_source')   ?? '',
-    utm_medium:   params.get('utm_medium')   ?? '',
-    utm_campaign: params.get('utm_campaign') ?? '',
-    utm_content:  params.get('utm_content')  ?? '',
-    utm_term:     params.get('utm_term')     ?? '',
-    utm_id:       params.get('utm_id')       ?? '',
+  const getParam = (key: string): string => {
+    if (queryParams && queryParams[key]) return queryParams[key] as string
+    return searchParams.get(key) ?? ''
   }
 
-  sessionStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+  const fbclid = getParam('fbclid')
+  const existing = getStoredFbParams()
+
+  // Si no hay un fbclid nuevo pero ya tenemos datos guardados, conservar y refrescar cookies
+  if (!fbclid && existing.fbclid) {
+    if (existing.fbc) setCookie('_fbc', existing.fbc)
+    return
+  }
+
+  const fbcValue = fbclid ? buildFbc(fbclid) : getCookie('_fbc') || existing.fbc
+
+  // Asegurar que la cookie _fbc exista en document.cookie para Meta Pixel
+  if (fbcValue) {
+    setCookie('_fbc', fbcValue)
+  }
+
+  const data: FbParams = {
+    fbclid: fbclid || existing.fbclid,
+    fbc: fbcValue,
+    fbp: getCookie('_fbp') || existing.fbp,
+    utm_source: getParam('utm_source') || existing.utm_source,
+    utm_medium: getParam('utm_medium') || existing.utm_medium,
+    utm_campaign: getParam('utm_campaign') || existing.utm_campaign,
+    utm_content: getParam('utm_content') || existing.utm_content,
+    utm_term: getParam('utm_term') || existing.utm_term,
+    utm_id: getParam('utm_id') || existing.utm_id,
+  }
+
+  const jsonStr = JSON.stringify(data)
+  try {
+    sessionStorage.setItem(STORAGE_KEY, jsonStr)
+    localStorage.setItem(STORAGE_KEY, jsonStr)
+  } catch {
+    /* ignorar */
+  }
 }
 
 /**
- * Retorna todos los parámetros de atribución almacenados en esta sesión.
+ * Retorna todos los parámetros de atribución almacenados en esta sesión / localStorage.
  */
 export function getStoredFbParams(): FbParams {
   try {
-    const raw = sessionStorage.getItem(STORAGE_KEY)
-    if (raw) return JSON.parse(raw) as FbParams
-  } catch { /* ignorar */ }
+    const rawSession = sessionStorage.getItem(STORAGE_KEY)
+    if (rawSession) return JSON.parse(rawSession) as FbParams
+
+    const rawLocal = localStorage.getItem(STORAGE_KEY)
+    if (rawLocal) return JSON.parse(rawLocal) as FbParams
+  } catch {
+    /* ignorar */
+  }
   return {
-    fbclid: '', fbc: '', fbp: '',
-    utm_source: '', utm_medium: '', utm_campaign: '',
-    utm_content: '', utm_term: '', utm_id: '',
+    fbclid: '',
+    fbc: '',
+    fbp: '',
+    utm_source: '',
+    utm_medium: '',
+    utm_campaign: '',
+    utm_content: '',
+    utm_term: '',
+    utm_id: '',
   }
 }

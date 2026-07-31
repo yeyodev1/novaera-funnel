@@ -13,7 +13,9 @@ const contactName = computed(() => {
       .split(/\s+/)
       .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ')
-  } catch { return '' }
+  } catch {
+    return ''
+  }
 })
 
 const RETURNING_THRESHOLD_MS = 10 * 60 * 1000
@@ -26,7 +28,7 @@ const isReturningVisitor = computed(() => {
 onMounted(() => {
   const alreadyFired = sessionStorage.getItem('os_complete_fired')
   if (!alreadyFired) {
-    ; (window as any).fbq?.('track', 'CompleteRegistration', {
+    ;(window as any).fbq?.('track', 'CompleteRegistration', {
       content_name: 'diagnostico-agendado',
       value: 1,
       currency: 'USD',
@@ -56,13 +58,11 @@ const nextSteps = [
 
 <template>
   <div class="booked">
-
     <header class="booked__topbar">
       <img src="@/assets/logos/logo.png" class="booked__logo-img" alt="NOVAERA Logo" />
     </header>
 
     <main class="booked__main">
-
       <section class="booked__hero">
         <div class="booked__hero-icon" aria-hidden="true">
           <i class="fa-solid fa-circle-check"></i>
@@ -77,28 +77,22 @@ const nextSteps = [
             <template v-if="contactName">
               {{ contactName }}, ya tenemos tu diagnóstico agendado
             </template>
-            <template v-else>
-              Ya tenemos tu diagnóstico agendado
-            </template>
+            <template v-else> Ya tenemos tu diagnóstico agendado </template>
           </h1>
           <p class="booked__hero-subtitle">
-            Tu sesión de diagnóstico comercial con NOVAERA está confirmada. Revisa tu correo
-            o WhatsApp para todos los detalles. Si necesitas reagendar, escríbenos.
+            Tu sesión de diagnóstico comercial con NOVAERA está confirmada. Revisa tu correo o
+            WhatsApp para todos los detalles. Si necesitas reagendar, escríbenos.
           </p>
         </template>
 
         <template v-else>
           <h1 class="booked__hero-title">
-            <template v-if="contactName">
-              ¡Listo, {{ contactName }}!
-            </template>
-            <template v-else>
-              ¡Tu diagnóstico está confirmado!
-            </template>
+            <template v-if="contactName"> ¡Listo, {{ contactName }}! </template>
+            <template v-else> ¡Tu diagnóstico está confirmado! </template>
           </h1>
           <p class="booked__hero-subtitle">
-            Tu sesión de diagnóstico comercial con NOVAERA ha sido agendada correctamente.
-            En breve recibirás todos los detalles.
+            Tu sesión de diagnóstico comercial con NOVAERA ha sido agendada correctamente. En breve
+            recibirás todos los detalles.
           </p>
         </template>
       </section>
@@ -107,7 +101,9 @@ const nextSteps = [
         <p id="steps-heading" class="booked__steps-label">Próximos pasos</p>
         <div class="booked__steps-grid">
           <div v-for="(step, i) in nextSteps" :key="i" class="booked__step">
-            <div class="booked__step-num" aria-hidden="true">{{ String(i + 1).padStart(2, '0') }}</div>
+            <div class="booked__step-num" aria-hidden="true">
+              {{ String(i + 1).padStart(2, '0') }}
+            </div>
             <div class="booked__step-icon" aria-hidden="true">
               <i :class="step.icon"></i>
             </div>
@@ -125,9 +121,12 @@ const nextSteps = [
           </div>
           <div class="booked__team-info">
             <strong class="booked__team-name">Raúl Albán</strong>
-            <span class="booked__team-role">Director de Proyectos — Ingeniería de Marca e Infraestructura</span>
+            <span class="booked__team-role"
+              >Director de Proyectos — Ingeniería de Marca e Infraestructura</span
+            >
             <p class="booked__team-note">
-              "Una infraestructura de alto valor no es un gasto, es una máquina de atracción comercial masiva. Eso es lo que construimos en NOVAERA."
+              "Una infraestructura de alto valor no es un gasto, es una máquina de atracción
+              comercial masiva. Eso es lo que construimos en NOVAERA."
             </p>
           </div>
         </div>
@@ -135,10 +134,10 @@ const nextSteps = [
 
       <p class="booked__disclaimer">
         <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-        Los resultados mencionados en el video corresponden a casos reales. Cada proyecto de infraestructura
-        es único y los resultados dependen de las condiciones específicas de cada locación y corporación.
+        Los resultados mencionados en el video corresponden a casos reales. Cada proyecto de
+        infraestructura es único y los resultados dependen de las condiciones específicas de cada
+        locación y corporación.
       </p>
-
     </main>
 
     <footer class="booked__footer">
@@ -146,9 +145,10 @@ const nextSteps = [
         <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
-      <p class="booked__footer-copy">© {{ new Date().getFullYear() }} NOVAERA. Todos los derechos reservados.</p>
+      <p class="booked__footer-copy">
+        © {{ new Date().getFullYear() }} NOVAERA. Todos los derechos reservados.
+      </p>
     </footer>
-
   </div>
 </template>
 
@@ -245,7 +245,7 @@ const nextSteps = [
 
 .booked__hero-subtitle {
   font-size: 0.95rem;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 1.65;
   margin: 0 auto;
   max-width: 460px;
@@ -317,7 +317,7 @@ const nextSteps = [
 
 .booked__step-body {
   font-size: 0.83rem;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 1.5;
   margin: 0;
 }
@@ -371,13 +371,13 @@ const nextSteps = [
 
 .booked__team-role {
   font-size: 0.8rem;
-  color: #CCCCCC;
+  color: #cccccc;
 }
 
 .booked__team-note {
   margin: 0.5rem 0 0;
   font-size: 0.86rem;
-  color: #FFFFFF;
+  color: #ffffff;
   font-style: italic;
   line-height: 1.55;
 }
@@ -387,7 +387,7 @@ const nextSteps = [
   gap: 0.6rem;
   align-items: flex-start;
   font-size: 0.76rem;
-  color: #EEEEEE;
+  color: #eeeeee;
   line-height: 1.55;
   margin: 0;
 
@@ -395,7 +395,7 @@ const nextSteps = [
     font-size: 0.8rem;
     flex-shrink: 0;
     margin-top: 1px;
-    color: #EEEEEE;
+    color: #eeeeee;
   }
 }
 
@@ -414,7 +414,7 @@ const nextSteps = [
 
     a {
       font-size: 0.76rem;
-      color: #EEEEEE;
+      color: #eeeeee;
       text-decoration: none;
 
       &:hover {
@@ -425,7 +425,7 @@ const nextSteps = [
 
   &-copy {
     font-size: 0.72rem;
-    color: #EEEEEE;
+    color: #eeeeee;
     margin: 0;
   }
 }

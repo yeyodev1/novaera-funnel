@@ -1,5 +1,6 @@
 <script setup lang="ts">
-const LOGO = 'https://res.cloudinary.com/dpuody0df/image/upload/v1775587085/bakano/logos/bakano-light.png';
+const LOGO =
+  'https://res.cloudinary.com/dpuody0df/image/upload/v1775587085/bakano/logos/bakano-light.png'
 </script>
 
 <template>
@@ -23,9 +24,9 @@ const LOGO = 'https://res.cloudinary.com/dpuody0df/image/upload/v1775587085/baka
   z-index: 100;
 
   &__logo-img {
-  height: 35px;
-  width: auto;
-  object-fit: contain;
+    height: 35px;
+    width: auto;
+    object-fit: contain;
     font-family: 'Outfit', sans-serif;
     font-weight: 800;
     font-size: 1.25rem;

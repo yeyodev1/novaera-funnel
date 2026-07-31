@@ -6,6 +6,8 @@ import LegalNoticeView from '../views/LegalNoticeView.vue'
 import BookingView from '../views/BookingView.vue'
 import BookedView from '../views/BookedView.vue'
 import NoSpaceView from '../views/NoSpaceView.vue'
+import { initPixel, trackPageView } from '@/utils/pixel'
+import { captureFbParams } from '@/utils/fbclid'
 
 import 'vue-router'
 
@@ -47,7 +49,8 @@ const router = createRouter({
       component: VideoView,
       meta: {
         title: 'Mira el video | NOVAERA — Paso 1 de 2',
-        description: 'Descubre cómo una infraestructura de alto valor aumenta tu autoridad comercial.',
+        description:
+          'Descubre cómo una infraestructura de alto valor aumenta tu autoridad comercial.',
         canonical: 'https://novaera.ec/ver-video',
         ogTitle: 'Mira el video | NOVAERA',
         ogDescription: 'Ve el video y agenda tu diagnóstico comercial gratuito.',
@@ -60,7 +63,8 @@ const router = createRouter({
       component: BookingView,
       meta: {
         title: 'Agenda tu Diagnóstico | NOVAERA — Paso 2 de 2',
-        description: 'Selecciona el día y hora para tu Diagnóstico de Infraestructura Comercial gratuito.',
+        description:
+          'Selecciona el día y hora para tu Diagnóstico de Infraestructura Comercial gratuito.',
         canonical: 'https://novaera.ec/agendar',
         ogTitle: 'Agenda tu Diagnóstico | NOVAERA',
         ogDescription: 'Elige tu horario y reserva tu Diagnóstico Comercial.',
@@ -86,10 +90,12 @@ const router = createRouter({
       component: NoSpaceView,
       meta: {
         title: 'Sin Cupos Disponibles | NOVAERA',
-        description: 'En este momento los cupos para diagnóstico comercial de NOVAERA están completos.',
+        description:
+          'En este momento los cupos para diagnóstico comercial de NOVAERA están completos.',
         canonical: 'https://novaera.ec/sin-espacio',
         ogTitle: 'Sin Cupos Disponibles | NOVAERA',
-        ogDescription: 'Los cupos de diagnóstico están completos. Te avisaremos cuando haya disponibilidad.',
+        ogDescription:
+          'Los cupos de diagnóstico están completos. Te avisaremos cuando haya disponibilidad.',
         ogUrl: 'https://novaera.ec/sin-espacio',
       } satisfies RouteMeta,
     },
@@ -99,7 +105,8 @@ const router = createRouter({
       component: PrivacyPolicyView,
       meta: {
         title: 'Política de Privacidad | NOVAERA',
-        description: 'Política de privacidad de NOVAERA. Información sobre el tratamiento de datos personales.',
+        description:
+          'Política de privacidad de NOVAERA. Información sobre el tratamiento de datos personales.',
         canonical: 'https://novaera.ec/politicas-privacidad',
         ogTitle: 'Política de Privacidad | NOVAERA',
         ogDescription: 'Política de privacidad de NOVAERA.',
@@ -125,19 +132,31 @@ const router = createRouter({
 // ── SEO dinámico por ruta ──────────────────────────────────────────────────────
 const setMeta = (name: string, content: string) => {
   let el = document.querySelector<HTMLMetaElement>(`meta[name="${name}"]`)
-  if (!el) { el = document.createElement('meta'); el.name = name; document.head.appendChild(el) }
+  if (!el) {
+    el = document.createElement('meta')
+    el.name = name
+    document.head.appendChild(el)
+  }
   el.content = content
 }
 
 const setOgMeta = (property: string, content: string) => {
   let el = document.querySelector<HTMLMetaElement>(`meta[property="${property}"]`)
-  if (!el) { el = document.createElement('meta'); el.setAttribute('property', property); document.head.appendChild(el) }
+  if (!el) {
+    el = document.createElement('meta')
+    el.setAttribute('property', property)
+    document.head.appendChild(el)
+  }
   el.content = content
 }
 
 const setCanonical = (href: string) => {
   let el = document.querySelector<HTMLLinkElement>('link[rel="canonical"]')
-  if (!el) { el = document.createElement('link'); el.rel = 'canonical'; document.head.appendChild(el) }
+  if (!el) {
+    el = document.createElement('link')
+    el.rel = 'canonical'
+    document.head.appendChild(el)
+  }
   el.href = href
 }
 
@@ -151,11 +170,14 @@ router.afterEach((to) => {
   setOgMeta('twitter:title', meta.ogTitle ?? meta.title ?? '')
   setOgMeta('twitter:description', meta.ogDescription ?? meta.description ?? '')
   setCanonical(meta.canonical ?? '')
+
+  initPixel()
+  trackPageView()
 })
 
 // ── Router Guards ──────────────────────────────────────────────────────────────
 const BOOKED_TTL_MS = 3 * 24 * 60 * 60 * 1000
-const DISQ_TTL_MS   = 48 * 60 * 60 * 1000
+const DISQ_TTL_MS = 48 * 60 * 60 * 1000
 
 const readTimestamp = (key: string): number | null => {
   const raw = localStorage.getItem(key)
@@ -175,11 +197,13 @@ const isFresh = (key: string, ttl: number): boolean => {
 const PUBLIC_ROUTES = ['privacy-policy', 'legal-notice']
 
 router.beforeEach((to, from, next) => {
+  captureFbParams(to.query as Record<string, string>)
+
   const routeName = to.name as string
   if (PUBLIC_ROUTES.includes(routeName)) return next()
 
   const bookedFresh = isFresh('os_booked_at', BOOKED_TTL_MS)
-  const disqFresh   = isFresh('os_disq_at',   DISQ_TTL_MS)
+  const disqFresh = isFresh('os_disq_at', DISQ_TTL_MS)
 
   if (routeName === 'booked') {
     if (!bookedFresh) return next({ name: 'funnel' })

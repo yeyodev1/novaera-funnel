@@ -16,7 +16,7 @@ const openModal = () => {
       return
     }
   }
-  ; (window as any).fbq?.('track', 'CompleteRegistration', {
+  ;(window as any).fbq?.('track', 'CompleteRegistration', {
     content_name: 'cta-abrir-registro',
     value: 1,
     currency: 'USD',
@@ -73,17 +73,20 @@ const pillars = [
 
 const testimonials = [
   {
-    quote: 'Pasamos de la constante improvisación, los sobrecostos ocultos y los interminables retrasos con proveedores informales a una ejecución técnica perfecta, directa de fábrica. Incrementó el flujo de clientes premium en un 22% durante el primer trimestre.',
+    quote:
+      'Pasamos de la constante improvisación, los sobrecostos ocultos y los interminables retrasos con proveedores informales a una ejecución técnica perfecta, directa de fábrica. Incrementó el flujo de clientes premium en un 22% durante el primer trimestre.',
     author: 'Director de Operaciones',
     role: 'Grupo Corporativo — Sector Automotriz',
   },
   {
-    quote: 'Si mañana retiro mi marca y coloco el letrero de mi competencia, nadie notaría la diferencia. Entendimos que necesitábamos dominar visualmente el mercado, no solo cumplir. NOVAERA transformó nuestras fachadas en verdaderos activos comerciales.',
+    quote:
+      'Si mañana retiro mi marca y coloco el letrero de mi competencia, nadie notaría la diferencia. Entendimos que necesitábamos dominar visualmente el mercado, no solo cumplir. NOVAERA transformó nuestras fachadas en verdaderos activos comerciales.',
     author: 'Director General',
     role: 'Corporación Multinacional',
   },
   {
-    quote: 'Nuestros espacios estaban muertos comercialmente y atrapados en una guerra de precios. Gracias a la ingeniería de alto valor comercial de NOVAERA, elevamos drásticamente nuestro valor percibido y facturamos con fluidez.',
+    quote:
+      'Nuestros espacios estaban muertos comercialmente y atrapados en una guerra de precios. Gracias a la ingeniería de alto valor comercial de NOVAERA, elevamos drásticamente nuestro valor percibido y facturamos con fluidez.',
     author: 'Gerente General',
     role: 'Franquicia en expansión',
   },
@@ -183,7 +186,6 @@ const dismissProof = () => {
 
 <template>
   <div class="funnel">
-
     <header class="funnel__topbar">
       <img src="@/assets/logos/logo.png" class="funnel__logo-img" alt="NOVAERA Logo" />
     </header>
@@ -192,13 +194,24 @@ const dismissProof = () => {
       <div class="funnel__urgency-info">
         <span class="funnel__urgency-dot" aria-hidden="true" />
         <i class="fa-solid fa-bolt funnel__urgency-icon" aria-hidden="true"></i>
-        <span class="funnel__urgency-text">CUPOS PARA <strong>DIAGNÓSTICO DE INFRAESTRUCTURA GRATUITO</strong> — Cierran en:</span>
+        <span class="funnel__urgency-text"
+          >CUPOS PARA <strong>DIAGNÓSTICO DE INFRAESTRUCTURA GRATUITO</strong> — Cierran en:</span
+        >
         <div class="funnel__timer" aria-live="polite" aria-label="Tiempo restante">
-          <span class="funnel__timer-block"><strong>{{ hours }}</strong><small>h</small></span>
+          <span class="funnel__timer-block"
+            ><strong>{{ hours }}</strong
+            ><small>h</small></span
+          >
           <span class="funnel__timer-sep" aria-hidden="true">:</span>
-          <span class="funnel__timer-block"><strong>{{ minutes }}</strong><small>m</small></span>
+          <span class="funnel__timer-block"
+            ><strong>{{ minutes }}</strong
+            ><small>m</small></span
+          >
           <span class="funnel__timer-sep" aria-hidden="true">:</span>
-          <span class="funnel__timer-block"><strong>{{ seconds }}</strong><small>s</small></span>
+          <span class="funnel__timer-block"
+            ><strong>{{ seconds }}</strong
+            ><small>s</small></span
+          >
         </div>
       </div>
       <button
@@ -213,7 +226,12 @@ const dismissProof = () => {
     </div>
 
     <Transition name="proof-fade">
-      <div v-if="proofVisible && currentProof" class="funnel__proof" role="status" aria-live="polite">
+      <div
+        v-if="proofVisible && currentProof"
+        class="funnel__proof"
+        role="status"
+        aria-live="polite"
+      >
         <div class="funnel__proof-icon" aria-hidden="true">
           <i class="fa-solid fa-circle-check"></i>
         </div>
@@ -243,7 +261,6 @@ const dismissProof = () => {
 
     <section class="funnel__hero" aria-labelledby="funnel-headline">
       <div class="funnel__container">
-
         <p class="funnel__eyebrow">
           <i class="fa-solid fa-building-shield" aria-hidden="true"></i>
           Infraestructura Comercial Premium
@@ -255,9 +272,9 @@ const dismissProof = () => {
         </h1>
 
         <p class="funnel__hero-sub">
-          Descubre cómo el sistema premium de NOVAERA transforma las fachadas y los espacios comerciales de empresas líderes,
-          eliminando los retrasos de proveedores informales y convirtiendo tu infraestructura en una 
-          máquina de atracción comercial masiva.
+          Descubre cómo el sistema premium de NOVAERA transforma las fachadas y los espacios
+          comerciales de empresas líderes, eliminando los retrasos de proveedores informales y
+          convirtiendo tu infraestructura en una máquina de atracción comercial masiva.
         </p>
 
         <ul class="funnel__benefits" role="list">
@@ -281,20 +298,35 @@ const dismissProof = () => {
 
         <div class="funnel__urgency-callout" role="note">
           <i class="fa-solid fa-fire" aria-hidden="true"></i>
-          <span>Exclusivo para <strong>empresas consolidadas y líderes comerciales</strong> — no atendemos proyectos residenciales ni búsquedas de "la cotización más barata".</span>
+          <span
+            >Exclusivo para <strong>empresas consolidadas y líderes comerciales</strong> — no
+            atendemos proyectos residenciales ni búsquedas de "la cotización más barata".</span
+          >
         </div>
 
         <div class="funnel__vsl-wrap">
-          <div class="funnel__vsl" @click="openModal()" role="button" aria-label="Ver video" tabindex="0">
+          <div
+            class="funnel__vsl"
+            @click="openModal()"
+            role="button"
+            aria-label="Ver video"
+            tabindex="0"
+          >
             <div class="funnel__vsl-bg">
-              <img src="https://fast.wistia.com/embed/medias/uejodz5qm2/swatch" class="funnel__vsl-thumb" alt="" />
+              <img
+                src="https://fast.wistia.com/embed/medias/uejodz5qm2/swatch"
+                class="funnel__vsl-thumb"
+                alt=""
+              />
               <div class="funnel__vsl-blur-overlay"></div>
             </div>
             <div class="funnel__vsl-overlay">
               <div class="funnel__vsl-play">
                 <i class="fa-solid fa-play" aria-hidden="true"></i>
               </div>
-              <p class="funnel__vsl-caption">Mira el video y descubre cómo dominar visualmente tu mercado</p>
+              <p class="funnel__vsl-caption">
+                Mira el video y descubre cómo dominar visualmente tu mercado
+              </p>
             </div>
           </div>
         </div>
@@ -309,13 +341,14 @@ const dismissProof = () => {
             100% gratuito &nbsp;·&nbsp; Sin compromiso &nbsp;·&nbsp; Cupos limitados
           </p>
         </div>
-
       </div>
     </section>
 
     <section class="funnel__stats" aria-label="Resultados comprobados">
       <div class="funnel__container">
-        <p class="funnel__section-label funnel__section-label--light">Resultados reales — clientes reales</p>
+        <p class="funnel__section-label funnel__section-label--light">
+          Resultados reales — clientes reales
+        </p>
         <div class="funnel__stats-grid">
           <div v-for="stat in stats" :key="stat.number" class="funnel__stat">
             <div class="funnel__stat-icon" aria-hidden="true">
@@ -335,9 +368,9 @@ const dismissProof = () => {
           El mito de que las adecuaciones son un "gasto estético"
         </h2>
         <p class="funnel__problem-intro">
-          Contratar a un maestro de obra informal o un taller reactivo no es un ahorro — es un pasivo 
-          que pagas al perder clientes de alto valor, proyectar desconfianza y retrasar tus aperturas. 
-          Esto es lo que realmente estás pagando:
+          Contratar a un maestro de obra informal o un taller reactivo no es un ahorro — es un
+          pasivo que pagas al perder clientes de alto valor, proyectar desconfianza y retrasar tus
+          aperturas. Esto es lo que realmente estás pagando:
         </p>
         <div class="funnel__problem-grid">
           <div v-for="(item, i) in before" :key="i" class="funnel__problem-item">
@@ -366,10 +399,10 @@ const dismissProof = () => {
             </div>
             <h3 class="funnel__pillar-title">Diseño Conceptual y Planificación Visual</h3>
             <p class="funnel__pillar-body">
-              Creamos la propuesta estética de tu fachada, letreros o espacios
-              comerciales antes de iniciar la producción. Visualiza con precisión el impacto que
-              proyectará tu marca para asegurar que cumpla con los estándares premium de tu empresa.
-              Resultado: una imagen de alto estatus garantizada.
+              Creamos la propuesta estética de tu fachada, letreros o espacios comerciales antes de
+              iniciar la producción. Visualiza con precisión el impacto que proyectará tu marca para
+              asegurar que cumpla con los estándares premium de tu empresa. Resultado: una imagen de
+              alto estatus garantizada.
             </p>
           </div>
         </div>
@@ -383,9 +416,9 @@ const dismissProof = () => {
             <h3 class="funnel__pillar-title">Ingeniería de Detalle y Sincronización de Obra</h3>
             <p class="funnel__pillar-body">
               Unificamos el diseño arquitectónico, la fabricación industrializada en planta y el
-              montaje especializado en sitio. Coordinamos cuadrillas de obra civil, iluminación
-              de marca e instalaciones en paralelo bajo una sola dirección de proyecto.
-              Optimizamos los tiempos de entrega hasta en un 32%.
+              montaje especializado en sitio. Coordinamos cuadrillas de obra civil, iluminación de
+              marca e instalaciones en paralelo bajo una sola dirección de proyecto. Optimizamos los
+              tiempos de entrega hasta en un 32%.
             </p>
           </div>
         </div>
@@ -399,9 +432,9 @@ const dismissProof = () => {
             <h3 class="funnel__pillar-title">Materiales de Alto Rendimiento y Garantía Directa</h3>
             <p class="funnel__pillar-body">
               Seleccionamos exclusivamente paneles composite de aluminio (ACM) de grado premium,
-              vidrios de alta seguridad con protección UV y sistemas LED de bajo consumo. Garantizamos
-              resistencia al desgaste climático extremo y ofrecemos un respaldo de hasta 5 años
-              en la estructura comercial.
+              vidrios de alta seguridad con protección UV y sistemas LED de bajo consumo.
+              Garantizamos resistencia al desgaste climático extremo y ofrecemos un respaldo de
+              hasta 5 años en la estructura comercial.
             </p>
           </div>
         </div>
@@ -464,14 +497,31 @@ const dismissProof = () => {
           <h2 id="authority-heading" class="funnel__authority-name">Ingeniería & Marca</h2>
           <p class="funnel__authority-role">Más de 19 años de dominio en el mercado nacional</p>
           <p class="funnel__authority-bio">
-            Durante décadas, hemos presenciado cómo empresas líderes queman su presupuesto en publicidad y licitaciones, solo para perder frente a competidores que proyectan una imagen superior. 
-            El mercado ha aceptado que el diseño sea tratado como un gasto menor con materiales dudosos. En <strong>NOVAERA</strong> nacimos para resolver ese vacío. Hemos transformado los espacios de firmas como <strong>Agripac, Kia, Primax, Dacar, Corpei, y Wendy's</strong>, entregando calidad premium directa de fábrica sin excusas ni improvisaciones.
+            Durante décadas, hemos presenciado cómo empresas líderes queman su presupuesto en
+            publicidad y licitaciones, solo para perder frente a competidores que proyectan una
+            imagen superior. El mercado ha aceptado que el diseño sea tratado como un gasto menor
+            con materiales dudosos. En <strong>NOVAERA</strong> nacimos para resolver ese vacío.
+            Hemos transformado los espacios de firmas como
+            <strong>Agripac, Kia, Primax, Dacar, Corpei, y Wendy's</strong>, entregando calidad
+            premium directa de fábrica sin excusas ni improvisaciones.
           </p>
           <ul class="funnel__authority-creds" role="list">
-            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> 19 años de experiencia corporativa e industrial.</li>
-            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Fábrica propia y control de calidad premium directo.</li>
-            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Dominio absoluto de Neuromarketing e Ingeniería Civil.</li>
-            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Solo aceptamos proyectos corporativos premium de gran escala.</li>
+            <li>
+              <i class="fa-solid fa-check-circle" aria-hidden="true"></i> 19 años de experiencia
+              corporativa e industrial.
+            </li>
+            <li>
+              <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Fábrica propia y control
+              de calidad premium directo.
+            </li>
+            <li>
+              <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Dominio absoluto de
+              Neuromarketing e Ingeniería Civil.
+            </li>
+            <li>
+              <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Solo aceptamos proyectos
+              corporativos premium de gran escala.
+            </li>
           </ul>
         </div>
       </div>
@@ -484,15 +534,18 @@ const dismissProof = () => {
           Ingeniería Comercial Premium
         </div>
         <h2 id="scarcity-heading" class="funnel__scarcity-title">
-          Solo abrimos espacio para <span class="funnel__scarcity-accent">un número limitado de corporaciones</span>
+          Solo abrimos espacio para
+          <span class="funnel__scarcity-accent">un número limitado de corporaciones</span>
         </h2>
         <p class="funnel__scarcity-sub">
-          Debido al riguroso control técnico, la planificación de ingeniería y la ejecución directa de fábrica, procesamos un cupo limitado de proyectos de gran escala al mes para garantizar la excelencia que nos caracteriza.
+          Debido al riguroso control técnico, la planificación de ingeniería y la ejecución directa
+          de fábrica, procesamos un cupo limitado de proyectos de gran escala al mes para garantizar
+          la excelencia que nos caracteriza.
         </p>
         <p class="funnel__scarcity-cta-text">
           Agenda hoy tu <strong>Diagnóstico de Infraestructura Comercial</strong>
-          sin costo — analizaremos de manera exhaustiva tu infraestructura actual y te diremos con precisión 
-          científica dónde estás perdiendo autoridad en el mercado.
+          sin costo — analizaremos de manera exhaustiva tu infraestructura actual y te diremos con
+          precisión científica dónde estás perdiendo autoridad en el mercado.
         </p>
         <button class="funnel__cta-btn funnel__cta-btn--final" @click="openModal()">
           <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
@@ -518,7 +571,6 @@ const dismissProof = () => {
         </p>
       </div>
     </footer>
-
   </div>
 
   <RegistrationModal :open="modalOpen" @close="modalOpen = false" />
@@ -569,7 +621,7 @@ const dismissProof = () => {
 
 .funnel__logo-sub {
   font-size: 0.68rem;
-  color: #CCCCCC;
+  color: #cccccc;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin: 0;
@@ -633,7 +685,10 @@ const dismissProof = () => {
   white-space: nowrap;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
   animation: cta-bounce 2.4s ease-in-out infinite;
-  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 
   span {
     font-size: 0.95rem;
@@ -641,7 +696,7 @@ const dismissProof = () => {
   }
 
   &:hover {
-    background: #FFF5F5;
+    background: #fff5f5;
     transform: translateY(-1px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 
@@ -661,7 +716,6 @@ const dismissProof = () => {
 }
 
 @keyframes cta-bounce {
-
   0%,
   100% {
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
@@ -730,7 +784,7 @@ const dismissProof = () => {
   font-family: fonts.$font-interface;
   font-size: 0.86rem;
   line-height: 1.3;
-  color: #FFFFFF;
+  color: #ffffff;
 
   strong {
     font-weight: 800;
@@ -750,7 +804,7 @@ const dismissProof = () => {
   color: rgba(255, 255, 255, 0.85);
 
   strong {
-    color: #FFFFFF;
+    color: #ffffff;
     font-weight: 700;
   }
 }
@@ -783,19 +837,25 @@ const dismissProof = () => {
   align-items: center;
   justify-content: center;
   font-size: 0.78rem;
-  transition: background 0.15s, color 0.15s;
+  transition:
+    background 0.15s,
+    color 0.15s;
 
   &:hover {
-    color: #FFFFFF;
+    color: #ffffff;
   }
 }
 
 .proof-fade-enter-active {
-  transition: opacity 0.32s ease, transform 0.42s cubic-bezier(0.34, 1.4, 0.64, 1);
+  transition:
+    opacity 0.32s ease,
+    transform 0.42s cubic-bezier(0.34, 1.4, 0.64, 1);
 }
 
 .proof-fade-leave-active {
-  transition: opacity 0.22s ease, transform 0.25s ease;
+  transition:
+    opacity 0.22s ease,
+    transform 0.25s ease;
 }
 
 .proof-fade-enter-from {
@@ -816,7 +876,6 @@ const dismissProof = () => {
 }
 
 @keyframes bolt-flash {
-
   0%,
   100% {
     opacity: 1;
@@ -832,7 +891,7 @@ const dismissProof = () => {
 .funnel__urgency-text {
   strong {
     font-weight: 900;
-    color: #FFE4E4;
+    color: #ffe4e4;
     letter-spacing: 0.04em;
   }
 }
@@ -955,7 +1014,7 @@ const dismissProof = () => {
   border: 1px solid rgba(colors.$QS-BLUE, 0.25);
   border-radius: 999px;
   padding: 0.35rem 0.85rem;
-  color: #E2E8F0;
+  color: #e2e8f0;
   font-family: fonts.$font-interface;
   font-size: 0.78rem;
   font-weight: 800;
@@ -983,7 +1042,7 @@ const dismissProof = () => {
 
 .funnel__hero-sub {
   font-size: 1rem;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 1.65;
   margin: 0 0 1.5rem;
   max-width: 720px;
@@ -1008,7 +1067,7 @@ const dismissProof = () => {
   align-items: center;
   gap: 0.6rem;
   font-size: 0.93rem;
-  color: #FFFFFF;
+  color: #ffffff;
 
   i {
     color: colors.$OS-BLUE;
@@ -1028,9 +1087,11 @@ const dismissProof = () => {
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
-  border: 2px solid #D8E6F5;
+  border: 2px solid #d8e6f5;
   box-shadow: 0 8px 40px rgba(0, 82, 165, 0.12);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 
   &:hover {
     transform: translateY(-2px);
@@ -1060,7 +1121,10 @@ const dismissProof = () => {
   object-fit: cover;
   filter: blur(8px) brightness(0.6);
   transform: scale(1.1);
-  transition: filter 0.4s ease, transform 0.4s ease, brightness 0.4s ease;
+  transition:
+    filter 0.4s ease,
+    transform 0.4s ease,
+    brightness 0.4s ease;
 
   .funnel__vsl:hover & {
     filter: blur(4px) brightness(0.75);
@@ -1071,7 +1135,11 @@ const dismissProof = () => {
 .funnel__vsl-blur-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(colors.$OS-NAVY, 0.2) 0%, rgba(colors.$OS-NAVY, 0.6) 100%);
+  background: radial-gradient(
+    circle at center,
+    rgba(colors.$OS-NAVY, 0.2) 0%,
+    rgba(colors.$OS-NAVY, 0.6) 100%
+  );
   z-index: 1;
 }
 
@@ -1142,11 +1210,14 @@ const dismissProof = () => {
   cursor: pointer;
   width: 100%;
   max-width: 520px;
-  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
   box-shadow: 0 4px 20px rgba(240, 180, 41, 0.3);
 
   &:hover {
-    background: #D49A1E;
+    background: #d49a1e;
     transform: translateY(-1px);
     box-shadow: 0 8px 28px rgba(240, 180, 41, 0.4);
   }
@@ -1162,7 +1233,7 @@ const dismissProof = () => {
   justify-content: center;
   gap: 0.4rem;
   font-size: 0.78rem;
-  color: #CCCCCC;
+  color: #cccccc;
   margin: 0;
 
   i {
@@ -1243,7 +1314,7 @@ const dismissProof = () => {
 
 .funnel__problem-intro {
   font-size: 0.95rem;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 1.6;
   margin: 0 0 1.5rem;
 }
@@ -1273,7 +1344,7 @@ const dismissProof = () => {
 
   p {
     font-size: 0.86rem;
-    color: #FFFFFF;
+    color: #ffffff;
     line-height: 1.5;
     margin: 0;
   }
@@ -1353,7 +1424,7 @@ const dismissProof = () => {
 
 .funnel__pillar-body {
   font-size: 0.9rem;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 1.6;
   margin: 0;
 }
@@ -1410,7 +1481,7 @@ const dismissProof = () => {
 
   span {
     font-size: 0.78rem;
-    color: #CCCCCC;
+    color: #cccccc;
   }
 }
 
@@ -1442,9 +1513,11 @@ const dismissProof = () => {
   height: 10px;
   border-radius: 50%;
   border: none;
-  background: #D0DBE8;
+  background: #d0dbe8;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.2s;
   padding: 0;
 
   &.active {
@@ -1460,8 +1533,8 @@ const dismissProof = () => {
 .funnel__authority {
   padding: 4rem 0;
   background: #000000;
-  border-top: 1px solid #E4EDF7;
-  border-bottom: 1px solid #E4EDF7;
+  border-top: 1px solid #e4edf7;
+  border-bottom: 1px solid #e4edf7;
 }
 
 .funnel__authority-inner {
@@ -1520,13 +1593,13 @@ const dismissProof = () => {
 
 .funnel__authority-role {
   font-size: 0.88rem;
-  color: #CCCCCC;
+  color: #cccccc;
   margin: 0 0 1rem;
 }
 
 .funnel__authority-bio {
   font-size: 0.93rem;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 1.65;
   margin: 0 0 1rem;
 
@@ -1549,7 +1622,7 @@ const dismissProof = () => {
     align-items: center;
     gap: 0.5rem;
     font-size: 0.86rem;
-    color: #FFFFFF;
+    color: #ffffff;
 
     i {
       color: colors.$OS-BLUE;
@@ -1628,7 +1701,7 @@ const dismissProof = () => {
   max-width: 560px;
 
   &:hover {
-    background: #D49A1E;
+    background: #d49a1e;
   }
 }
 

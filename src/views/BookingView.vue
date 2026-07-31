@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { getStoredFbParams } from '@/utils/fbclid'
 
 const router = useRouter()
 const iframeHeight = ref(1100)
@@ -9,13 +10,26 @@ const BASE_URL = 'https://api.leadconnectorhq.com/widget/booking/t3NhQRoFbUHYCSx
 
 const calendarUrl = computed(() => {
   try {
-    const stored = localStorage.getItem('os_contact')
-    if (!stored) return BASE_URL
-    const { nombre, email, phone } = JSON.parse(stored)
     const params = new URLSearchParams()
-    if (nombre) params.set('firstName', nombre)
-    if (email) params.set('email', email)
-    if (phone) params.set('phone', phone)
+    const stored = localStorage.getItem('os_contact')
+    if (stored) {
+      const { nombre, email, phone } = JSON.parse(stored)
+      if (nombre) params.set('firstName', nombre)
+      if (email) params.set('email', email)
+      if (phone) params.set('phone', phone)
+    }
+
+    const fbParams = getStoredFbParams()
+    if (fbParams.fbclid) params.set('fbclid', fbParams.fbclid)
+    if (fbParams.utm_source) params.set('utm_source', fbParams.utm_source)
+    if (fbParams.utm_medium) params.set('utm_medium', fbParams.utm_medium)
+    if (fbParams.utm_campaign) params.set('utm_campaign', fbParams.utm_campaign)
+    if (fbParams.utm_content) params.set('utm_content', fbParams.utm_content)
+    if (fbParams.utm_term) params.set('utm_term', fbParams.utm_term)
+    if (fbParams.utm_id) params.set('utm_id', fbParams.utm_id)
+    if (fbParams.fbc) params.set('fbc', fbParams.fbc)
+    if (fbParams.fbp) params.set('fbp', fbParams.fbp)
+
     const qs = params.toString()
     return qs ? `${BASE_URL}?${qs}` : BASE_URL
   } catch {
@@ -55,13 +69,11 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
 
 <template>
   <div class="booking">
-
     <header class="booking__topbar">
       <img src="@/assets/logos/logo.png" class="booking__logo-img" alt="NOVAERA Logo" />
     </header>
 
     <main class="booking__main">
-
       <div class="stepper" aria-label="Paso 2 de 2">
         <div class="stepper__track">
           <div class="stepper__step stepper__step--done">
@@ -88,9 +100,9 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
           <span class="booking__title-accent">diagnóstico de infraestructura</span>
         </h1>
         <p class="booking__subtitle">
-          Una sesión de 30 minutos con el equipo de NOVAERA para analizar el potencial de tu
-          fachada o instalaciones. Identificaremos áreas clave de mejora para posicionar
-          tu marca como líder en el mercado.
+          Una sesión de 30 minutos con el equipo de NOVAERA para analizar el potencial de tu fachada
+          o instalaciones. Identificaremos áreas clave de mejora para posicionar tu marca como líder
+          en el mercado.
         </p>
       </section>
 
@@ -105,7 +117,6 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
           id="t3NhQRoFbUHYCSxzg7h8"
         ></iframe>
       </div>
-
     </main>
 
     <footer class="booking__footer">
@@ -113,9 +124,10 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
         <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
-      <p class="booking__footer-copy">© {{ new Date().getFullYear() }} NOVAERA. Todos los derechos reservados.</p>
+      <p class="booking__footer-copy">
+        © {{ new Date().getFullYear() }} NOVAERA. Todos los derechos reservados.
+      </p>
     </footer>
-
   </div>
 </template>
 
@@ -168,29 +180,68 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
   justify-content: center;
   margin-bottom: 2rem;
 
-  &__track { display: flex; align-items: center; gap: 0; }
-  &__step { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; }
+  &__track {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  &__step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+  }
 
   &__circle {
-    width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center;
-    justify-content: center; font-family: fonts.$font-interface; font-size: 0.85rem;
-    font-weight: 800; border: 2px solid #D0DBE8; color: #EEEEEE; transition: all 0.3s ease;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: fonts.$font-interface;
+    font-size: 0.85rem;
+    font-weight: 800;
+    border: 2px solid #d0dbe8;
+    color: #eeeeee;
+    transition: all 0.3s ease;
 
-    .stepper__step--done & { background: colors.$OS-BLUE; border-color: colors.$OS-BLUE; color: #000000; }
-    .stepper__step--active & { background: colors.$OS-RED; border-color: colors.$OS-RED; color: #000000; }
+    .stepper__step--done & {
+      background: colors.$OS-BLUE;
+      border-color: colors.$OS-BLUE;
+      color: #000000;
+    }
+    .stepper__step--active & {
+      background: colors.$OS-RED;
+      border-color: colors.$OS-RED;
+      color: #000000;
+    }
   }
 
   &__label {
-    font-family: fonts.$font-interface; font-size: 0.72rem; font-weight: 600;
-    letter-spacing: 0.04em; color: #EEEEEE;
-    .stepper__step--done & { color: colors.$OS-BLUE; }
-    .stepper__step--active & { color: colors.$OS-DARK; }
+    font-family: fonts.$font-interface;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #eeeeee;
+    .stepper__step--done & {
+      color: colors.$OS-BLUE;
+    }
+    .stepper__step--active & {
+      color: colors.$OS-DARK;
+    }
   }
 
   &__line {
-    width: 60px; height: 2px; background: #E0EAF5; border-radius: 2px;
-    margin: 0 0.5rem; margin-bottom: 1.1rem;
-    &--done { background: colors.$OS-BLUE; }
+    width: 60px;
+    height: 2px;
+    background: #e0eaf5;
+    border-radius: 2px;
+    margin: 0 0.5rem;
+    margin-bottom: 1.1rem;
+    &--done {
+      background: colors.$OS-BLUE;
+    }
   }
 }
 
@@ -215,31 +266,67 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
   }
 }
 
-.booking__heading { margin-bottom: 1.75rem; }
+.booking__heading {
+  margin-bottom: 1.75rem;
+}
 
 .booking__title {
   @include fonts.heading-font(800);
   font-size: clamp(1.7rem, 4vw, 2.4rem);
-  color: colors.$OS-DARK; margin: 0 0 0.6rem; letter-spacing: -0.025em; line-height: 1.2;
-  &-accent { color: colors.$OS-RED; }
+  color: colors.$OS-DARK;
+  margin: 0 0 0.6rem;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  &-accent {
+    color: colors.$OS-RED;
+  }
 }
 
 .booking__subtitle {
-  font-size: 0.93rem; color: #FFFFFF; line-height: 1.6; margin: 0;
+  font-size: 0.93rem;
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0;
 }
 
 .calendar__wrap {
-  border-radius: 16px; overflow: hidden; border: 1px solid #222222;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #222222;
   box-shadow: 0 4px 24px rgba(0, 82, 165, 0.07);
 }
 
-.calendar__iframe { width: 100%; display: block; min-height: 600px; }
+.calendar__iframe {
+  width: 100%;
+  display: block;
+  min-height: 600px;
+}
 
 .booking__footer {
-  padding: 1.5rem; border-top: 1px solid #222222;
-  display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid #222222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
 
-  &-links { display: flex; gap: 1.5rem; a { font-size: 0.76rem; color: #EEEEEE; text-decoration: none; &:hover { color: colors.$OS-NAVY; } } }
-  &-copy { font-size: 0.72rem; color: #EEEEEE; margin: 0; }
+  &-links {
+    display: flex;
+    gap: 1.5rem;
+    a {
+      font-size: 0.76rem;
+      color: #eeeeee;
+      text-decoration: none;
+      &:hover {
+        color: colors.$OS-NAVY;
+      }
+    }
+  }
+  &-copy {
+    font-size: 0.72rem;
+    color: #eeeeee;
+    margin: 0;
+  }
 }
 </style>

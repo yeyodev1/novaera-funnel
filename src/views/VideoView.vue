@@ -3,6 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import CalendarModal from '@/components/CalendarModal.vue'
 import { trackStage, generateEventId } from '@/utils/ghl'
 import { useContactStore } from '@/stores/contact'
+import { getStoredFbParams } from '@/utils/fbclid'
 
 const contactStore = useContactStore()
 const calendarOpen = ref(false)
@@ -24,7 +25,13 @@ const validateCapture = () => {
 }
 
 const submitCapture = async () => {
-  captureTouched.value = { nombre: true, apellido: true, empresa: true, email: true, telefono: true }
+  captureTouched.value = {
+    nombre: true,
+    apellido: true,
+    empresa: true,
+    email: true,
+    telefono: true,
+  }
   if (!validateCapture()) return
   captureSubmitting.value = true
 
@@ -46,9 +53,10 @@ const submitCapture = async () => {
     telefono: c.telefono,
     phone: c.telefono,
     event_id: leadEventId,
+    ...getStoredFbParams(),
   })
-    ; (window as any).fbq?.('track', 'Lead', { content_name: 'video-gate' }, { eventID: leadEventId })
-  await new Promise(r => setTimeout(r, 600))
+  ;(window as any).fbq?.('track', 'Lead', { content_name: 'video-gate' }, { eventID: leadEventId })
+  await new Promise((r) => setTimeout(r, 600))
   captureSubmitting.value = false
   captureOpen.value = false
   startTimer()
@@ -72,11 +80,11 @@ const startTimer = () => {
       secondsLeft.value--
     } else {
       ctaUnlocked.value = true
-        ; (window as any).fbq?.('track', 'CompleteRegistration', {
-          content_name: 'video-completado',
-          value: 1,
-          currency: 'USD',
-        })
+      ;(window as any).fbq?.('track', 'CompleteRegistration', {
+        content_name: 'video-completado',
+        value: 1,
+        currency: 'USD',
+      })
       if (timer) clearInterval(timer)
     }
   }, 1000)
@@ -88,23 +96,23 @@ onMounted(() => {
   if (!hasContact) {
     captureOpen.value = true
   } else {
-    ; (window as any).fbq?.('track', 'ViewContent', { content_name: 'video-vsl' })
+    ;(window as any).fbq?.('track', 'ViewContent', { content_name: 'video-vsl' })
     startTimer()
   }
 })
 
-onUnmounted(() => { if (timer) clearInterval(timer) })
+onUnmounted(() => {
+  if (timer) clearInterval(timer)
+})
 </script>
 
 <template>
   <div class="vv-page">
-
     <header class="vv-topbar">
       <img src="@/assets/logos/logo.png" class="vv-topbar__logo-img" alt="NOVAERA Logo" />
     </header>
 
     <main class="vv-main">
-
       <div class="vv-stepper" aria-label="Paso 1 de 2">
         <span class="vv-stepper__pill">
           <span class="vv-stepper__dot vv-stepper__dot--active" aria-current="step"></span>
@@ -123,8 +131,8 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
           <span class="vv-accent">eligen a NOVAERA</span>
         </h1>
         <p class="vv-subtitle">
-          Ve el video completo y descubre cómo dominar visualmente tu mercado,
-          aumentar el valor percibido de tus servicios y dejar atrás a tus competidores.
+          Ve el video completo y descubre cómo dominar visualmente tu mercado, aumentar el valor
+          percibido de tus servicios y dejar atrás a tus competidores.
         </p>
       </section>
 
@@ -143,16 +151,14 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
           <div class="vv-cta-locked__bar-wrap" aria-hidden="true">
             <div
               class="vv-cta-locked__bar"
-              :style="{ width: ((COUNTDOWN_SECONDS - secondsLeft) / COUNTDOWN_SECONDS * 100) + '%' }"
+              :style="{
+                width: ((COUNTDOWN_SECONDS - secondsLeft) / COUNTDOWN_SECONDS) * 100 + '%',
+              }"
             />
           </div>
         </div>
 
-        <button
-          v-else
-          class="vv-cta-btn"
-          @click="calendarOpen = true"
-        >
+        <button v-else class="vv-cta-btn" @click="calendarOpen = true">
           <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
           AGENDAR MI DIAGNÓSTICO COMERCIAL
         </button>
@@ -173,19 +179,34 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
           <div class="vv-authority__content">
             <p class="vv-authority__eyebrow">Líder y Fundador</p>
             <h2 id="authority-heading" class="vv-authority__name">Raúl Albán</h2>
-            <p class="vv-authority__role">Director de Proyectos — Ingeniería de Marca e Infraestructura Comercial</p>
+            <p class="vv-authority__role">
+              Director de Proyectos — Ingeniería de Marca e Infraestructura Comercial
+            </p>
             <p class="vv-authority__bio">
-              Con más de 19 años de experiencia comprobada en el mercado nacional, transformando la presencia física de marcas líderes como Kia y Primax. Mi filosofía es simple: <strong>una infraestructura de alto valor no es un simple tema de estética, es una máquina de atracción comercial masiva</strong>.
+              Con más de 19 años de experiencia comprobada en el mercado nacional, transformando la
+              presencia física de marcas líderes como Kia y Primax. Mi filosofía es simple:
+              <strong
+                >una infraestructura de alto valor no es un simple tema de estética, es una máquina
+                de atracción comercial masiva</strong
+              >.
             </p>
             <ul class="vv-authority__creds" role="list">
-              <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Ingeniería de fachadas de alto impacto y dominio visual</li>
-              <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Adecuación interior y mobiliario comercial de alto estatus</li>
-              <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Branding vehicular premium y protección de marca</li>
+              <li>
+                <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Ingeniería de fachadas
+                de alto impacto y dominio visual
+              </li>
+              <li>
+                <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Adecuación interior y
+                mobiliario comercial de alto estatus
+              </li>
+              <li>
+                <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Branding vehicular
+                premium y protección de marca
+              </li>
             </ul>
           </div>
         </div>
       </section>
-
     </main>
 
     <footer class="vv-footer">
@@ -193,51 +214,120 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
         <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
-      <p class="vv-footer__copy">© {{ new Date().getFullYear() }} NOVAERA. Todos los derechos reservados.</p>
+      <p class="vv-footer__copy">
+        © {{ new Date().getFullYear() }} NOVAERA. Todos los derechos reservados.
+      </p>
     </footer>
-
   </div>
 
   <CalendarModal :open="calendarOpen" @close="calendarOpen = false" />
 
   <Teleport to="body">
     <Transition name="capture-fade">
-      <div v-if="captureOpen" class="capture-overlay" role="dialog" aria-modal="true" aria-labelledby="capture-title">
+      <div
+        v-if="captureOpen"
+        class="capture-overlay"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="capture-title"
+      >
         <div class="capture-modal">
           <div class="capture-modal__header">
             <img src="@/assets/logos/logo.png" class="capture-modal__logo-img" alt="NOVAERA Logo" />
             <h2 id="capture-title" class="capture-modal__title">
               Antes de ver el video, <span>confirma tus datos</span>
             </h2>
-            <p class="capture-modal__sub">Para personalizar tu diagnóstico de infraestructura comercial</p>
+            <p class="capture-modal__sub">
+              Para personalizar tu diagnóstico de infraestructura comercial
+            </p>
           </div>
           <form class="capture-modal__form" @submit.prevent="submitCapture" novalidate>
             <div class="capture-row">
-              <div class="capture-field" :class="{ error: captureTouched.nombre && captureErrors.nombre }">
+              <div
+                class="capture-field"
+                :class="{ error: captureTouched.nombre && captureErrors.nombre }"
+              >
                 <label>Nombre</label>
-                <input v-model="captureForm.nombre" type="text" placeholder="Ej: Juan" @blur="captureTouched.nombre = true" />
-                <span v-if="captureTouched.nombre && captureErrors.nombre" class="capture-field__error">{{ captureErrors.nombre }}</span>
+                <input
+                  v-model="captureForm.nombre"
+                  type="text"
+                  placeholder="Ej: Juan"
+                  @blur="captureTouched.nombre = true"
+                />
+                <span
+                  v-if="captureTouched.nombre && captureErrors.nombre"
+                  class="capture-field__error"
+                  >{{ captureErrors.nombre }}</span
+                >
               </div>
-              <div class="capture-field" :class="{ error: captureTouched.apellido && captureErrors.apellido }">
+              <div
+                class="capture-field"
+                :class="{ error: captureTouched.apellido && captureErrors.apellido }"
+              >
                 <label>Apellido</label>
-                <input v-model="captureForm.apellido" type="text" placeholder="Ej: Pérez" @blur="captureTouched.apellido = true" />
-                <span v-if="captureTouched.apellido && captureErrors.apellido" class="capture-field__error">{{ captureErrors.apellido }}</span>
+                <input
+                  v-model="captureForm.apellido"
+                  type="text"
+                  placeholder="Ej: Pérez"
+                  @blur="captureTouched.apellido = true"
+                />
+                <span
+                  v-if="captureTouched.apellido && captureErrors.apellido"
+                  class="capture-field__error"
+                  >{{ captureErrors.apellido }}</span
+                >
               </div>
             </div>
-            <div class="capture-field" :class="{ error: captureTouched.empresa && captureErrors.empresa }">
+            <div
+              class="capture-field"
+              :class="{ error: captureTouched.empresa && captureErrors.empresa }"
+            >
               <label>Tu empresa</label>
-              <input v-model="captureForm.empresa" type="text" placeholder="Ej: Importadora XYZ" @blur="captureTouched.empresa = true" />
-              <span v-if="captureTouched.empresa && captureErrors.empresa" class="capture-field__error">{{ captureErrors.empresa }}</span>
+              <input
+                v-model="captureForm.empresa"
+                type="text"
+                placeholder="Ej: Importadora XYZ"
+                @blur="captureTouched.empresa = true"
+              />
+              <span
+                v-if="captureTouched.empresa && captureErrors.empresa"
+                class="capture-field__error"
+                >{{ captureErrors.empresa }}</span
+              >
             </div>
-            <div class="capture-field" :class="{ error: captureTouched.email && captureErrors.email }">
+            <div
+              class="capture-field"
+              :class="{ error: captureTouched.email && captureErrors.email }"
+            >
               <label>Email</label>
-              <input v-model="captureForm.email" type="email" placeholder="tu@empresa.com" @blur="captureTouched.email = true" />
-              <span v-if="captureTouched.email && captureErrors.email" class="capture-field__error">{{ captureErrors.email }}</span>
+              <input
+                v-model="captureForm.email"
+                type="email"
+                placeholder="tu@empresa.com"
+                @blur="captureTouched.email = true"
+              />
+              <span
+                v-if="captureTouched.email && captureErrors.email"
+                class="capture-field__error"
+                >{{ captureErrors.email }}</span
+              >
             </div>
-            <div class="capture-field" :class="{ error: captureTouched.telefono && captureErrors.telefono }">
+            <div
+              class="capture-field"
+              :class="{ error: captureTouched.telefono && captureErrors.telefono }"
+            >
               <label>Teléfono</label>
-              <input v-model="captureForm.telefono" type="tel" placeholder="+593 98 000 0000" @blur="captureTouched.telefono = true" />
-              <span v-if="captureTouched.telefono && captureErrors.telefono" class="capture-field__error">{{ captureErrors.telefono }}</span>
+              <input
+                v-model="captureForm.telefono"
+                type="tel"
+                placeholder="+593 98 000 0000"
+                @blur="captureTouched.telefono = true"
+              />
+              <span
+                v-if="captureTouched.telefono && captureErrors.telefono"
+                class="capture-field__error"
+                >{{ captureErrors.telefono }}</span
+              >
             </div>
             <button type="submit" class="capture-submit" :disabled="captureSubmitting">
               <span v-if="!captureSubmitting">
@@ -319,7 +409,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #D0DBE8;
+    background: #d0dbe8;
     transition: background 0.2s;
 
     &--active {
@@ -331,7 +421,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     font-family: fonts.$font-interface;
     font-size: 0.78rem;
     font-weight: 600;
-    color: #CCCCCC;
+    color: #cccccc;
     letter-spacing: 0.03em;
   }
 }
@@ -376,7 +466,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
 .vv-subtitle {
   font-size: 0.95rem;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 1.6;
   margin: 0;
 }
@@ -400,7 +490,8 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     height: 100%;
 
     &:not(:defined) {
-      background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/bivr0yu5qp/swatch');
+      background: center / contain no-repeat
+        url('https://fast.wistia.com/embed/medias/bivr0yu5qp/swatch');
       display: block;
       filter: blur(5px);
       padding-top: 56.25%;
@@ -425,23 +516,23 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
   &__icon {
     font-size: 1.4rem;
-    color: #EEEEEE;
+    color: #eeeeee;
   }
 
   &__text {
     font-size: 0.88rem;
-    color: #CCCCCC;
+    color: #cccccc;
     margin: 0;
 
     strong {
-      color: #7997FF;
+      color: #7997ff;
     }
   }
 
   &__bar-wrap {
     width: 100%;
     height: 4px;
-    background: #E8EDF5;
+    background: #e8edf5;
     border-radius: 99px;
     overflow: hidden;
   }
@@ -471,11 +562,14 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   cursor: pointer;
   width: 100%;
   max-width: 420px;
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.15s,
+    box-shadow 0.2s;
   box-shadow: 0 4px 20px rgba(240, 180, 41, 0.3);
 
   &:hover {
-    background: #D49A1E;
+    background: #d49a1e;
     transform: translateY(-1px);
     box-shadow: 0 8px 28px rgba(240, 180, 41, 0.45);
   }
@@ -490,7 +584,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   align-items: center;
   gap: 0.4rem;
   font-size: 0.76rem;
-  color: #EEEEEE;
+  color: #eeeeee;
   margin: 0;
 
   i {
@@ -554,13 +648,13 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
 .vv-authority__role {
   font-size: 0.8rem;
-  color: #CCCCCC;
+  color: #cccccc;
   margin: 0 0 1rem;
 }
 
 .vv-authority__bio {
   font-size: 0.88rem;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 1.6;
   margin: 0 0 1.25rem;
 
@@ -582,7 +676,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     align-items: center;
     gap: 0.5rem;
     font-size: 0.78rem;
-    color: #FFFFFF;
+    color: #ffffff;
 
     i {
       color: colors.$OS-BLUE;
@@ -609,7 +703,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
     a {
       font-size: 0.76rem;
-      color: #EEEEEE;
+      color: #eeeeee;
       text-decoration: none;
 
       &:hover {
@@ -620,7 +714,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
   &__copy {
     font-size: 0.72rem;
-    color: #EEEEEE;
+    color: #eeeeee;
     margin: 0;
   }
 }
@@ -688,7 +782,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
   &__sub {
     font-size: 0.82rem;
-    color: #CCCCCC;
+    color: #cccccc;
     margin: 0;
   }
 
@@ -719,7 +813,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     font-family: fonts.$font-interface;
     font-size: 0.78rem;
     font-weight: 700;
-    color: #FFFFFF;
+    color: #ffffff;
     letter-spacing: 0.02em;
   }
 
@@ -729,7 +823,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     padding: 0.7rem 0.85rem;
     font-family: fonts.$font-secondary;
     font-size: 0.88rem;
-    color: #FFFFFF;
+    color: #ffffff;
     background: #111111;
     outline: none;
     transition: all 0.2s ease;
@@ -772,11 +866,13 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   cursor: pointer;
   width: 100%;
   margin-top: 0.25rem;
-  transition: background 0.2s, transform 0.15s;
+  transition:
+    background 0.2s,
+    transform 0.15s;
   box-shadow: 0 4px 16px rgba(240, 180, 41, 0.3);
 
   &:hover:not(:disabled) {
-    background: #D49A1E;
+    background: #d49a1e;
     transform: translateY(-1px);
   }
 

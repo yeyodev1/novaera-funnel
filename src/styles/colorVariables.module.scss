@@ -1,68 +1,68 @@
 // NOVAERA / Graphic Corporation Colors
-$NE-BLACK:         #000000; // C:0 M:0 Y:0 K:100
-$NE-DARK-GRAY:     #666666; // C:0 M:0 Y:0 K:60
-$NE-BLUE:          #0D42FF; // C:95 M:74 Y:0 K:0
-$NE-PINK-PURPLE:   #C757F5; // C:22 M:66 Y:4 K:0
-$NE-GREEN:         #00FF00; // C:100 M:0 Y:100 K:0
-$NE-DEEP-PURPLE:   #320691; // C:76 M:97 Y:30 K:19
-$NE-YELLOW-ORANGE: #FFA82B; // C:0 M:34 Y:83 K:0
-$NE-ORANGE:        #FF8005; // C:0 M:50 Y:98 K:0
-$NE-HOT-PINK:      #FA2682; // C:2 M:85 Y:49 K:0
-$NE-YELLOW:        #F5FF0F; // C:4 M:0 Y:94 K:0
+$NE-BLACK: #000000; // C:0 M:0 Y:0 K:100
+$NE-DARK-GRAY: #666666; // C:0 M:0 Y:0 K:60
+$NE-BLUE: #0d42ff; // C:95 M:74 Y:0 K:0
+$NE-PINK-PURPLE: #c757f5; // C:22 M:66 Y:4 K:0
+$NE-GREEN: #00ff00; // C:100 M:0 Y:100 K:0
+$NE-DEEP-PURPLE: #320691; // C:76 M:97 Y:30 K:19
+$NE-YELLOW-ORANGE: #ffa82b; // C:0 M:34 Y:83 K:0
+$NE-ORANGE: #ff8005; // C:0 M:50 Y:98 K:0
+$NE-HOT-PINK: #fa2682; // C:2 M:85 Y:49 K:0
+$NE-YELLOW: #f5ff0f; // C:4 M:0 Y:94 K:0
 
 // Mapeo a las variables del sistema (manteniendo los nombres para no romper UI)
-$QS-NAVY:    #222222;         // Brand Principal (Gris Oscuro/Charcoal)
-$QS-BLUE:    #8E9CB2;         // Secundario (Gris Plata)
-$QS-GOLD:    #F0B429;         // Acento (Amarillo Oro)
-$QS-RED:     #F0B429;         // CTAs y urgencia (Amarillo Oro para contraste)
-$QS-DARK:    #FFFFFF;         // Texto claro (modo oscuro)
-$QS-LIGHT:   $NE-BLACK;       // Fondo negro
-$QS-SURFACE: #111111;         // Superficies/cards oscuras
+$QS-NAVY: #222222; // Brand Principal (Gris Oscuro/Charcoal)
+$QS-BLUE: #8e9cb2; // Secundario (Gris Plata)
+$QS-GOLD: #f0b429; // Acento (Amarillo Oro)
+$QS-RED: #f0b429; // CTAs y urgencia (Amarillo Oro para contraste)
+$QS-DARK: #ffffff; // Texto claro (modo oscuro)
+$QS-LIGHT: $NE-BLACK; // Fondo negro
+$QS-SURFACE: #111111; // Superficies/cards oscuras
 
 // Urgency / inmediatez
-$QS-URGENT:        #F0B429;
-$QS-URGENT-DARK:   #A67300;
-$QS-URGENT-LIGHT:  #FFD666;
-$QS-URGENT-BG:     rgba(#F0B429, 0.15);
+$QS-URGENT: #f0b429;
+$QS-URGENT-DARK: #a67300;
+$QS-URGENT-LIGHT: #ffd666;
+$QS-URGENT-BG: rgba(#f0b429, 0.15);
 
 // Aliases legacy Aluvicopp (mantienen compatibilidad)
-$ALU-NAVY:    $QS-NAVY;
-$ALU-BLUE:    $QS-BLUE;
-$ALU-SILVER:  #8E9CB2;
-$ALU-RED:     $QS-RED;
-$ALU-DARK:    $QS-DARK;
-$ALU-LIGHT:   $QS-LIGHT;
+$ALU-NAVY: $QS-NAVY;
+$ALU-BLUE: $QS-BLUE;
+$ALU-SILVER: #8e9cb2;
+$ALU-RED: $QS-RED;
+$ALU-DARK: $QS-DARK;
+$ALU-LIGHT: $QS-LIGHT;
 $ALU-SURFACE: $QS-SURFACE;
-$ALU-URGENT:        $QS-URGENT;
-$ALU-URGENT-DARK:   $QS-URGENT-DARK;
-$ALU-URGENT-LIGHT:  $QS-URGENT-LIGHT;
-$ALU-URGENT-BG:     $QS-URGENT-BG;
+$ALU-URGENT: $QS-URGENT;
+$ALU-URGENT-DARK: $QS-URGENT-DARK;
+$ALU-URGENT-LIGHT: $QS-URGENT-LIGHT;
+$ALU-URGENT-BG: $QS-URGENT-BG;
 
 // Aliases legacy Bakano (mantienen compatibilidad — no usar para código nuevo)
-$BAKANO-PINK:   $QS-NAVY;
-$BAKANO-DARK:   $QS-DARK;
-$BAKANO-LIGHT:  $QS-LIGHT;
+$BAKANO-PINK: $QS-NAVY;
+$BAKANO-DARK: $QS-DARK;
+$BAKANO-LIGHT: $QS-LIGHT;
 $BAKANO-PURPLE: $QS-BLUE;
-$BAKANO-GREEN:  #8E9CB2;
+$BAKANO-GREEN: #8e9cb2;
 $BAKANO-PRIMARY: $QS-NAVY;
 
 // Aliases legacy Ale Barreto (mantienen compatibilidad)
-$AB-WOOD:     #8E9CB2;
-$AB-EARTH:    $QS-BLUE;
-$AB-FOREST:   $QS-NAVY;
-$AB-SAGE:     #8E9CB2;
-$AB-CREAM:    $QS-LIGHT;
-$AB-WHITE:    #ffffff;
-$AB-URGENT:        $QS-URGENT;
-$AB-URGENT-DARK:   $QS-URGENT-DARK;
-$AB-URGENT-LIGHT:  $QS-URGENT-LIGHT;
-$AB-URGENT-BG:     $QS-URGENT-BG;
+$AB-WOOD: #8e9cb2;
+$AB-EARTH: $QS-BLUE;
+$AB-FOREST: $QS-NAVY;
+$AB-SAGE: #8e9cb2;
+$AB-CREAM: $QS-LIGHT;
+$AB-WHITE: #ffffff;
+$AB-URGENT: $QS-URGENT;
+$AB-URGENT-DARK: $QS-URGENT-DARK;
+$AB-URGENT-LIGHT: $QS-URGENT-LIGHT;
+$AB-URGENT-BG: $QS-URGENT-BG;
 
 // OS Aliases (para mantener compatibilidad con código existente)
-$OS-RED:   $QS-RED;
-$OS-NAVY:  $QS-NAVY;
-$OS-BLUE:  $QS-BLUE;
-$OS-DARK:  $QS-DARK;
+$OS-RED: $QS-RED;
+$OS-NAVY: $QS-NAVY;
+$OS-BLUE: $QS-BLUE;
+$OS-DARK: $QS-DARK;
 
 // Colores base
 $white: #ffffff;
