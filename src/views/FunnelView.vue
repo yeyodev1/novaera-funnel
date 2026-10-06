@@ -59,15 +59,15 @@ const pillars = [
   },
   {
     num: '02',
-    icon: 'fa-solid fa-couch',
-    title: 'Adecuación interior y mobiliario comercial de estatus',
-    body: 'Optimizamos los flujos de tránsito, diseñamos iluminación de precisión y fabricamos mobiliario premium a medida (counters, viniles HD). Cada centímetro acelera cierres de negocios y proyecta solidez inquebrantable.',
+    icon: 'fa-solid fa-lightbulb',
+    title: 'Logos corpóreos y letreros luminosos de fachada',
+    body: 'Fabricamos logos corpóreos en acero, acrílico y LED de alta durabilidad que hacen que tu marca se vea de día y de noche, a distancia y sin degradarse con el clima.',
   },
   {
     num: '03',
-    icon: 'fa-solid fa-truck-fast',
-    title: 'Blindaje de marca exterior y branding vehicular',
-    body: 'Transformamos cada camión o vehículo corporativo en una valla publicitaria móvil de alto impacto con viniles automotrices importados de alta durabilidad, garantizando uniformidad de marca en toda tu flota.',
+    icon: 'fa-solid fa-store',
+    title: 'Renovación de fachadas para sucursales y cadenas',
+    body: 'Modernizamos fachadas existentes y estandarizamos la imagen exterior de todas tus sucursales para que cada punto proyecte el mismo nivel de marca.',
   },
 ]
 
@@ -86,7 +86,7 @@ const testimonials = [
   },
   {
     quote:
-      'Nuestros espacios estaban muertos comercialmente y atrapados en una guerra de precios. Gracias a la ingeniería de alto valor comercial de NOVAERA, elevamos drásticamente nuestro valor percibido y facturamos con fluidez.',
+      'Nuestra fachada estaba muerta comercialmente y atrapados en una guerra de precios. Gracias a la ingeniería de alto valor comercial de NOVAERA, elevamos drásticamente nuestro valor percibido y facturamos con fluidez.',
     author: 'Gerente General',
     role: 'Franquicia en expansión',
   },
@@ -272,9 +272,9 @@ const dismissProof = () => {
         </h1>
 
         <p class="funnel__hero-sub">
-          Descubre cómo el sistema premium de NOVAERA transforma las fachadas y los espacios
-          comerciales de empresas líderes, eliminando los retrasos de proveedores informales y
-          convirtiendo tu infraestructura en una máquina de atracción comercial masiva.
+          Descubre cómo el sistema premium de NOVAERA transforma las fachadas de empresas líderes,
+          eliminando los retrasos de proveedores informales y convirtiendo tu fachada en una máquina
+          de atracción comercial masiva.
         </p>
 
         <ul class="funnel__benefits" role="list">
@@ -399,10 +399,10 @@ const dismissProof = () => {
             </div>
             <h3 class="funnel__pillar-title">Diseño Conceptual y Planificación Visual</h3>
             <p class="funnel__pillar-body">
-              Creamos la propuesta estética de tu fachada, letreros o espacios comerciales antes de
-              iniciar la producción. Visualiza con precisión el impacto que proyectará tu marca para
-              asegurar que cumpla con los estándares premium de tu empresa. Resultado: una imagen de
-              alto estatus garantizada.
+              Creamos la propuesta estética de tu fachada y su letrero corpóreo antes de iniciar la
+              producción. Visualiza con precisión el impacto que proyectará tu marca para asegurar
+              que cumpla con los estándares premium de tu empresa. Resultado: una imagen de alto
+              estatus garantizada.
             </p>
           </div>
         </div>
@@ -501,7 +501,7 @@ const dismissProof = () => {
             publicidad y licitaciones, solo para perder frente a competidores que proyectan una
             imagen superior. El mercado ha aceptado que el diseño sea tratado como un gasto menor
             con materiales dudosos. En <strong>NOVAERA</strong> nacimos para resolver ese vacío.
-            Hemos transformado los espacios de firmas como
+            Hemos transformado las fachadas de firmas como
             <strong>Agripac, Kia, Primax, Dacar, Corpei, y Wendy's</strong>, entregando calidad
             premium directa de fábrica sin excusas ni improvisaciones.
           </p>

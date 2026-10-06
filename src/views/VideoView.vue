@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import CalendarModal from '@/components/CalendarModal.vue'
 import { trackStage, generateEventId } from '@/utils/ghl'
 import { useContactStore } from '@/stores/contact'
@@ -59,35 +59,6 @@ const submitCapture = async () => {
   await new Promise((r) => setTimeout(r, 600))
   captureSubmitting.value = false
   captureOpen.value = false
-  startTimer()
-}
-
-const IS_DEV = window.location.hostname === 'localhost'
-const COUNTDOWN_SECONDS = IS_DEV ? 3 : 120
-const secondsLeft = ref(COUNTDOWN_SECONDS)
-const ctaUnlocked = ref(false)
-let timer: ReturnType<typeof setInterval> | null = null
-
-const formattedTime = () => {
-  const m = Math.floor(secondsLeft.value / 60)
-  const s = secondsLeft.value % 60
-  return `${m}:${s.toString().padStart(2, '0')}`
-}
-
-const startTimer = () => {
-  timer = setInterval(() => {
-    if (secondsLeft.value > 0) {
-      secondsLeft.value--
-    } else {
-      ctaUnlocked.value = true
-      ;(window as any).fbq?.('track', 'CompleteRegistration', {
-        content_name: 'video-completado',
-        value: 1,
-        currency: 'USD',
-      })
-      if (timer) clearInterval(timer)
-    }
-  }, 1000)
 }
 
 onMounted(() => {
@@ -97,12 +68,7 @@ onMounted(() => {
     captureOpen.value = true
   } else {
     ;(window as any).fbq?.('track', 'ViewContent', { content_name: 'video-vsl' })
-    startTimer()
   }
-})
-
-onUnmounted(() => {
-  if (timer) clearInterval(timer)
 })
 </script>
 
@@ -143,24 +109,9 @@ onUnmounted(() => {
       </div>
 
       <div class="vv-cta-section">
-        <div v-if="!ctaUnlocked" class="vv-cta-locked" aria-live="polite">
-          <i class="fa-solid fa-clock vv-cta-locked__icon" aria-hidden="true"></i>
-          <p class="vv-cta-locked__text">
-            El botón se habilitará en <strong>{{ formattedTime() }}</strong>
-          </p>
-          <div class="vv-cta-locked__bar-wrap" aria-hidden="true">
-            <div
-              class="vv-cta-locked__bar"
-              :style="{
-                width: ((COUNTDOWN_SECONDS - secondsLeft) / COUNTDOWN_SECONDS) * 100 + '%',
-              }"
-            />
-          </div>
-        </div>
-
-        <button v-else class="vv-cta-btn" @click="calendarOpen = true">
+        <button class="vv-cta-btn" @click="calendarOpen = true">
           <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-          AGENDAR MI DIAGNÓSTICO COMERCIAL
+          AGENDAR MI DIAGNÓSTICO DE FACHADA
         </button>
 
         <p class="vv-cta-sub">
@@ -196,12 +147,12 @@ onUnmounted(() => {
                 de alto impacto y dominio visual
               </li>
               <li>
-                <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Adecuación interior y
-                mobiliario comercial de alto estatus
+                <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Logos corpóreos
+                luminosos y letreros de fachada
               </li>
               <li>
-                <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Branding vehicular
-                premium y protección de marca
+                <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Renovación de fachadas
+                con alucobond y vidrio templado
               </li>
             </ul>
           </div>
@@ -504,45 +455,6 @@ onUnmounted(() => {
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
-}
-
-.vv-cta-locked {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  width: 100%;
-  max-width: 420px;
-
-  &__icon {
-    font-size: 1.4rem;
-    color: #eeeeee;
-  }
-
-  &__text {
-    font-size: 0.88rem;
-    color: #cccccc;
-    margin: 0;
-
-    strong {
-      color: #7997ff;
-    }
-  }
-
-  &__bar-wrap {
-    width: 100%;
-    height: 4px;
-    background: #e8edf5;
-    border-radius: 99px;
-    overflow: hidden;
-  }
-
-  &__bar {
-    height: 100%;
-    background: colors.$OS-BLUE;
-    border-radius: 99px;
-    transition: width 0.8s linear;
-  }
 }
 
 .vv-cta-btn {

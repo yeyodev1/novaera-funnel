@@ -35,11 +35,11 @@ const router = createRouter({
       meta: {
         title: 'NOVAERA | Ingeniería de Marca e Infraestructura Comercial',
         description:
-          'NOVAERA — Especialistas en infraestructura comercial premium. Transformamos fachadas corporativas, adecuación interior y branding vehicular sin retrasos ni improvisaciones. Diagnóstico gratuito.',
+          'NOVAERA — Especialistas en infraestructura comercial premium. Diseñamos, fabricamos e instalamos fachadas corporativas y logos corpóreos sin retrasos ni improvisaciones. Diagnóstico gratuito.',
         canonical: 'https://novaera.ec/',
         ogTitle: 'NOVAERA | Infraestructura Comercial Premium',
         ogDescription:
-          'Domina visualmente tu mercado. Construimos fachadas corporativas y espacios comerciales que proyectan el verdadero nivel de éxito de tu empresa.',
+          'Domina visualmente tu mercado. Construimos fachadas corporativas que proyectan el verdadero nivel de éxito de tu empresa.',
         ogUrl: 'https://novaera.ec/',
       } satisfies RouteMeta,
     },

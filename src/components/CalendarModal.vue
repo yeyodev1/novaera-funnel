@@ -33,7 +33,8 @@ const isValid = () =>
   form.value.consent
 
 const qualifies = () => {
-  if (form.value.tipo === 'residencial' || form.value.presupuesto === 'bajo') return false
+  if (form.value.tipo === 'residencial' || form.value.presupuesto === 'sin_presupuesto')
+    return false
   return true
 }
 
@@ -47,11 +48,10 @@ const handleSubmit = async () => {
   const scheduleEventId = generateEventId('schedule')
 
   const tipoLabel: Record<string, string> = {
-    fachadas: 'Fachadas corporativas y exteriores',
-    interiores: 'Adecuación interior y mobiliario comercial',
-    vehicular: 'Branding de flota vehicular',
-    letreros: 'Letreros comerciales de alto impacto',
-    residencial: 'Proyecto residencial / Vivienda',
+    nueva: 'Fachada nueva para mi local, edificio o sucursal',
+    renovacion: 'Renovar o modernizar mi fachada actual',
+    corporeo: 'Letrero / logo corpóreo luminoso para mi fachada',
+    residencial: 'Fachada de vivienda / proyecto residencial',
   }
   const volumenLabel: Record<string, string> = {
     gran: 'Gran corporación / Multinacional',
@@ -60,10 +60,10 @@ const handleSubmit = async () => {
     micro: 'Microempresa / Emprendimiento',
   }
   const presupuestoLabel: Record<string, string> = {
-    premium: 'Más de $10,000 (Inversión alta / premium)',
+    premium: 'Más de $10,000',
     rango_5000_10000: 'De $5,000 a $10,000',
-    rango_1200_5000: 'De $1,200 a $5,000',
-    bajo: 'La cotización más barata (Menos de $1,200)',
+    rango_3000_5000: 'De $3,000 a $5,000',
+    sin_presupuesto: 'No tengo presupuesto',
   }
 
   const etiquetas = [
@@ -85,7 +85,7 @@ NOVAERA — Cualificación
 ━━━━━━━━━━━━━━━━━━━━━━━━
 🏗 Tipo: ${tipoLabel[form.value.tipo] ?? form.value.tipo}
 🏢 Empresa: ${volumenLabel[form.value.volumen] ?? form.value.volumen}
-💰 Enfoque: ${presupuestoLabel[form.value.presupuesto] ?? form.value.presupuesto}
+💰 Presupuesto: ${presupuestoLabel[form.value.presupuesto] ?? form.value.presupuesto}
 💡 Reto: ${form.value.reto}
 ━━━━━━━━━━━━━━━━━━━━━━━━
 ${califica ? '✅ CALIFICA' : '❌ NO CALIFICA — No cumple perfil premium'}
@@ -202,16 +202,18 @@ watch(
             <fieldset class="cal-fieldset" :class="{ 'has-error': touched && !form.tipo }">
               <legend class="cal-legend">
                 <span class="cal-q-num">01</span>
-                ¿Qué tipo de proyecto necesitas desarrollar?
+                ¿Qué necesitas para tu fachada?
               </legend>
               <div class="cal-options">
                 <label
                   v-for="opt in [
-                    { value: 'fachadas', label: 'Fachadas corporativas y exteriores' },
-                    { value: 'interiores', label: 'Adecuación interior y mobiliario comercial' },
-                    { value: 'vehicular', label: 'Branding de flota vehicular' },
-                    { value: 'letreros', label: 'Letreros comerciales de alto impacto' },
-                    { value: 'residencial', label: 'Proyecto residencial / Vivienda' },
+                    { value: 'nueva', label: 'Fachada nueva para mi local, edificio o sucursal' },
+                    { value: 'renovacion', label: 'Renovar o modernizar mi fachada actual' },
+                    {
+                      value: 'corporeo',
+                      label: 'Letrero / logo corpóreo luminoso para mi fachada',
+                    },
+                    { value: 'residencial', label: 'Fachada de vivienda / proyecto residencial' },
                   ]"
                   :key="opt.value"
                   class="cal-option"
@@ -256,36 +258,29 @@ watch(
               class="cal-fieldset cal-fieldset--budget"
               :class="{
                 'has-error': touched && !form.presupuesto,
-                'has-investment': form.presupuesto && form.presupuesto !== 'bajo',
+                'has-investment': form.presupuesto && form.presupuesto !== 'sin_presupuesto',
               }"
             >
               <legend class="cal-legend cal-legend--budget">
                 <span class="cal-q-num cal-q-num--budget">03</span>
-                <span>¿Qué nivel de inversión buscas para este proyecto?</span>
+                <span>¿Cuánto tienes previsto invertir en tu fachada?</span>
                 <i class="fa-solid fa-chart-line cal-legend-chart" aria-hidden="true"></i>
               </legend>
               <div class="cal-options">
                 <label
                   v-for="opt in [
-                    {
-                      value: 'premium',
-                      label: 'Más de $10,000 (Inversión alta / premium)',
-                      premium: true,
-                    },
+                    { value: 'rango_3000_5000', label: 'De $3,000 a $5,000', premium: false },
                     { value: 'rango_5000_10000', label: 'De $5,000 a $10,000', premium: true },
-                    { value: 'rango_1200_5000', label: 'De $1,200 a $5,000', premium: false },
-                    {
-                      value: 'bajo',
-                      label: 'La cotización más barata (Menos de $1,200)',
-                      premium: false,
-                    },
+                    { value: 'premium', label: 'Más de $10,000', premium: true },
+                    { value: 'sin_presupuesto', label: 'No tengo presupuesto', premium: false },
                   ]"
                   :key="opt.value"
                   class="cal-option"
                   :class="{
                     selected: form.presupuesto === opt.value,
                     'cal-option--premium': opt.premium && form.presupuesto === opt.value,
-                    'cal-option--low': opt.value === 'bajo' && form.presupuesto === 'bajo',
+                    'cal-option--low':
+                      opt.value === 'sin_presupuesto' && form.presupuesto === 'sin_presupuesto',
                     'cal-option--premium-hover': opt.premium && form.presupuesto !== opt.value,
                   }"
                 >
@@ -309,7 +304,7 @@ watch(
             >
               <legend class="cal-legend">
                 <span class="cal-q-num">04</span>
-                ¿Cuál es tu principal desafío con tu infraestructura actual?
+                ¿Cuál es el principal problema con tu fachada actual?
               </legend>
               <textarea
                 v-model="form.reto"
