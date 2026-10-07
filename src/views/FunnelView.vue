@@ -220,7 +220,7 @@ const dismissProof = () => {
         aria-label="Agendar diagnóstico"
         @click="openModal()"
       >
-        AGENDAR MI DIAGNÓSTICO
+        AGENDA TU CONSULTA GRATIS
         <span aria-hidden="true">→</span>
       </button>
     </div>
@@ -334,7 +334,7 @@ const dismissProof = () => {
         <div class="funnel__cta-wrap">
           <button class="funnel__cta-btn" @click="openModal()">
             <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-            AGENDAR DIAGNÓSTICO GRATUITO
+            AGENDA TU CONSULTA GRATIS
           </button>
           <p class="funnel__cta-sub">
             <i class="fa-solid fa-lock" aria-hidden="true"></i>
@@ -549,7 +549,7 @@ const dismissProof = () => {
         </p>
         <button class="funnel__cta-btn funnel__cta-btn--final" @click="openModal()">
           <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-          AGENDAR MI DIAGNÓSTICO GRATUITO
+          AGENDA TU CONSULTA GRATIS
         </button>
         <p class="funnel__cta-sub">
           <i class="fa-solid fa-lock" aria-hidden="true"></i>
