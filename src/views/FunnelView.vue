@@ -742,7 +742,7 @@ const dismissProof = () => {
   border-radius: 12px;
   padding: 0.75rem 0.9rem 0.75rem 0.85rem;
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
-  max-width: 320px;
+  max-width: min(320px, calc(100vw - 6rem));
   font-family: fonts.$font-secondary;
 
   @media (min-width: 768px) {
